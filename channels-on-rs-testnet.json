@@ -1,0 +1,1412 @@
+{
+  "channels": [
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-uratom-0-withdrawal",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-618"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-618\",\"address\":\"cosmos1tne2mwtwgeeh2hr4vw9vt0uj5s4dln5qga7f7llmmqrydewwafds6zmjq4\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-370"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-uratom-0-delegation",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-618"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-618\",\"address\":\"cosmos1kzlrmxw3h2n4uzuv73m33cfw7xt7qjf3hlqx33ulc02e9dhxu46qgfxg9l\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-371"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-634"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-634\",\"address\":\"cosmos1d6t4pqxqvy35sem93ks3lnm5n0k6k46220fksfqk07ht0vz0esvs653pg3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-387"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-634"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-634\",\"address\":\"cosmos1shdnke5udnvd8xv467ph6faf696hsvte7v5wzkrwssxrhufxrgnqq3z29y\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-388"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-634"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-634\",\"address\":\"cosmos1j08uyhxnunh243nqhr395l60su0dz4q84pr4vpa7je0hyahkc3gssfvc2e\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-389"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-634"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-634\",\"address\":\"cosmos1jymdqx83vz725r7axhlds4t0p09n64nq04dssccgtu66zkh9flhq78yemz\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-390"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos1ud6u97gu39nwawn3092v2fflju2e2fa74wt3v8w22v0ys84g6zyq907yxl\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-392"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos12cad9hpe0m237arr443ugrllv82uzuef6a8w8r6nue7hmauqqwescj8h2h\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-393"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos10uxaa5gkxpeungu2c9qswx035v6t3r24w6v2r6dxd858rq2mzknqj8ru28\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-394"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos1rfmn8u084d7cngu9raeau7pd04avkggzdqznzazf83zfn2dz7zxsmvwk7v\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-395"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-7"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos10uxaa5gkxpeungu2c9qswx035v6t3r24w6v2r6dxd858rq2mzknqj8ru28\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-396"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-7"
+      },
+      "connection_hops": [
+        "connection-635"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-635\",\"address\":\"cosmos10uxaa5gkxpeungu2c9qswx035v6t3r24w6v2r6dxd858rq2mzknqj8ru28\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-397"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-52"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-426"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-52"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-427"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_reward_account",
+        "channel_id": "channel-53"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos1e3e78pv0p93j9ft67s99krcm6wx5pjzgq4kdtq8qek0d7vdsggxqm5fzz8\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-428"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_reward_account",
+        "channel_id": "channel-53"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos1e3e78pv0p93j9ft67s99krcm6wx5pjzgq4kdtq8qek0d7vdsggxqm5fzz8\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-429"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_reward_account",
+        "channel_id": "channel-53"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos1e3e78pv0p93j9ft67s99krcm6wx5pjzgq4kdtq8qek0d7vdsggxqm5fzz8\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-430"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-54"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-438"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-57"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-449"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-57"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-450"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-58"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-451"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.withdrawal",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-707"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-4\",\"host_connection_id\":\"connection-707\",\"address\":\"cosmos1u234rtk42hnkft9a4kssk4fu9cwvv8krx5nrawaswemax09mqx9smh5ywg\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-462"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.deposit",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-707"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-4\",\"host_connection_id\":\"connection-707\",\"address\":\"cosmos1adtztw9zgue77gn29np5jg762rxx046hvwwjrpex5ae2frmuxsaqq425jj\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-463"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.performance",
+        "channel_id": "channel-5"
+      },
+      "connection_hops": [
+        "connection-707"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-4\",\"host_connection_id\":\"connection-707\",\"address\":\"cosmos1cqvqntwak7qwwlc3qkpv892zxn6pn6qhr7rq0j3vezrzuu5qrtnsqqw3vz\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-464"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-6"
+      },
+      "connection_hops": [
+        "connection-707"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-4\",\"host_connection_id\":\"connection-707\",\"address\":\"cosmos13dqvh4qtg4gzczuktgnw8gc2ewnwmhdwnctekxctyr4azz4dcyysecgq7e\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-465"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-6"
+      },
+      "connection_hops": [
+        "connection-707"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-4\",\"host_connection_id\":\"connection-707\",\"address\":\"cosmos13dqvh4qtg4gzczuktgnw8gc2ewnwmhdwnctekxctyr4azz4dcyysecgq7e\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-466"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-63"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-469"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-63"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-470"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-63"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-471"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-63"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-472"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-56"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-473"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-55"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-474"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-60"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-475"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-61"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-476"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-59"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-477"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-56"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-478"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-55"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-479"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-60"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-480"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-64"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-481"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-64"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-482"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-64"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-483"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-65"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-484"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-65"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-485"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-65"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-486"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-65"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-487"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-66"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-488"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-66"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-489"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-66"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-490"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-725"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-725\",\"address\":\"cosmos1wvug2fhapvpdc090mujyq46qnwcaejcjhr0r23l8s32e20cslpfq5g8fn0\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-498"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-725"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-725\",\"address\":\"cosmos16gx75w8va9wjte0gjaytdrcltenjsq4y6ukagx844vealcna87nqp233tl\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-499"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-725"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-725\",\"address\":\"cosmos1prqu30tdkxpy2azjfp4phe5ju2ktrcx9r49hllhfmfg33786k3jqedvkx4\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-500"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-725"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-725\",\"address\":\"cosmos1ptxs6zyrxc29d070dyvgaz8r4kxv9xcngahgxn496nve8fdlwaes3fvqah\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-501"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-755"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-755\",\"address\":\"cosmos15gnve0j05g6p8jevutfu3jzrnl4y00aw2g7mejwhfc5ruk43wmus6lf6h2\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-506"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-755"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-755\",\"address\":\"cosmos1jcjepqwp9p0q35n8jryktjs7gj4ux8ln3naxn7en8j82dadylz8smsrpuk\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-507"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-755"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-755\",\"address\":\"cosmos1hq60fkhnpl5vdjux380cam0h2q6rlhavf2jjp8xampqsc5pmngtqutmqx0\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-508"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-755"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-755\",\"address\":\"cosmos1uasxt3ps56zgfnjwm87aplgtj8nz6q44f3kuv4gq30v8jqzt0x3qt3ul3v\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-509"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-756"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-756\",\"address\":\"cosmos14pjvauu5k4h0lx6nvpzj474trurnekenvkg8gshz7f6932apxjls2md2pe\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-511"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-756"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-756\",\"address\":\"cosmos1sh0g8uv4arvzw6p8ev7vlhx6zg5z2un6qtq0fk36ujvl00wplduqvr6emf\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-512"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-756"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-756\",\"address\":\"cosmos1s2tf9j66yt0kggfpq2ufvh30wuz9naj3l0fncm8v402hthtyhgys360xdu\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-513"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-756"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-756\",\"address\":\"cosmos15j3eh685g6m25pu9fj7rzw00323qlakaqskf20z2xja9pmpdcecssewqux\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-514"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-757"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-757\",\"address\":\"cosmos1vvacn97fxny426hdlzwx50y6t2n3ultdch885vjytxxtpewn9rrs96apsg\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-516"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-757"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-757\",\"address\":\"cosmos1l3u680uc0cu3xhcqhamnezynn27rpd2slfyl5zxuuyzurh2v0c9qk2t7ql\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-517"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-757"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-757\",\"address\":\"cosmos1ya4r8lsy09lum50zccqu0gtnpx0l0v9dlhvp2xmceugflf99dy7qhhxa44\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-518"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-757"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-757\",\"address\":\"cosmos1mayxwt8ah48ksxlrqj8szsxr0dr0h8grytsjqg987cczl6x09hys6ua7g7\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-519"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.FEE",
+        "channel_id": "channel-2"
+      },
+      "connection_hops": [
+        "connection-768"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-768\",\"address\":\"cosmos1jxaug940t3xz49eajy8a2g74t8me264qfply54p24rtngsj9eteq5gjy4q\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-521"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.DELEGATION",
+        "channel_id": "channel-1"
+      },
+      "connection_hops": [
+        "connection-768"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-768\",\"address\":\"cosmos1j9snrx6kde5ckr28qu0egcu2uyyj23cu5kq7mzwq20cvx3ch2rsqfl7z0k\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-522"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.WITHDRAWAL",
+        "channel_id": "channel-3"
+      },
+      "connection_hops": [
+        "connection-768"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-768\",\"address\":\"cosmos1d2lqa80fq85rp43m7jdwq43rv7mg2xue0fy99w8gnen8yu2p934qe0m6qt\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-523"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.REDEMPTION",
+        "channel_id": "channel-4"
+      },
+      "connection_hops": [
+        "connection-768"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-0\",\"host_connection_id\":\"connection-768\",\"address\":\"cosmos1kdq6qk5hljjkx4vvkeyuz3f3fznem3jqwdjtxyvk6dy8xgp8fuws03zh0q\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-524"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-ex1h0j8x0v9hs4eq6ppgamemfyu4vuvp2sl0q9p3v",
+        "channel_id": "channel-101"
+      },
+      "connection_hops": [
+        "connection-781"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-98\",\"host_connection_id\":\"connection-781\",\"address\":\"cosmos1zpcpy3r2qp069f7cfjyu3r2jvawpvvk8kjuej7q99ls4hejvvfpq2vqr5f\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-527"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-15"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-528"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.deposit",
+        "channel_id": "channel-12"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1pl2ld9d0x9ve6flklr9jv9sl69y6yucvaelcljml83l7kyn0m0ksacp9tj\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-529"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.performance",
+        "channel_id": "channel-14"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1v8p98feyknvf9crjp3yu4ywr3v4y7j3zd9qqxpxjxgaa5phy2t6qamlsga\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-530"
+    },
+    {
+      "state": "STATE_OPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.withdrawal",
+        "channel_id": "channel-13"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1ets9pef83fltsrgvvwkzw055wck9wagsjkyfqgef09g3jn5sy8espdph07\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-531"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-35"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-537"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-35"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-538"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-36"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-539"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-40"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-541"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-40"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-542"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-40"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-543"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-41"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-544"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-41"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-545"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-42"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-546"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-42"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-547"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-83"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-548"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-83"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-549"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-lscosmos_pstake_delegation_account",
+        "channel_id": "channel-83"
+      },
+      "connection_hops": [
+        "connection-344"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-30\",\"host_connection_id\":\"connection-344\",\"address\":\"cosmos13t4996czrgft9gw43epuwauccrldu5whx6uprjdmvsmuf7ylg8yqcxgzk3\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-550"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-46"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-551"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-47"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-552"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-47"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-553"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-47"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-554"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-47"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-555"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-47"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-556"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-48"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-557"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-48"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-558"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-48"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-559"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-51"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-560"
+    },
+    {
+      "state": "STATE_TRYOPEN",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-51"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-561"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-orai1lf9q8r3e29hmgjeajd2vhr2n2yj7tkwqt4mx7pj4pl4kpz6adw3qmy4q0x",
+        "channel_id": "channel-79"
+      },
+      "connection_hops": [
+        "connection-806"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-74\",\"host_connection_id\":\"connection-806\",\"address\":\"cosmos16fk4kdzy4juducecy5k7wv5e3a87y63200shva395qs27z2q4tgq9g6yf5\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-562"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-orai1pdxhr0uyxy43l3hmta20guuw5ysm76d0yrv7vus6v9kuwcwvt7pqmh5ya9",
+        "channel_id": "channel-81"
+      },
+      "connection_hops": [
+        "connection-806"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-74\",\"host_connection_id\":\"connection-806\",\"address\":\"cosmos1fhce7xvxuz3q6hhed93v2vszaxsmwe5myc0jgsvscf4d74vxevysnunzj6\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-563"
+    },
+    {
+      "state": "STATE_CLOSED",
+      "ordering": "ORDER_ORDERED",
+      "counterparty": {
+        "port_id": "icacontroller-cosmoshub-4.delegate",
+        "channel_id": "channel-58"
+      },
+      "connection_hops": [
+        "connection-709"
+      ],
+      "version": "{\"version\":\"ics27-1\",\"controller_connection_id\":\"connection-1\",\"host_connection_id\":\"connection-709\",\"address\":\"cosmos1st3fng2vjcpz5lhg46un94zg0vn3nj658wc0chc57z29hx8zqeys6mvxdd\",\"encoding\":\"proto3\",\"tx_type\":\"sdk_multi_msg\"}",
+      "port_id": "icahost",
+      "channel_id": "channel-564"
+    }
+  ],
+  "pagination": {
+    "next_key": "L3BvcnRzL2ljYWhvc3QvY2hhbm5lbHMvY2hhbm5lbC01NjU=",
+    "total": "0"
+  },
+  "height": {
+    "revision_number": "4",
+    "revision_height": "17108832"
+  }
+}
