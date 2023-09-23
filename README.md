@@ -1,5 +1,19 @@
 # Spammy
 
-a tool for spamming client update transactions
+Tooling and documentation for the reproduction of:
 
-Built to demonstrate the exploit of the vulnerability ignored by ICF for 2 years.
+* banana king
+* client update spam
+
+In an effort to reporoduce a p2p storm on the cosmos hub testnet. 
+
+
+P2P storms have occured on the following networks:
+
+* Sentinel
+* Luna Classic
+  * Led to economic harm 
+* Stride
+
+
+
