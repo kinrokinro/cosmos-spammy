@@ -9,6 +9,13 @@
 In an effort to reporoduce a p2p storm on the cosmos hub testnet. 
 
 
+## Links to explorer
+
+* Plain old cosmos hub client updates
+ * https://ping.pub/cosmos/tx/2BA652123FFD549CCFA672BDD596801DABAD680029EA817369814DE5750DB4AB
+  
+
+
 ## Target
 
 We're looking to transmit a "banana client".  This transaction will 
@@ -23,6 +30,15 @@ We're looking to transmit a "banana client".  This transaction will
 
 
 ## Notes
+
+Change the maximum request body size in config.toml
+
+```toml
+# Maximum size of request body, in bytes
+max_body_bytes = 100000000
+```
+
+
 
 Generate a random string (hex output)
 
