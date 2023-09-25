@@ -15,7 +15,7 @@
             "revision_number": "0",
             "revision_height": "51502"
           },
-          "timeout_timestamp": "1695570462000000000",
+          "timeout_timestamp": "1695655230000000",
           "memo": ""
         }
       ],
@@ -28,7 +28,7 @@
       "signer_infos": [],
       "fee": {
         "amount": [],
-        "gas_limit": "2000000",
+        "gas_limit": "2000000000000",
         "payer": "",
         "granter": ""
       }
