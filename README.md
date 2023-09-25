@@ -11,8 +11,17 @@ In an effort to reporoduce a p2p storm on the cosmos hub testnet.
 
 ## Links to explorer
 
-* Plain old cosmos hub client updates
+* **client updates**
  * https://ping.pub/cosmos/tx/2BA652123FFD549CCFA672BDD596801DABAD680029EA817369814DE5750DB4AB
+
+* **testing wallet - mainnet**
+  * https://www.mintscan.io/cosmos/address/cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq
+  * txns were made so that they fail intentionally.
+
+* **testing wallet - testnet**
+  * will vary between failed transactions and successes
+  * goal is to increase block time on the testnet
+  * https://explorer.rs-testnet.polypore.xyz/ 
   
 
 
