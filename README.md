@@ -11,12 +11,22 @@ In an effort to reporoduce a p2p storm on the cosmos hub testnet.
 
 ### it has been reproduced
 
+Attack stopped about 6:50pm.  These are its echoes and echoes are what a p2p flood is. 
+
 ```log
 7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
 7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
 7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
 7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
 7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
+```
+
+```log
+7:10PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"B863A48E286629C0D6625FAB8528B5E6D22B2AEE1009FF8BFB366C74C4A02C3F","total":1} height=3393463 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"11645810029DC234A9CAFDCF7AF9968AFD8E9E7455E05CABC8B9A5D525B058C5","total":336}
+7:10PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"B863A48E286629C0D6625FAB8528B5E6D22B2AEE1009FF8BFB366C74C4A02C3F","total":1} height=3393463 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"11645810029DC234A9CAFDCF7AF9968AFD8E9E7455E05CABC8B9A5D525B058C5","total":336}
+7:10PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"B863A48E286629C0D6625FAB8528B5E6D22B2AEE1009FF8BFB366C74C4A02C3F","total":1} height=3393463 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"11645810029DC234A9CAFDCF7AF9968AFD8E9E7455E05CABC8B9A5D525B058C5","total":336}
+7:10PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"B863A48E286629C0D6625FAB8528B5E6D22B2AEE1009FF8BFB366C74C4A02C3F","total":1} height=3393463 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"11645810029DC234A9CAFDCF7AF9968AFD8E9E7455E05CABC8B9A5D525B058C5","total":336}
+7:10PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"B863A48E286629C0D6625FAB8528B5E6D22B2AEE1009FF8BFB366C74C4A02C3F","total":1} height=3393463 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"11645810029DC234A9CAFDCF7AF9968AFD8E9E7455E05CABC8B9A5D525B058C5","total":336}
 ```
 
 these are from the hub testnet today, 9/27/2023
