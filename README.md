@@ -1,5 +1,27 @@
 # Spammy
 
+## Timeline
+
+* 2021, Sept 
+  * Issue first noticed on sentinel
+* 2022, May 
+  * Issue occurs on Luna Classic, accelerating the loss of billions in user funds
+  * Today, notably, Luna2 has a block size of 1MB and Terraform Labs confirmed that it is due to this
+* 2023, August 15 
+  * Issue occurs on Stride and Notional begins to investigate with suport from a broad group of teams.
+* 2023, Sept 25 
+  * Notional Labs reproduces the issue on the cosmos hub replicated security testnet with the explicit approval of Hypha
+* 2023, Sept 26
+  * Notional labs has accelerated the attack
+  * RS testnet blocks last 38 seconds each
+  * Notional labs discontinues the attack on the RS testnet
+* 2023, Sept 27
+  * The network continues to experience degraded performance
+  * Validator mempools remain [full](./mempoolcryptocrew.json) 
+  * Block times are stil 7.9 seconds on average, representing a service degredation of 33%
+  * Full validator mempools could reduce access to the network for users
+
+
 ## Tooling and documentation for the reproduction of:
 
 * banana king
