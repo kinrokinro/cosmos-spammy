@@ -18,8 +18,9 @@
 * 2023, Sept 27
   * The network continues to experience degraded performance
   * Validator mempools remain [full](./mempoolcryptocrew.json) 
-  * Block times are stil 7.9 seconds on average, representing a service degredation of 33%
+  * Block times are stil [7.9 seconds on average](./screenshots/hub-testnet/current-09-27_19-55-05.jpg), representing a service degredation of 33%
   * Full validator mempools could reduce access to the network for users
+  * Network hasn't been attacked for over 18 hours
 
 
 ## Tooling and documentation for the reproduction of:
