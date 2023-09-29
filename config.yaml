@@ -1,0 +1,969 @@
+global:
+    api-listen-addr: :5183
+    timeout: 30s
+    memo: Jacob Trying notionalapi.com
+    light-cache-size: 500
+chains:
+    bostrom:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/bostrom
+            key: default
+            chain-id: bostrom
+            rpc-addr: https://r-cyber--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: bostrom
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 1boot
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 20s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants: null
+    cheqd:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/cheqd-mainnet-1
+            key: default
+            chain-id: cheqd-mainnet-1
+            rpc-addr: https://r-cheqd--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: cheqd
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01ncheq
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 0
+                granteelastsignerindex: 0
+    cosmoshub:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/cosmoshub-4
+            key: default
+            chain-id: cosmoshub-4
+            rpc-addr: https://r-cosmoshub--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: cosmos
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01uatom
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 16945788
+                granteelastsignerindex: 0
+    evmos:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/evmos_9001-2
+            key: default
+            chain-id: evmos_9001-2
+            rpc-addr: https://r-evmos--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: evmos
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 4000000000aevmos
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 23s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs:
+                - ethermint
+            coin-type: 60
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants: null
+    juno:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/juno-1
+            key: default
+            chain-id: juno-1
+            rpc-addr: https://r-juno--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: juno
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.095ujuno
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 9965579
+                granteelastsignerindex: 0
+    kava:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/kava_2222-10
+            key: default
+            chain-id: kava_2222-10
+            rpc-addr: https://r-kava--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: kava
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01ukava
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 20s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 459
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 0
+                granteelastsignerindex: 0
+    mars:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/mars-1
+            key: default
+            chain-id: mars-1
+            rpc-addr: https://r-mars--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: mars
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01umars
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 3302388
+                granteelastsignerindex: 0
+    neutron:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/neutron-1
+            key: default
+            chain-id: neutron-1
+            rpc-addr: https://r-neutron--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: neutron
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01untrn
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 2862061
+                granteelastsignerindex: 0
+    noble:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/noble-1
+            key: default
+            chain-id: noble-1
+            rpc-addr: https://r-noble--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: noble
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01ustake
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants: null
+    nolus:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/pirin-1
+            key: default
+            chain-id: pirin-1
+            rpc-addr: https://r-nolus--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: nolus
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01unls
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 20s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants: null
+    osmosis:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/osmosis-1
+            key: default
+            chain-id: osmosis-1
+            rpc-addr: https://r-osmosis--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: osmo
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01uosmo
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants: null
+    persistence:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/core-1
+            key: default
+            chain-id: core-1
+            rpc-addr: https://r-persistent--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: persistence
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01uxprt
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 13121031
+                granteelastsignerindex: 0
+    quasar:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/quasar-1
+            key: default
+            chain-id: quasar-1
+            rpc-addr: https://r-quasar--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: quasar
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.03uqsr
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 20s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 2611807
+                granteelastsignerindex: 0
+    quicksilver:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/quicksilver-2
+            key: default
+            chain-id: quicksilver-2
+            rpc-addr: https://r-quicksilver--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: quick
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01uqck
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 3647605
+                granteelastsignerindex: 0
+    regen:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/regen-1
+            key: default
+            chain-id: regen-1
+            rpc-addr: https://r-regen--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: regen
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01uregen
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 0
+                granteelastsignerindex: 0
+    stride:
+        type: cosmos
+        value:
+            key-directory: /root/.relayer/keys/stride-1
+            key: default
+            chain-id: stride-1
+            rpc-addr: https://r-stride--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            account-prefix: stride
+            keyring-backend: test
+            gas-adjustment: 1.2
+            gas-prices: 0.01ustrd
+            min-gas-amount: 0
+            max-gas-amount: 0
+            debug: false
+            timeout: 30s
+            block-timeout: ""
+            output-format: json
+            sign-mode: direct
+            extra-codecs: []
+            coin-type: 118
+            signing-algorithm: ""
+            broadcast-mode: batch
+            min-loop-duration: 0s
+            extension-options: []
+            feegrants:
+                num_grantees: 10
+                granter: default
+                grantees:
+                    - grantee1
+                    - grantee2
+                    - grantee3
+                    - grantee4
+                    - grantee5
+                    - grantee6
+                    - grantee7
+                    - grantee8
+                    - grantee9
+                    - grantee10
+                block_last_verified: 5373170
+                granteelastsignerindex: 0
+paths:
+    bostrom-osmosis:
+        src:
+            chain-id: bostrom
+            client-id: 07-tendermint-5
+            connection-id: connection-2
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-1597
+            connection-id: connection-1255
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-evmos:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-620
+            connection-id: connection-480
+        dst:
+            chain-id: evmos_9001-2
+            client-id: 07-tendermint-3
+            connection-id: connection-3
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-juno:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-439
+            connection-id: connection-372
+        dst:
+            chain-id: juno-1
+            client-id: 07-tendermint-3
+            connection-id: connection-2
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-kava:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-557
+            connection-id: connection-460
+        dst:
+            chain-id: kava_2222-10
+            client-id: 07-tendermint-1
+            connection-id: connection-0
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-neutron:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-1119
+            connection-id: connection-809
+        dst:
+            chain-id: neutron-1
+            client-id: 07-tendermint-0
+            connection-id: connection-0
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-noble:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-1116
+            connection-id: connection-790
+        dst:
+            chain-id: noble-1
+            client-id: 07-tendermint-4
+            connection-id: connection-12
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-osmosis:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-259
+            connection-id: connection-257
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-1
+            connection-id: connection-1
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-persistence:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-391
+            connection-id: connection-344
+        dst:
+            chain-id: core-1
+            client-id: 07-tendermint-36
+            connection-id: connection-30
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-quicksilver:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-1018
+            connection-id: connection-709
+        dst:
+            chain-id: quicksilver-2
+            client-id: 07-tendermint-2
+            connection-id: connection-1
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-regen:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-386
+            connection-id: connection-340
+        dst:
+            chain-id: regen-1
+            client-id: 07-tendermint-27
+            connection-id: connection-24
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    cosmoshub-stride:
+        src:
+            chain-id: cosmoshub-4
+            client-id: 07-tendermint-913
+            connection-id: connection-635
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-0
+            connection-id: connection-0
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    evmos-kava:
+        src:
+            chain-id: evmos_9001-2
+            client-id: 07-tendermint-113
+            connection-id: connection-67
+        dst:
+            chain-id: kava_2222-10
+            client-id: 07-tendermint-120
+            connection-id: connection-157
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    evmos-stride:
+        src:
+            chain-id: evmos_9001-2
+            client-id: 07-tendermint-77
+            connection-id: connection-33
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-8
+            connection-id: connection-7
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-mars:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-300
+            connection-id: connection-270
+        dst:
+            chain-id: mars-1
+            client-id: 07-tendermint-11
+            connection-id: connection-7
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-noble:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-334
+            connection-id: connection-322
+        dst:
+            chain-id: noble-1
+            client-id: 07-tendermint-3
+            connection-id: connection-8
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-osmosis:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-0
+            connection-id: connection-0
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-1457
+            connection-id: connection-1142
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-persistence:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-89
+            connection-id: connection-51
+        dst:
+            chain-id: core-1
+            client-id: 07-tendermint-49
+            connection-id: connection-48
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-quicksilver:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-318
+            connection-id: connection-309
+        dst:
+            chain-id: quicksilver-2
+            client-id: 07-tendermint-17
+            connection-id: connection-10
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    juno-stride:
+        src:
+            chain-id: juno-1
+            client-id: 07-tendermint-263
+            connection-id: connection-205
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-31
+            connection-id: connection-19
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    kava-osmosis:
+        src:
+            chain-id: kava_2222-10
+            client-id: 07-tendermint-2
+            connection-id: connection-1
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-1735
+            connection-id: connection-1328
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    mars-neutron:
+        src:
+            chain-id: mars-1
+            client-id: 07-tendermint-64
+            connection-id: connection-50
+        dst:
+            chain-id: neutron-1
+            client-id: 07-tendermint-21
+            connection-id: connection-21
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    mars-osmosis:
+        src:
+            chain-id: mars-1
+            client-id: 07-tendermint-4
+            connection-id: connection-3
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-2602
+            connection-id: connection-2114
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    neutron-stride:
+        src:
+            chain-id: neutron-1
+            client-id: 07-tendermint-18
+            connection-id: connection-15
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-125
+            connection-id: connection-113
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    noble-osmosis:
+        src:
+            chain-id: noble-1
+            client-id: 07-tendermint-0
+            connection-id: connection-2
+        dst:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-2704
+            connection-id: connection-2241
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    osmosis-persistence:
+        src:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-3
+            connection-id: connection-4
+        dst:
+            chain-id: core-1
+            client-id: 07-tendermint-6
+            connection-id: connection-5
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    osmosis-quasar:
+        src:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-2703
+            connection-id: connection-2240
+        dst:
+            chain-id: quasar-1
+            client-id: 07-tendermint-1
+            connection-id: connection-1
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    osmosis-quicksilver:
+        src:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-2400
+            connection-id: connection-1889
+        dst:
+            chain-id: quicksilver-2
+            client-id: 07-tendermint-6
+            connection-id: connection-2
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    osmosis-regen:
+        src:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-6
+            connection-id: connection-7
+        dst:
+            chain-id: regen-1
+            client-id: 07-tendermint-1
+            connection-id: connection-1
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    osmosis-stride:
+        src:
+            chain-id: osmosis-1
+            client-id: 07-tendermint-2119
+            connection-id: connection-1657
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-1
+            connection-id: connection-2
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    persistence-quicksilver:
+        src:
+            chain-id: core-1
+            client-id: 07-tendermint-96
+            connection-id: connection-77
+        dst:
+            chain-id: quicksilver-2
+            client-id: 07-tendermint-15
+            connection-id: connection-8
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    persistence-regen:
+        src:
+            chain-id: core-1
+            client-id: 07-tendermint-33
+            connection-id: connection-27
+        dst:
+            chain-id: regen-1
+            client-id: 07-tendermint-30
+            connection-id: connection-28
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    persistence-stride:
+        src:
+            chain-id: core-1
+            client-id: 07-tendermint-83
+            connection-id: connection-71
+        dst:
+            chain-id: stride-1
+            client-id: 07-tendermint-54
+            connection-id: connection-33
+        src-channel-filter:
+            rule: ""
+            channel-list: []
+    quicksilver-regen:
+        src:
+            chain-id: quicksilver-2
+            client-id: 07-tendermint-16
+            connection-id: connection-9
+        dst:
+            chain-id: regen-1
+            client-id: 07-tendermint-113
+            connection-id: connection-102
+        src-channel-filter:
+            rule: ""
+            channel-list: []
