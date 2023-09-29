@@ -1,0 +1,26 @@
+{
+"body":
+    {
+      "@type": "/ibc.core.channel.v1.MsgAcknowledgement",
+      "packet": {
+        "sequence": "2041174",
+        "source_port": "transfer",
+        "source_channel": "channel-141",
+        "destination_port": "transfer",
+        "destination_channel": "channel-0",
+        "data": "eyJhbW91bnQiOiIxMzkwNzE5IiwiZGVub20iOiJ1YXRvbSIsInJlY2VpdmVyIjoib3NtbzFqamg0OTVzNGRhMHZ0ejB3NjZjZzB1ZTg3ZmV1N3h1emU5OTljOSIsInNlbmRlciI6ImNvc21vczFqamg0OTVzNGRhMHZ0ejB3NjZjZzB1ZTg3ZmV1N3h1ejM3azR3aCJ9",
+        "timeout_height": {
+          "revision_number": "1",
+          "revision_height": "11670569"
+        },
+        "timeout_timestamp": "0"
+      },
+      "acknowledgement": "eyJyZXN1bHQiOiJBUT09In0=",
+      "proof_acked": "CrULCrILCjhhY2tzL3BvcnRzL3RyYW5zZmVyL2NoYW5uZWxzL2NoYW5uZWwtMC9zZXF1ZW5jZXMvMjA0MTE3NBIgCPdVftUYJv4Y2EUSvyTsdQAe268hI6R333KgqfNkCnwaDggBGAEgASoGAAKszpALIiwIARIoAgSszpALIGHdDQMe+/zoxvfDeMZVNMPISeGB05h+iMCjHHmfXfD/ICIsCAESKAQGrM6QCyCeLywnV6HhwsOi1Wb7J8IxmcJ3zVDNEhxUzdQGZXezriAiLggBEgcGCqzOkAsgGiEgDWcFWm2NXaD0NQTZ289+E6jT++WVf7fQ+VZ3B1NxFMoiLAgBEigIFqzOkAsg6Hol7p/UrNGMGOvGPeZwc06zImP4O8Df+se2gXRWKhIgIiwIARIoCiKszpALIEJzehXF1l+heCDFDGvUyS/WN6IL099ZxEdJjVEz51l/ICIuCAESBwxOrM6QCyAaISCM3pplzsuFGjlfKqzWDh+AR3vJNdkPPB9svMKD7W/pGSItCAESKQ6UAazOkAsgOBeTVbBRK+wFZ5uvQ9kJrO91KfvNXLGDT5auJlIpQjQgIi0IARIpEMYCrM6QCyDsK0f2TnfV8tl6lECSoeyDYIu12SovAcp/vvXCFqeDZyAiLQgBEikStgOszpALIItFXtA0OoTwvoOPQt+0+BU2H0RPjZNzdnKhGX0qMM6xICItCAESKRT4B6zOkAsgieMoCsKwQah7YDxr23kw36CVVpdcl6sjd7SCzwQXzskgIi8IARIIFowOrM6QCyAaISCAxX3V5GJfU0WavLG0uoNTbfALz9RjaJu6DhItMT+ouSItCAESKRj6GazOkAsgQwOggG+rSXIifBARg/JDbTOCVcm//S0wQXYBQRDO0oQgIi0IARIpGtovrM6QCyAD4LWGlsdGD3k+52tGJCCwZAna9xn0MeKt9+2GDHtGFCAiLwgBEggc0keszpALIBohIOpgJVpHfROiDlPTFuPg0b6E7S6FA1pxvoL0EMX4wgZTIi8IARIIHrBsrM6QCyAaISCj4IqPd0dLnGBFH+bwgmdFaTG/7s/CwXEkqoy7nbpVRSIwCAESCSCQnQKszpALIBohIDGWz6JUsvUssnLOEsvWXd1mX4PyITJ0Ri/B6V/iIg8BIi4IARIqIrTqBKzOkAsgBhR8UJqJgc823oACIkcU8CBUHxCtrFOVgvmI3w8b+8AgIi4IARIqJJCTCKzOkAsg2YZa8wxN7C1nr0OrzsFaa34IIWN59c9hyQUyv9tB3ekgIi4IARIqJq6BDKzOkAsgVGWgTtNeEEu65tDFlyKX2jDWgrIGoNb5WhwthgJjnuUgIi4IARIqKI7WGKzOkAsgP6DGGbbvRIRvxL74nw8QgU15v+EIu2R4A3gNfIokXcUgIi4IARIqKpD3I6zOkAsg8ZGjeyBoaB9FbSwKWbpD1QtJrxtbzB7QP+BI+loOWYogIi4IARIqLI7kUazOkAsg1dZ6pAp9jYyjCoVJPgovrH1vJ6oM2i9omVpVIs9KDpsgIjAIARIJLsSwe6zOkAsgGiEgUnGLhP1xYEOlwY14dPD9Mm99cxhRvDFTNmEMc57Q+0YiLwgBEiswgvTaAazOkAsg1Xf+4K6XKxWJjmdC7VuIKlqA41MNcX1/MbFKOBjehRMgIjEIARIKMsyapAOszpALIBohIEyjEKjaE8Cr6ttJyXk9j35C0727lZmq4UmOwV7XzMNuIjEIARIKNJDxhwaszpALIBohIHk4uazOYOHIZ2HykEHqkipMQlkpiehIDorDKmXnojWmIjEIARIKNsbU5QmszpALIBohILc3txh+RDzfl8Ly8MLfSSnbxPJJHIyObTm3DkC/g34wIjEIARIKOICX3BaszpALIBohIMJD9d5d8uR3EdkqVCeSI379kom4GQmrEcPf6eRMsjUfCqUCCqICCgNpYmMSIK3akqN14t2QLYhD1zCduIWEMf8fUjisxeCQtwoIALc3GgkIARgBIAEqAQAiJQgBEiEBAymSh2ovd8C1LprYuwP+6ojQz4h0xENw8U5vq/mt5bMiJwgBEgEBGiAFPBSgz3rKSRwUyNxv+hbgotD5b5btBUV917PEFt1ewiIlCAESIQFEGAj/QeQ+ojpbj26rocSYz4Vk0nN8QV11IGEocRSALSIlCAESIQF9g3bqMOkQBdpKAm0zEc+1RbOh7WFGFp2BR2/WGFqp8iInCAESAQEaIA3VOj2MOWhiMSa9iyfIegD6+lndYha/z2F4apcbQoxcIicIARIBARogHJ27vEYL8tgexBvx1SHkCVIhZjBRHqj2+oTbxMDOsic=",
+      "proof_height": {
+        "revision_number": "1",
+        "revision_height": "11670423"
+      },
+      "signer": "cosmos1q6cc9u0x5r3fkjcex0rgxee5qlu86w8rh2ypaj"
+    }
+} 
