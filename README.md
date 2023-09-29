@@ -9,6 +9,13 @@
   * Today, notably, Luna2 has a block size of 1MB and Terraform Labs confirmed that it is due to this
 * 2023, August 15 
   * Issue occurs on Stride and Notional begins to investigate with suport from a broad group of teams.
+* 2023, Sept 21
+  * 8:01am - Jacob Gadikian adds Jessy Irwin to "invalid block parts" channel
+    * https://notionalgroup.slack.com/archives/C05N6G0CLBB/p1695272490812409
+  * 8:54am - Jessy Irwin leaves "invalid block parts" channel without saying a word
+    * https://notionalgroup.slack.com/archives/C05N6G0CLBB/p1695275679442249
+  * 9:08am - Amulet subtweets this
+    * https://x.com/amuletdotdev/status/1704739436335083941?s=20 
 * 2023, Sept 25 
   * Notional Labs reproduces the issue on the cosmos hub replicated security testnet with the explicit approval of Hypha
 * 2023, Sept 26
@@ -21,6 +28,9 @@
   * Block times are stil [7.9 seconds on average](./screenshots/hub-testnet/current-09-27_19-55-05.jpg), representing a service degredation of 33%
   * Full validator mempools could reduce access to the network for users
   * Network hasn't been attacked for over 18 hours
+* 2023, Sept 28 7:16PM CET
+  * https://x.com/amuletdotdev/status/1707429071213511090
+  * https://github.com/cometbft/cometbft/security/advisories/GHSA-hq58-p9mv-338c 
 * 2023, Sept 29 2:14PM CET
   * Cosmos hub replicated security testnet continues to have degraded performance due to gossiping of invalid block parts 
 
