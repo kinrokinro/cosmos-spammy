@@ -4,7 +4,7 @@
         {
           "@type": "/ibc.applications.transfer.v1.MsgTransfer",
           "source_port": "transfer",
-          "source_channel": "channel-207",
+          "source_channel": "channel-58",
           "token": {
             "denom": "uatom",
             "amount": "1"
