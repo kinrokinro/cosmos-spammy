@@ -32,7 +32,16 @@
   * https://x.com/amuletdotdev/status/1707429071213511090
   * https://github.com/cometbft/cometbft/security/advisories/GHSA-hq58-p9mv-338c 
 * 2023, Sept 29 2:14PM CET
-  * Cosmos hub replicated security testnet continues to have degraded performance due to gossiping of invalid block parts 
+  * Cosmos hub replicated security testnet continues to have degraded performance due to gossiping of invalid block parts, logs below.
+ 
+
+It is my strong belief that Amulet does not understand the nature of the situation because they've failed to communicate with the numerous teams involved.  If they were to even just sync the cosmos hub replicated security testnet, they would immediately see that it is still suffering from the previous attack. 
+
+Amulet seems to have not understood that there are numerous issues at play, despite being in possession of this report:
+
+https://docs.google.com/document/d/1oCjsVYMaV77etxOEbDxh58vkAQaXf7RAkhXvF_8GYis/edit
+
+
 
 
 ## Tooling and documentation for the reproduction of:
