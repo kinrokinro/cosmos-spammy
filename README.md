@@ -4,6 +4,7 @@
 
 * 2021, Sept 
   * Issue first noticed on sentinel
+    * [validator chat logs](./sentinel-evidence/sentinelvalidatortg/) 10/15/2021-12/15/2021
 * 2022, May 
   * Issue occurs on Luna Classic, accelerating the loss of billions in user funds
   * Today, notably, Luna2 has a block size of 1MB and Terraform Labs confirmed that it is due to this
