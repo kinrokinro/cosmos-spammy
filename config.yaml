@@ -69,13 +69,13 @@ chains:
                     - grantee10
                 block_last_verified: 0
                 granteelastsignerindex: 0
-    cosmoshub:
+    provider:
         type: cosmos
         value:
             key-directory: /root/.relayer/keys/cosmoshub-4
             key: default
-            chain-id: cosmoshub-4
-            rpc-addr: https://r-cosmoshub--a1f4bb74a50728120e4f8c8054a8bb4c.gw.notionalapi.com:443
+            chain-id: provider
+            rpc-addr: http://127.0.0.1:26657
             account-prefix: cosmos
             keyring-backend: test
             gas-adjustment: 1.2
@@ -93,22 +93,7 @@ chains:
             broadcast-mode: batch
             min-loop-duration: 0s
             extension-options: []
-            feegrants:
-                num_grantees: 10
-                granter: default
-                grantees:
-                    - grantee1
-                    - grantee2
-                    - grantee3
-                    - grantee4
-                    - grantee5
-                    - grantee6
-                    - grantee7
-                    - grantee8
-                    - grantee9
-                    - grantee10
-                block_last_verified: 16945788
-                granteelastsignerindex: 0
+            feegrants: null
     evmos:
         type: cosmos
         value:
