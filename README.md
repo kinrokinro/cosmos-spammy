@@ -361,6 +361,8 @@ This is also still observable a day later, 9/27/2023
 12:25PM INF committed state app_hash=A01E10B48B
 ```
 
+
+
 ```log
 261B6107CF","total":336}
 1:06PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"502B3B39711D7276EF576D41FBDB1325ECFFE6B2175B20E197AE9F07F7BC9A95","total":1} height=3425588 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"0D53B9F96924328364477170E2037E6186E329506A673B4B25917C261B6107CF","total":336}
