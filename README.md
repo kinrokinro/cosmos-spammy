@@ -28,7 +28,7 @@
   * Block times are stil [7.9 seconds on average](./screenshots/hub-testnet/current-09-27_19-55-05.jpg), representing a service degredation of 33%
   * Full validator mempools could reduce access to the network for users
   * Network hasn't been attacked for over 18 hours
-* 2023, Sept 28 7:16PM CET
+* 2023, Sept 28 7:16PM CET - amulet announces a low severity security issue with comet, likely because they've not got full context on the issue
   * https://x.com/amuletdotdev/status/1707429071213511090
   * https://github.com/cometbft/cometbft/security/advisories/GHSA-hq58-p9mv-338c 
 * 2023, Sept 29 2:14PM CET
