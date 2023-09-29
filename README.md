@@ -21,6 +21,8 @@
   * Block times are stil [7.9 seconds on average](./screenshots/hub-testnet/current-09-27_19-55-05.jpg), representing a service degredation of 33%
   * Full validator mempools could reduce access to the network for users
   * Network hasn't been attacked for over 18 hours
+* 2023, Sept 29 2:14PM CET
+  * Cosmos hub replicated security testnet continues to have degraded performance due to gossiping of invalid block parts 
 
 
 ## Tooling and documentation for the reproduction of:
