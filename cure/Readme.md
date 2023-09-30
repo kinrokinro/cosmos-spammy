@@ -5,6 +5,12 @@ Assaf Morami of Secret Network has provided me with an example transaction that 
 I give him huge credit.  Both myself and Jehan Tremback were not aware this was possible. 
 
 
+```bash
+appd tx gov submit-proposal param-change ./path/to/cure.json --from key -y -b block
+```
+
+
+
 ```json
 {
     "title": "Reduce Maximum Block Size",
