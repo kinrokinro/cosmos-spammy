@@ -3355,13 +3355,5 @@ for i in $( eval echo {"$SEQUENCE"..10000000} )
 
 
 
-## How do I know if there is a p2p flood?
 
-```log
-7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
-7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
-7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
-7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
-7:05PM INF Peer ProposalBlockPartSetHeader mismatch, sleeping blockPartSetHeader={"hash":"15D4BC6DF45AB6A42002DE7F77C492D98BA9FC4D17C1A0FD8A544AA365D44489","total":1} height=3393430 module=consensus peer={"Data":{},"Logger":{}} peerBlockPartSetHeader={"hash":"AE74171AA9816668A59C8B0B5CE1CA337A49FA0420EAD47A29FA61D04162ACFD","total":336}
-```
 
