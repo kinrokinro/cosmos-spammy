@@ -20,7 +20,7 @@
 * 2023, Sept 25 
   * Notional Labs reproduces the issue on the cosmos hub replicated security testnet with the explicit approval of Hypha
 * 2023, Sept 26
-  * Notional labs has accelerated the attack
+  * Notional labs has accelerated the attack with a [bash script](./attack.bash)
   * RS testnet blocks last 38 seconds each
   * Notional labs discontinues the attack on the RS testnet
 * 2023, Sept 27
