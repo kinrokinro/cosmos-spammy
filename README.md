@@ -1,5 +1,24 @@
 # Spammy
 
+**This repository deals with reports of about 11 distinct issues:**
+
+1) banana king (reported for over a year)
+2) client spamming 
+3) block sizes too large
+4) mempool issues causing echoes / amplification
+5) gas issues overall
+6) lack of field length limits in ibc for reciever in send transactions
+7) lack of field length limits in ibc memos
+8) p2p issues of an unknown type, likely a lack of throttling or back pressure
+9) consensus issues resulting in an invalid proposer signature error
+10) invalid block parts error 
+11) ability to dos through globalfee whitelists, even with a 1mb block size
+
+
+Note: this repository is continuously under heavy revision. 
+
+
+
 ## Timeline
 
 * 2021, Sept 
