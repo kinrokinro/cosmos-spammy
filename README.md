@@ -39,6 +39,10 @@
 * 2023, Sept 30:
   * Video One: (DM Jacob for access)
   * Video Two: (DM Jacob for access)
+  * [Secret Network Governance Proposal by Assaf](https://www.mintscan.io/secret/proposals/274)
+  * [Osmosis Expedited Governance Proposal by Jacob Gadikian](https://www.mintscan.io/osmosis/proposals/645)
+  * [Cosmos Hub Governance Proposal by Jacob Gadikian](https://www.mintscan.io/cosmos/proposals/827)
+  
  
 
 It is my strong belief that Amulet does not understand the nature of the situation because they've failed to communicate with the numerous teams involved.  If they were to even just sync the cosmos hub replicated security testnet, they would immediately see that it is still suffering from the previous attack. 
