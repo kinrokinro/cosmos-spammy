@@ -40,6 +40,8 @@
   * Video One: (DM Jacob for access)
   * Video Two: (DM Jacob for access)
   * [Secret Network Governance Proposal by Assaf](https://www.mintscan.io/secret/proposals/274)
+  * Formation of Validator Working Group on Spam per Amulet Recommendations by Jacob Gadikian
+* 2023, Oct 1:
   * [Osmosis Expedited Governance Proposal by Jacob Gadikian](https://www.mintscan.io/osmosis/proposals/645)
   * [Cosmos Hub Governance Proposal by Jacob Gadikian](https://www.mintscan.io/cosmos/proposals/827)
   
