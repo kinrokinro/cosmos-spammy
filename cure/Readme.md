@@ -20,8 +20,7 @@ appd tx gov submit-proposal param-change ./path/to/cure.json --from key -y -b bl
             "subspace": "baseapp",
             "key": "BlockParams",
             "value": {
-                "max_bytes": "1048576",
-                "max_gas": "8000000"
+                "max_bytes": "1048576"
             }
         }
     ],
