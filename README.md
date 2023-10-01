@@ -5,6 +5,8 @@
 * 2021, Sept 
   * Issue first noticed on sentinel
     * [validator chat logs](./sentinel-evidence/sentinelvalidatortg/) 10/15/2021-12/15/2021
+    * first report to icf hackerone
+    * https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:c14b2605-3497-381a-870e-510b92e33f75
 * 2022, May 
   * Issue occurs on Luna Classic, accelerating the loss of billions in user funds
   * Today, notably, Luna2 has a block size of 1MB and Terraform Labs confirmed that it is due to this
@@ -37,6 +39,12 @@
 * 2023, Sept 30:
   * Video One: (DM Jacob for access)
   * Video Two: (DM Jacob for access)
+  * [Secret Network Governance Proposal by Assaf](https://www.mintscan.io/secret/proposals/274)
+  * Formation of Validator Working Group on Spam per Amulet Recommendations by Jacob Gadikian
+* 2023, Oct 1:
+  * [Osmosis Expedited Governance Proposal by Jacob Gadikian](https://www.mintscan.io/osmosis/proposals/645)
+  * [Cosmos Hub Governance Proposal by Jacob Gadikian](https://www.mintscan.io/cosmos/proposals/827)
+  
  
 
 It is my strong belief that Amulet does not understand the nature of the situation because they've failed to communicate with the numerous teams involved.  If they were to even just sync the cosmos hub replicated security testnet, they would immediately see that it is still suffering from the previous attack. 
@@ -91,6 +99,9 @@ We're looking to transmit a "banana client".  This transaction will
 * Luna Classic
   * Led to economic harm 
 * Stride
+
+
+And p2p storms have been safely replicated on the cosmos hub replicated security testnet. 
 
 
 ## Notes
@@ -164,15 +175,4 @@ for i in $( eval echo {"$SEQUENCE"..10000000} )
          do gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq 1uatom --from test --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --gas auto --yes --sequence $i
          done
 ```
-
-
-
-
-
-
- Hub testnet blcok range 3881725 to 3881733
-
-
-
-
 

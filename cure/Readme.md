@@ -9,6 +9,12 @@ I give him huge credit.  Both myself and Jehan Tremback were not aware this was 
 appd tx gov submit-proposal param-change ./path/to/cure.json --from key -y -b block
 ```
 
+example used on Osmosis
+
+```bash
+osmosisd tx gov submit-proposal param-change cure.json --from icns --keyring-backend file --fees 2000uosmo
+```
+
 
 
 ```json
@@ -20,8 +26,7 @@ appd tx gov submit-proposal param-change ./path/to/cure.json --from key -y -b bl
             "subspace": "baseapp",
             "key": "BlockParams",
             "value": {
-                "max_bytes": "1048576",
-                "max_gas": "8000000"
+                "max_bytes": "1048576"
             }
         }
     ],
