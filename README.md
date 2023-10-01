@@ -5,6 +5,8 @@
 * 2021, Sept 
   * Issue first noticed on sentinel
     * [validator chat logs](./sentinel-evidence/sentinelvalidatortg/) 10/15/2021-12/15/2021
+    * first report to icf hackerone
+    * https://acrobat.adobe.com/link/review?uri=urn:aaid:scds:US:c14b2605-3497-381a-870e-510b92e33f75
 * 2022, May 
   * Issue occurs on Luna Classic, accelerating the loss of billions in user funds
   * Today, notably, Luna2 has a block size of 1MB and Terraform Labs confirmed that it is due to this
