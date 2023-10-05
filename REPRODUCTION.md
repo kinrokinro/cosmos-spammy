@@ -3182,3 +3182,8 @@ This is also still observable a day later, 9/27/2023
 1:07PM ERR failed to process message err="error part set invalid proof" height=3425598 module=consensus msg_type=*consensus.BlockPartMessage peer=032ac421764cdf5139e64510669cc519fe1e1193 round=0
 1:08PM INF Timed out dur=3500 height=3
 ```
+
+**invalid proposal signature**
+```log
+8:23PM ERR failed to process message err="error invalid proposal signature" height=3429265 module=consensus msg_type=*consensus.ProposalMessage peer=00a824ce894d823f59814812dd4e295892629667 round=0
+```
