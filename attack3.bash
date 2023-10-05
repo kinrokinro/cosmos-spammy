@@ -13,7 +13,7 @@ do
 
 	then
 		echo "sequence mismatch at $i, getting new sequence number"
-		sequence
+		break
 	fi
 
 	cat attack3.log
@@ -27,11 +27,15 @@ sequence () {
 
 SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
 echo $SEQUENCE
+loop
 
 }
 
-# get initial sequence number
-sequence
+while true; do
 
-# run main loop
-loop
+	# get new sequence number and call main loop
+	sequence
+
+done
+
+
