@@ -1,19 +1,5 @@
 set -ue
 
-# get sequence number 
-sequence () {
-
-SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
-print $SEQUENCE
-
-}
-
-
-# get seqwuence number before entering main loop
-sequence
-loop
-
-
 # main loop
 loop () {
 for i in $( eval echo {"$SEQUENCE"..10000000} )
@@ -26,9 +12,26 @@ do
 	if [ grep -q expected attack3.log ] 
 
 	then
-		print "sequence mismatch at $i, getting new sequence number"
+		echo "sequence mismatch at $i, getting new sequence number"
 		sequence
 	fi
 
+	cat attack3.log
+
 done
 }
+
+
+# get sequence number 
+sequence () {
+
+SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
+echo $SEQUENCE
+
+}
+
+# get initial sequence number
+sequence
+
+# run main loop
+loop
