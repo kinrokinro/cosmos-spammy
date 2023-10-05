@@ -21,8 +21,9 @@ do
 
 	# get sequence number if we've had an account sequence mismatch
 	if [ grep -q expected attack3.log ] 
+
 	then
-		sequence()
+		sequence
 	fi
 
 done
