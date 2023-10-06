@@ -36,12 +36,15 @@ echo "transaction signed"
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs > bananaattack.log
 echo "transaction broadcasted"
 
+cat bananaattack.log
+
 # Step 6: Check for a sequence number mismatch
 	if [ $(grep -c "mismatch" bananaattack.log) -eq 1 ]
 	then
 		echo "sequence number mismatch"
 		break
 	fi
+
 
 
 done
