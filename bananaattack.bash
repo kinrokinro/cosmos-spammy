@@ -3,7 +3,7 @@ set -ue
 
 loop () {
 
-for i in $( eval echo {"$SEQUENCE"..10000} )
+for i in $( eval echo {"$SEQUENCE"..500000} )
 do
 
 # Make a new transaction body with a random string
