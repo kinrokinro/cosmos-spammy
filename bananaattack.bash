@@ -14,7 +14,7 @@ gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2j
 echo "transaction body generated"
 
 # Step 1: Generate the random hex string and save it to a temporary file
-openssl rand -hex 200000 > tmp.txt
+openssl rand -hex 900000 > tmp.txt
 echo "random string generated"
 
 # Step 2: Use jq with --arg to set the receiver field
@@ -34,7 +34,6 @@ echo "transaction signed"
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
 echo "transaction broadcasted"
 
-sleep 1
 
 done
 
