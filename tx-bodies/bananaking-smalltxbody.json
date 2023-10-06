@@ -28,7 +28,7 @@
       "signer_infos": [],
       "fee": {
         "amount": [],
-        "gas_limit": "2000000000000",
+        "gas_limit": "1000000",
         "payer": "",
         "granter": ""
       }

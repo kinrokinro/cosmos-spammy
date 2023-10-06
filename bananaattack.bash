@@ -17,7 +17,7 @@ jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' tx-bo
 rm tmp.txt
 
 # Step 4: Sign the transaction
-gaiad tx sign autobanana.json --home ~/.gaia-rs --from test3 --yes --sequence $i &> signedbanana.json
+gaiad tx sign autobanana.json --home /root/.gaia-rs --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 --yes --sequence 16081 --chain-id provider --keyring-backend test &> signedbanana.json
 
 # Step 5: Broadcast the transaction
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
