@@ -1,6 +1,6 @@
 set -ue
 
-SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
+SEQUENCE=16104
 
 
 
@@ -33,11 +33,11 @@ echo "transaction signed"
 
 
 # Step 5: Broadcast the transaction
-gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
+gaiad tx broadcast signedbanana.json --home ~/.gaia-rs > bananaattack.log
 echo "transaction broadcasted"
 
 # Step 6: Check for a sequence number mismatch
-	if [ $(grep -c "mismatch" attack.log) -eq 1 ]
+	if [ $(grep -c "mismatch" bananaattack.log) -eq 1 ]
 	then
 		echo "sequence number mismatch"
 		break
