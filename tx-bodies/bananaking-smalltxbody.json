@@ -27,7 +27,7 @@
     "auth_info": {
       "signer_infos": [],
       "fee": {
-        "amount": ["3750uatom"],
+        "amount": "3750uatom",
         "gas_limit": "1500000",
         "payer": "",
         "granter": ""
