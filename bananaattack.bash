@@ -34,6 +34,8 @@ echo "transaction signed"
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
 echo "transaction broadcasted"
 
+sleep 1
+
 done
 
 }
