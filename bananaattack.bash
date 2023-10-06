@@ -6,12 +6,14 @@ loop () {
 for i in $( eval echo {"$SEQUENCE"..10000} )
 do
 
+# Make a new transaction body with a random string
+gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1uatom  --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --yes   --packet-timeout-timestamp 0 --generate-only --fees 6969uatom --gas 1505075 --from cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm &> bareibctx.json
+
 # Step 1: Generate the random hex string and save it to a temporary file
 openssl rand -hex 200000 > tmp.txt
 
 # Step 2: Use jq with --arg to set the receiver field
-jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' tx-bodies/bananaking-smalltxbody.json > autobanana.json
-
+jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' bareibctx.json > autobanana.json
 
 # Step 3: remove the temporary file afterwards
 rm tmp.txt
