@@ -1,7 +1,9 @@
 set -ue
 
+SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
 
-loop () {
+
+
 
 for i in $( eval echo {"$SEQUENCE"..5000000} )
 
@@ -34,19 +36,16 @@ echo "transaction signed"
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
 echo "transaction broadcasted"
 
+# Step 6: Check for a sequence number mismatch
+	if [ $(grep -c "mismatch" attack.log) -eq 1 ]
+	then
+		echo "sequence number mismatch"
+		break
+	fi
+
 
 done
 
-}
+echo "if you're running it right the script just restarted"
 
-# get sequence number 
-sequence () {
-
-SEQUENCE=$(curl http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 | jq --raw-output ' .account.sequence ')
-echo "new sequence number is $SEQUENCE"
-loop
-
-}
-
-sequence
 
