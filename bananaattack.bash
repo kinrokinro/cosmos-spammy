@@ -4,6 +4,7 @@ set -ue
 loop () {
 
 for i in $( eval echo {"$SEQUENCE"..5000000} )
+
 do
 
 echo "sequence number is $i"
@@ -25,7 +26,7 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-gaiad tx sign autobanana.json --home /root/.gaia-rs --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 --yes --sequence 16081 --chain-id provider --keyring-backend test &> signedbanana.json
+gaiad tx sign autobanana.json --home /root/.gaia-rs --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 --yes --sequence $i --chain-id provider --keyring-backend test &> signedbanana.json
 echo "transaction signed"
 
 
