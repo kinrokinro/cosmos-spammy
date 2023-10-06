@@ -1,5 +1,4 @@
 set -ue
-ulimit -s 65536
 
 
 loop () {
@@ -22,8 +21,6 @@ gaiad tx sign autobanana.json --home ~/.gaia-rs --from test3 --yes --sequence $i
 
 # Step 5: Broadcast the transaction
 gaiad tx broadcast signedbanana.json --home ~/.gaia-rs
-
-
 
 done
 
