@@ -28,7 +28,7 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-gaiad tx sign autobanana.json --home /root/.gaia-rs --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 --yes --sequence $i --offline --account 495 --chain-id provider --keyring-backend test &> signedbanana.json
+gaiad tx sign autobanana.json --home /root/.gaia-rs --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 --yes --sequence $i --offline --account-number 495 --chain-id provider --keyring-backend test &> signedbanana.json
 echo "transaction signed"
 
 
