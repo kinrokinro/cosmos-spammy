@@ -12,7 +12,7 @@ do
 echo "sequence number is $i"
 
 # Make a new transaction body with a random string
-gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1uatom  --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --packet-timeout-timestamp 0 --generate-only --fees 24000uatom --gas 5014074 --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 &> bareibctx.json
+gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1uatom  --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --packet-timeout-timestamp 0 --generate-only --fees 24000uatom --gas 1000000 --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 &> bareibctx.json
 echo "transaction body generated"
 
 # Step 1: Generate the random hex string and save it to a temporary file
