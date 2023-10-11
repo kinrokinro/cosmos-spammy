@@ -4,9 +4,12 @@ while true
 
 do
 
-SEQUENCE=$(curl https://rila-cl.nolus.network:1317/cosmos/auth/v1beta1/accounts/nolus1rv3a4m73jf95erk7n6vghz4j649wyr6r2p56n4 | jq --raw-output ' .account.sequence ')
-
+ACCOUNT=nolus1u579an2m3783rpxdr65ma0ruakxkw2yep8qyuk
+SEQUENCE=$(curl https://rila-cl.nolus.network:1317/cosmos/auth/v1beta1/accounts/$ACCOUNT | jq --raw-output ' .account.sequence ')
+NUMBER=$(curl https://rila-cl.nolus.network:1317/cosmos/auth/v1beta1/accounts/$ACCOUNT | jq --raw-output ' .account.account_number ')
+MEMO=50000
 CHANNEL=channel-0
+RECIEVER=40000
 # CHAIN-ID=rila-1
 
 
@@ -17,12 +20,12 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-nolusd tx ibc-transfer transfer transfer $CHANNEL nolus1rv3a4m73jf95erk7n6vghz4j649wyr6r2p56n4 1unls  --keyring-backend test --memo $(openssl rand -hex 50000) --yes --packet-timeout-timestamp 0 --generate-only --fees 4894unls --gas 1957443 --from nolus1rv3a4m73jf95erk7n6vghz4j649wyr6r2p56n4 &> bareibctx.json
+nolusd tx ibc-transfer transfer transfer $CHANNEL $ACCOUNT 1unls  --keyring-backend test --memo $(openssl rand -hex $MEMO) --yes --packet-timeout-timestamp 0 --packet-timeout-height 0-0 --generate-only --fees 4894unls --gas 4957443 --from $ACCOUNT &> bareibctx.json
 echo "transaction body with padded memo field generated"
 
 # Step 1: Generate the random hex string and save it to a temporary file
-openssl rand -hex 40000 > tmp.txt
-echo "80kb random string generated (hex times two)"
+openssl rand -hex $RECIEVER > tmp.txt
+echo "$(($RECIEVER*2))kb random string generated (hex times two)"
 
 # Step 2: Use jq with --arg to set the receiver field
 jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' bareibctx.json > autobanana.json
@@ -33,7 +36,7 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-nolusd tx sign autobanana.json --chain-id rila-1 --from nolus1rv3a4m73jf95erk7n6vghz4j649wyr6r2p56n4 --yes --sequence $SEQUENCE --keyring-backend test --offline --account-number 1401 &> ban.json
+nolusd tx sign autobanana.json --chain-id rila-1 --from $ACCOUNT --yes --sequence $SEQUENCE --keyring-backend test --offline --account-number $NUMBER &> ban.json
 echo "transaction signed"
 
 

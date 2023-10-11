@@ -1,6 +1,14 @@
 set -ue
 
-SEQUENCE=21876
+
+# Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
+SEQUENCE=23814
+IBCMEMO=2000
+RECIEVEADDR=2000
+GAS=183000
+CHAINID=provider
+FEES=2000
+UDENOM=uatom
 
 
 while true
@@ -10,11 +18,11 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1uatom  --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --yes   --packet-timeout-timestamp 0 --generate-only --fees 55286uatom --gas 22114074 --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 &> bareibctx.json
+gaiad tx ibc-transfer transfer transfer channel-58  cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes   --packet-timeout-timestamp 0 --generate-only --fees $FEES$UDENOM --gas $GAS --from cosmos18hmramafeyg3xu3j8m6s4w38sgt93r29v7c8d5 &> bareibctx.json
 echo "transaction body generated"
 
 # Step 1: Generate the random hex string and save it to a temporary file
-openssl rand -hex 150000 > tmp.txt
+openssl rand -hex $RECIEVEADDR > tmp.txt
 echo "random string generated"
 
 # Step 2: Use jq with --arg to set the receiver field
