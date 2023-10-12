@@ -40,7 +40,7 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAIND --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
+$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAINID --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
 echo "transaction signed"
 
 
