@@ -40,12 +40,12 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id provider --amino --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
+$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id provider --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
 echo "transaction signed"
 
 
 # Step 5: Broadcast the transaction
-$APPNAME tx broadcast ban.json --sign-mode amino --home ~/.gaia-rs > banana.log
+$APPNAME tx broadcast ban.json > banana.log
 cat banana.log
 echo "transaction broadcasted"
 
