@@ -4,8 +4,8 @@ set -ue
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="injectived"
 SEQUENCE=311812
-IBCMEMO=45000
-RECIEVEADDR=1000000
+IBCMEMO=50000
+RECIEVEADDR=500000
 GAS=1900000
 ADDRESS=inj1tcj6mwx3r4uet0vm3wdhug5g3lx47tf5xn7e59
 CHAINID=injective-888
