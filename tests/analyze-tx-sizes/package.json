@@ -1,0 +1,16 @@
+{
+    "name": "tx-analysis",
+    "version": "1.0.0",
+    "description": "",
+    "main": "fetchTxs.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "@cosmjs/proto-signing": "^0.31.1",
+      "@cosmjs/tendermint-rpc": "^0.31.1"
+    }
+  }
+  

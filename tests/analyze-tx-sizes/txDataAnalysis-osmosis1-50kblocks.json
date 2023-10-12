@@ -1,0 +1,2595 @@
+{
+  "avgTxSize": 2555.439902152242,
+  "largestTxSize": 288224,
+  "largestMsgSize": 288005,
+  "msgSizeMap": {
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountIn": 55999865,
+    "/osmosis.concentratedliquidity.v1beta1.MsgAddToPosition": 6693939,
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountIn": 173716048,
+    "/cosmwasm.wasm.v1.MsgExecuteContract": 309520354,
+    "/ibc.core.client.v1.MsgUpdateClient": 3010549285,
+    "/ibc.core.channel.v1.MsgRecvPacket": 197472306,
+    "/ibc.core.channel.v1.MsgAcknowledgement": 135267142,
+    "/osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition": 4409022,
+    "/osmosis.gamm.v1beta1.MsgJoinPool": 315145,
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut": 1824612,
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountOut": 5756511,
+    "/osmosis.lockup.MsgBeginUnlocking": 29841,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCreatePosition": 10385609,
+    "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountIn": 2579713,
+    "/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward": 2839597,
+    "/cosmos.authz.v1beta1.MsgExec": 12901363,
+    "/ibc.applications.transfer.v1.MsgTransfer": 8086513,
+    "/cosmos.staking.v1beta1.MsgDelegate": 1104320,
+    "/cosmos.bank.v1beta1.MsgSend": 1528420,
+    "/cosmos.staking.v1beta1.MsgUndelegate": 100659,
+    "/osmosis.superfluid.MsgSuperfluidUndelegate": 37729,
+    "/osmosis.superfluid.MsgSuperfluidUnbondLock": 37729,
+    "/cosmos.gov.v1beta1.MsgVote": 603100,
+    "/osmosis.superfluid.MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition": 362540,
+    "/ibc.core.channel.v1.MsgTimeout": 1762393,
+    "/osmosis.gamm.v1beta1.MsgExitPool": 242089,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards": 144135,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives": 135048,
+    "/osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn": 195434,
+    "/osmosis.lockup.MsgLockTokens": 186529,
+    "/cosmos.authz.v1beta1.MsgGrant": 72571,
+    "/cosmos.staking.v1beta1.MsgBeginRedelegate": 34906,
+    "/osmosis.superfluid.MsgUnbondConvertAndStake": 74640,
+    "/osmosis.superfluid.MsgAddToConcentratedLiquiditySuperfluidPosition": 28063,
+    "/osmosis.superfluid.MsgLockAndSuperfluidDelegate": 12861,
+    "/cosmwasm.wasm.v1.MsgInstantiateContract": 18373,
+    "/cosmos.authz.v1beta1.MsgRevoke": 3811,
+    "/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission": 3692,
+    "/osmosis.superfluid.MsgSuperfluidDelegate": 2525,
+    "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors": 448,
+    "/cosmwasm.wasm.v1.MsgStoreCode": 1601921,
+    "/osmosis.incentives.MsgCreateGauge": 1446,
+    "/cosmwasm.wasm.v1.MsgMigrateContract": 2558,
+    "/ibc.core.channel.v1.MsgChannelOpenTry": 634738,
+    "/ibc.core.channel.v1.MsgChannelOpenConfirm": 238925,
+    "/cosmos.gov.v1beta1.MsgSubmitProposal": 7905,
+    "/cosmos.staking.v1beta1.MsgEditValidator": 616,
+    "/osmosis.superfluid.MsgCreateFullRangePositionAndSuperfluidDelegate": 17543,
+    "/osmosis.concentratedliquidity.poolmodel.concentrated.v1beta1.MsgCreateConcentratedPool": 2048,
+    "/ibc.core.client.v1.MsgCreateClient": 5427,
+    "/osmosis.concentratedliquidity.v1beta1.MsgFungifyChargedPositions": 265,
+    "/ibc.core.connection.v1.MsgConnectionOpenTry": 28643,
+    "/ibc.core.connection.v1.MsgConnectionOpenConfirm": 8584,
+    "/ibc.core.channel.v1.MsgChannelCloseConfirm": 37787,
+    "/cosmos.gov.v1beta1.MsgDeposit": 69,
+    "/osmosis.cosmwasmpool.v1beta1.MsgCreateCosmWasmPool": 216,
+    "/cosmos.vesting.v1beta1.MsgCreateVestingAccount": 119
+  },
+  "largestTxMap": {
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountIn": 7616,
+    "/osmosis.concentratedliquidity.v1beta1.MsgAddToPosition": 878,
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountIn": 15463,
+    "/cosmwasm.wasm.v1.MsgExecuteContract": 26926,
+    "/ibc.core.client.v1.MsgUpdateClient": 96465,
+    "/ibc.core.channel.v1.MsgRecvPacket": 96465,
+    "/ibc.core.channel.v1.MsgAcknowledgement": 96465,
+    "/osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition": 1123,
+    "/osmosis.gamm.v1beta1.MsgJoinPool": 519,
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut": 2414,
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountOut": 595,
+    "/osmosis.lockup.MsgBeginUnlocking": 329,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCreatePosition": 1123,
+    "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountIn": 2849,
+    "/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward": 16098,
+    "/cosmos.authz.v1beta1.MsgExec": 192066,
+    "/ibc.applications.transfer.v1.MsgTransfer": 7647,
+    "/cosmos.staking.v1beta1.MsgDelegate": 3477,
+    "/cosmos.bank.v1beta1.MsgSend": 3268,
+    "/cosmos.staking.v1beta1.MsgUndelegate": 414,
+    "/osmosis.superfluid.MsgSuperfluidUndelegate": 448,
+    "/osmosis.superfluid.MsgSuperfluidUnbondLock": 448,
+    "/cosmos.gov.v1beta1.MsgVote": 755,
+    "/osmosis.superfluid.MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition": 1150,
+    "/ibc.core.channel.v1.MsgTimeout": 96465,
+    "/osmosis.gamm.v1beta1.MsgExitPool": 547,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards": 538,
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives": 538,
+    "/osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn": 461,
+    "/osmosis.lockup.MsgLockTokens": 374,
+    "/cosmos.authz.v1beta1.MsgGrant": 1138,
+    "/cosmos.staking.v1beta1.MsgBeginRedelegate": 462,
+    "/osmosis.superfluid.MsgUnbondConvertAndStake": 1937,
+    "/osmosis.superfluid.MsgAddToConcentratedLiquiditySuperfluidPosition": 410,
+    "/osmosis.superfluid.MsgLockAndSuperfluidDelegate": 389,
+    "/cosmwasm.wasm.v1.MsgInstantiateContract": 766,
+    "/cosmos.authz.v1beta1.MsgRevoke": 886,
+    "/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission": 1719,
+    "/osmosis.superfluid.MsgSuperfluidDelegate": 390,
+    "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors": 879,
+    "/cosmwasm.wasm.v1.MsgStoreCode": 288224,
+    "/osmosis.incentives.MsgCreateGauge": 383,
+    "/cosmwasm.wasm.v1.MsgMigrateContract": 22247,
+    "/ibc.core.channel.v1.MsgChannelOpenTry": 17404,
+    "/ibc.core.channel.v1.MsgChannelOpenConfirm": 17404,
+    "/cosmos.gov.v1beta1.MsgSubmitProposal": 2431,
+    "/cosmos.staking.v1beta1.MsgEditValidator": 665,
+    "/osmosis.superfluid.MsgCreateFullRangePositionAndSuperfluidDelegate": 664,
+    "/osmosis.concentratedliquidity.poolmodel.concentrated.v1beta1.MsgCreateConcentratedPool": 536,
+    "/ibc.core.client.v1.MsgCreateClient": 636,
+    "/osmosis.concentratedliquidity.v1beta1.MsgFungifyChargedPositions": 360,
+    "/ibc.core.connection.v1.MsgConnectionOpenTry": 4367,
+    "/ibc.core.connection.v1.MsgConnectionOpenConfirm": 2418,
+    "/ibc.core.channel.v1.MsgChannelCloseConfirm": 15110,
+    "/cosmos.gov.v1beta1.MsgDeposit": 280,
+    "/osmosis.cosmwasmpool.v1beta1.MsgCreateCosmWasmPool": 449,
+    "/cosmos.vesting.v1beta1.MsgCreateVestingAccount": 349
+  },
+  "largestMsgs": {
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountIn": [
+      {
+        "size": 450,
+        "height": 11844655
+      },
+      {
+        "size": 447,
+        "height": 11829198
+      },
+      {
+        "size": 447,
+        "height": 11840981
+      },
+      {
+        "size": 447,
+        "height": 11843757
+      },
+      {
+        "size": 441,
+        "height": 11817765
+      },
+      {
+        "size": 440,
+        "height": 11817795
+      },
+      {
+        "size": 440,
+        "height": 11852214
+      },
+      {
+        "size": 439,
+        "height": 11859993
+      },
+      {
+        "size": 439,
+        "height": 11860011
+      },
+      {
+        "size": 439,
+        "height": 11860024
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgAddToPosition": [
+      {
+        "size": 121,
+        "height": 11802614
+      },
+      {
+        "size": 121,
+        "height": 11802636
+      },
+      {
+        "size": 119,
+        "height": 11757895
+      },
+      {
+        "size": 119,
+        "height": 11831416
+      },
+      {
+        "size": 117,
+        "height": 11757864
+      },
+      {
+        "size": 117,
+        "height": 11815899
+      },
+      {
+        "size": 116,
+        "height": 11802671
+      },
+      {
+        "size": 116,
+        "height": 11802677
+      },
+      {
+        "size": 116,
+        "height": 11802682
+      },
+      {
+        "size": 116,
+        "height": 11802688
+      }
+    ],
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountIn": [
+      {
+        "size": 611,
+        "height": 11805210
+      },
+      {
+        "size": 611,
+        "height": 11805210
+      },
+      {
+        "size": 611,
+        "height": 11805210
+      },
+      {
+        "size": 611,
+        "height": 11836330
+      },
+      {
+        "size": 611,
+        "height": 11836330
+      },
+      {
+        "size": 611,
+        "height": 11836330
+      },
+      {
+        "size": 539,
+        "height": 11830636
+      },
+      {
+        "size": 539,
+        "height": 11830642
+      },
+      {
+        "size": 537,
+        "height": 11791504
+      },
+      {
+        "size": 537,
+        "height": 11791504
+      }
+    ],
+    "/cosmwasm.wasm.v1.MsgExecuteContract": [
+      {
+        "size": 16463,
+        "height": 11781252
+      },
+      {
+        "size": 15231,
+        "height": 11807095
+      },
+      {
+        "size": 15055,
+        "height": 11793760
+      },
+      {
+        "size": 14967,
+        "height": 11813991
+      },
+      {
+        "size": 14879,
+        "height": 11793538
+      },
+      {
+        "size": 14791,
+        "height": 11805545
+      },
+      {
+        "size": 14791,
+        "height": 11822551
+      },
+      {
+        "size": 14791,
+        "height": 11845066
+      },
+      {
+        "size": 14791,
+        "height": 11846906
+      },
+      {
+        "size": 14615,
+        "height": 11774923
+      }
+    ],
+    "/ibc.core.client.v1.MsgUpdateClient": [
+      {
+        "size": 44140,
+        "height": 11832957
+      },
+      {
+        "size": 43951,
+        "height": 11830972
+      },
+      {
+        "size": 43951,
+        "height": 11830972
+      },
+      {
+        "size": 43796,
+        "height": 11833539
+      },
+      {
+        "size": 43774,
+        "height": 11830872
+      },
+      {
+        "size": 43744,
+        "height": 11832989
+      },
+      {
+        "size": 43703,
+        "height": 11830987
+      },
+      {
+        "size": 43581,
+        "height": 11830976
+      },
+      {
+        "size": 43543,
+        "height": 11830794
+      },
+      {
+        "size": 43543,
+        "height": 11830794
+      }
+    ],
+    "/ibc.core.channel.v1.MsgRecvPacket": [
+      {
+        "size": 11052,
+        "height": 11834889
+      },
+      {
+        "size": 9538,
+        "height": 11833030
+      },
+      {
+        "size": 9335,
+        "height": 11774090
+      },
+      {
+        "size": 9335,
+        "height": 11852045
+      },
+      {
+        "size": 9296,
+        "height": 11837188
+      },
+      {
+        "size": 9291,
+        "height": 11844646
+      },
+      {
+        "size": 9288,
+        "height": 11792696
+      },
+      {
+        "size": 9264,
+        "height": 11860285
+      },
+      {
+        "size": 9251,
+        "height": 11785272
+      },
+      {
+        "size": 9251,
+        "height": 11800142
+      }
+    ],
+    "/ibc.core.channel.v1.MsgAcknowledgement": [
+      {
+        "size": 10328,
+        "height": 11834892
+      },
+      {
+        "size": 9003,
+        "height": 11761364
+      },
+      {
+        "size": 8983,
+        "height": 11801547
+      },
+      {
+        "size": 8977,
+        "height": 11758716
+      },
+      {
+        "size": 8942,
+        "height": 11765583
+      },
+      {
+        "size": 8927,
+        "height": 11762061
+      },
+      {
+        "size": 8918,
+        "height": 11761964
+      },
+      {
+        "size": 8888,
+        "height": 11764382
+      },
+      {
+        "size": 8888,
+        "height": 11833034
+      },
+      {
+        "size": 8888,
+        "height": 11833034
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgWithdrawPosition": [
+      {
+        "size": 90,
+        "height": 11844146
+      },
+      {
+        "size": 89,
+        "height": 11756231
+      },
+      {
+        "size": 89,
+        "height": 11756336
+      },
+      {
+        "size": 89,
+        "height": 11756445
+      },
+      {
+        "size": 89,
+        "height": 11756550
+      },
+      {
+        "size": 89,
+        "height": 11756611
+      },
+      {
+        "size": 89,
+        "height": 11756669
+      },
+      {
+        "size": 89,
+        "height": 11756782
+      },
+      {
+        "size": 89,
+        "height": 11756888
+      },
+      {
+        "size": 89,
+        "height": 11756997
+      }
+    ],
+    "/osmosis.gamm.v1beta1.MsgJoinPool": [
+      {
+        "size": 262,
+        "height": 11791605
+      },
+      {
+        "size": 262,
+        "height": 11843620
+      },
+      {
+        "size": 262,
+        "height": 11843635
+      },
+      {
+        "size": 262,
+        "height": 11857186
+      },
+      {
+        "size": 259,
+        "height": 11843643
+      },
+      {
+        "size": 259,
+        "height": 11857250
+      },
+      {
+        "size": 257,
+        "height": 11769116
+      },
+      {
+        "size": 257,
+        "height": 11802018
+      },
+      {
+        "size": 256,
+        "height": 11763707
+      },
+      {
+        "size": 253,
+        "height": 11810368
+      }
+    ],
+    "/osmosis.gamm.v1beta1.MsgSwapExactAmountOut": [
+      {
+        "size": 307,
+        "height": 11759675
+      },
+      {
+        "size": 307,
+        "height": 11759703
+      },
+      {
+        "size": 307,
+        "height": 11759704
+      },
+      {
+        "size": 307,
+        "height": 11759706
+      },
+      {
+        "size": 307,
+        "height": 11759707
+      },
+      {
+        "size": 307,
+        "height": 11759708
+      },
+      {
+        "size": 307,
+        "height": 11781495
+      },
+      {
+        "size": 307,
+        "height": 11781496
+      },
+      {
+        "size": 307,
+        "height": 11781497
+      },
+      {
+        "size": 307,
+        "height": 11781498
+      }
+    ],
+    "/osmosis.poolmanager.v1beta1.MsgSwapExactAmountOut": [
+      {
+        "size": 362,
+        "height": 11759935
+      },
+      {
+        "size": 362,
+        "height": 11830701
+      },
+      {
+        "size": 307,
+        "height": 11801376
+      },
+      {
+        "size": 307,
+        "height": 11805086
+      },
+      {
+        "size": 307,
+        "height": 11856292
+      },
+      {
+        "size": 307,
+        "height": 11856309
+      },
+      {
+        "size": 307,
+        "height": 11856321
+      },
+      {
+        "size": 307,
+        "height": 11856332
+      },
+      {
+        "size": 307,
+        "height": 11856349
+      },
+      {
+        "size": 307,
+        "height": 11856367
+      }
+    ],
+    "/osmosis.lockup.MsgBeginUnlocking": [
+      {
+        "size": 49,
+        "height": 11756090
+      },
+      {
+        "size": 49,
+        "height": 11756141
+      },
+      {
+        "size": 49,
+        "height": 11756146
+      },
+      {
+        "size": 49,
+        "height": 11756349
+      },
+      {
+        "size": 49,
+        "height": 11756360
+      },
+      {
+        "size": 49,
+        "height": 11756592
+      },
+      {
+        "size": 49,
+        "height": 11756599
+      },
+      {
+        "size": 49,
+        "height": 11756621
+      },
+      {
+        "size": 49,
+        "height": 11756642
+      },
+      {
+        "size": 49,
+        "height": 11756666
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgCreatePosition": [
+      {
+        "size": 266,
+        "height": 11795244
+      },
+      {
+        "size": 264,
+        "height": 11776636
+      },
+      {
+        "size": 257,
+        "height": 11840298
+      },
+      {
+        "size": 257,
+        "height": 11851024
+      },
+      {
+        "size": 256,
+        "height": 11841436
+      },
+      {
+        "size": 256,
+        "height": 11841496
+      },
+      {
+        "size": 256,
+        "height": 11853218
+      },
+      {
+        "size": 255,
+        "height": 11836346
+      },
+      {
+        "size": 254,
+        "height": 11807043
+      },
+      {
+        "size": 254,
+        "height": 11819104
+      }
+    ],
+    "/osmosis.poolmanager.v1beta1.MsgSplitRouteSwapExactAmountIn": [
+      {
+        "size": 2603,
+        "height": 11832954
+      },
+      {
+        "size": 1781,
+        "height": 11830691
+      },
+      {
+        "size": 1776,
+        "height": 11849163
+      },
+      {
+        "size": 1364,
+        "height": 11824478
+      },
+      {
+        "size": 1289,
+        "height": 11825988
+      },
+      {
+        "size": 1203,
+        "height": 11850900
+      },
+      {
+        "size": 1199,
+        "height": 11830695
+      },
+      {
+        "size": 1198,
+        "height": 11830695
+      },
+      {
+        "size": 1048,
+        "height": 11846704
+      },
+      {
+        "size": 1039,
+        "height": 11830741
+      }
+    ],
+    "/cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward": [
+      {
+        "size": 117,
+        "height": 11756100
+      },
+      {
+        "size": 117,
+        "height": 11758471
+      },
+      {
+        "size": 117,
+        "height": 11758637
+      },
+      {
+        "size": 117,
+        "height": 11758716
+      },
+      {
+        "size": 117,
+        "height": 11759538
+      },
+      {
+        "size": 117,
+        "height": 11760617
+      },
+      {
+        "size": 117,
+        "height": 11761300
+      },
+      {
+        "size": 117,
+        "height": 11761589
+      },
+      {
+        "size": 117,
+        "height": 11762398
+      },
+      {
+        "size": 117,
+        "height": 11764699
+      }
+    ],
+    "/cosmos.authz.v1beta1.MsgExec": [
+      {
+        "size": 191849,
+        "height": 11780477
+      },
+      {
+        "size": 191833,
+        "height": 11759261
+      },
+      {
+        "size": 19889,
+        "height": 11776894
+      },
+      {
+        "size": 19826,
+        "height": 11776913
+      },
+      {
+        "size": 19811,
+        "height": 11851174
+      },
+      {
+        "size": 19798,
+        "height": 11851178
+      },
+      {
+        "size": 19731,
+        "height": 11776886
+      },
+      {
+        "size": 19708,
+        "height": 11776923
+      },
+      {
+        "size": 19695,
+        "height": 11851188
+      },
+      {
+        "size": 19687,
+        "height": 11836349
+      }
+    ],
+    "/ibc.applications.transfer.v1.MsgTransfer": [
+      {
+        "size": 7423,
+        "height": 11801544
+      },
+      {
+        "size": 7362,
+        "height": 11762057
+      },
+      {
+        "size": 7353,
+        "height": 11761960
+      },
+      {
+        "size": 7301,
+        "height": 11828522
+      },
+      {
+        "size": 7295,
+        "height": 11841983
+      },
+      {
+        "size": 7288,
+        "height": 11832097
+      },
+      {
+        "size": 7284,
+        "height": 11770548
+      },
+      {
+        "size": 7283,
+        "height": 11774735
+      },
+      {
+        "size": 7276,
+        "height": 11808975
+      },
+      {
+        "size": 7275,
+        "height": 11855820
+      }
+    ],
+    "/cosmos.staking.v1beta1.MsgDelegate": [
+      {
+        "size": 136,
+        "height": 11767565
+      },
+      {
+        "size": 135,
+        "height": 11860112
+      },
+      {
+        "size": 134,
+        "height": 11764799
+      },
+      {
+        "size": 134,
+        "height": 11778170
+      },
+      {
+        "size": 133,
+        "height": 11858389
+      },
+      {
+        "size": 132,
+        "height": 11791951
+      },
+      {
+        "size": 130,
+        "height": 11827731
+      },
+      {
+        "size": 119,
+        "height": 11761080
+      },
+      {
+        "size": 119,
+        "height": 11761673
+      },
+      {
+        "size": 119,
+        "height": 11761771
+      }
+    ],
+    "/cosmos.bank.v1beta1.MsgSend": [
+      {
+        "size": 523,
+        "height": 11824161
+      },
+      {
+        "size": 204,
+        "height": 11853560
+      },
+      {
+        "size": 191,
+        "height": 11820873
+      },
+      {
+        "size": 189,
+        "height": 11845721
+      },
+      {
+        "size": 188,
+        "height": 11825765
+      },
+      {
+        "size": 188,
+        "height": 11826926
+      },
+      {
+        "size": 188,
+        "height": 11845904
+      },
+      {
+        "size": 187,
+        "height": 11788474
+      },
+      {
+        "size": 187,
+        "height": 11801248
+      },
+      {
+        "size": 187,
+        "height": 11805600
+      }
+    ],
+    "/cosmos.staking.v1beta1.MsgUndelegate": [
+      {
+        "size": 136,
+        "height": 11818046
+      },
+      {
+        "size": 134,
+        "height": 11808900
+      },
+      {
+        "size": 120,
+        "height": 11834657
+      },
+      {
+        "size": 119,
+        "height": 11757477
+      },
+      {
+        "size": 119,
+        "height": 11761904
+      },
+      {
+        "size": 119,
+        "height": 11765013
+      },
+      {
+        "size": 119,
+        "height": 11787518
+      },
+      {
+        "size": 119,
+        "height": 11788231
+      },
+      {
+        "size": 119,
+        "height": 11797379
+      },
+      {
+        "size": 119,
+        "height": 11832487
+      }
+    ],
+    "/osmosis.superfluid.MsgSuperfluidUndelegate": [
+      {
+        "size": 49,
+        "height": 11756106
+      },
+      {
+        "size": 49,
+        "height": 11756127
+      },
+      {
+        "size": 49,
+        "height": 11756139
+      },
+      {
+        "size": 49,
+        "height": 11756156
+      },
+      {
+        "size": 49,
+        "height": 11756202
+      },
+      {
+        "size": 49,
+        "height": 11756230
+      },
+      {
+        "size": 49,
+        "height": 11757544
+      },
+      {
+        "size": 49,
+        "height": 11757691
+      },
+      {
+        "size": 49,
+        "height": 11757703
+      },
+      {
+        "size": 49,
+        "height": 11757719
+      }
+    ],
+    "/osmosis.superfluid.MsgSuperfluidUnbondLock": [
+      {
+        "size": 49,
+        "height": 11756106
+      },
+      {
+        "size": 49,
+        "height": 11756127
+      },
+      {
+        "size": 49,
+        "height": 11756139
+      },
+      {
+        "size": 49,
+        "height": 11756156
+      },
+      {
+        "size": 49,
+        "height": 11756202
+      },
+      {
+        "size": 49,
+        "height": 11756230
+      },
+      {
+        "size": 49,
+        "height": 11757544
+      },
+      {
+        "size": 49,
+        "height": 11757691
+      },
+      {
+        "size": 49,
+        "height": 11757703
+      },
+      {
+        "size": 49,
+        "height": 11757719
+      }
+    ],
+    "/cosmos.gov.v1beta1.MsgVote": [
+      {
+        "size": 50,
+        "height": 11756114
+      },
+      {
+        "size": 50,
+        "height": 11756124
+      },
+      {
+        "size": 50,
+        "height": 11756139
+      },
+      {
+        "size": 50,
+        "height": 11756170
+      },
+      {
+        "size": 50,
+        "height": 11756170
+      },
+      {
+        "size": 50,
+        "height": 11756176
+      },
+      {
+        "size": 50,
+        "height": 11756181
+      },
+      {
+        "size": 50,
+        "height": 11756183
+      },
+      {
+        "size": 50,
+        "height": 11756185
+      },
+      {
+        "size": 50,
+        "height": 11756208
+      }
+    ],
+    "/osmosis.superfluid.MsgUnlockAndMigrateSharesToFullRangeConcentratedPosition": [
+      {
+        "size": 265,
+        "height": 11774970
+      },
+      {
+        "size": 262,
+        "height": 11787630
+      },
+      {
+        "size": 262,
+        "height": 11843845
+      },
+      {
+        "size": 261,
+        "height": 11804944
+      },
+      {
+        "size": 261,
+        "height": 11835839
+      },
+      {
+        "size": 259,
+        "height": 11757047
+      },
+      {
+        "size": 259,
+        "height": 11757189
+      },
+      {
+        "size": 259,
+        "height": 11764058
+      },
+      {
+        "size": 259,
+        "height": 11773974
+      },
+      {
+        "size": 259,
+        "height": 11778965
+      }
+    ],
+    "/ibc.core.channel.v1.MsgTimeout": [
+      {
+        "size": 7621,
+        "height": 11832634
+      },
+      {
+        "size": 4663,
+        "height": 11832488
+      },
+      {
+        "size": 3392,
+        "height": 11808455
+      },
+      {
+        "size": 3392,
+        "height": 11823070
+      },
+      {
+        "size": 3389,
+        "height": 11830489
+      },
+      {
+        "size": 3376,
+        "height": 11830701
+      },
+      {
+        "size": 3372,
+        "height": 11847963
+      },
+      {
+        "size": 3369,
+        "height": 11849151
+      },
+      {
+        "size": 3338,
+        "height": 11808464
+      },
+      {
+        "size": 3334,
+        "height": 11817122
+      }
+    ],
+    "/osmosis.gamm.v1beta1.MsgExitPool": [
+      {
+        "size": 331,
+        "height": 11787860
+      },
+      {
+        "size": 329,
+        "height": 11820115
+      },
+      {
+        "size": 263,
+        "height": 11771418
+      },
+      {
+        "size": 263,
+        "height": 11819534
+      },
+      {
+        "size": 262,
+        "height": 11791225
+      },
+      {
+        "size": 262,
+        "height": 11831739
+      },
+      {
+        "size": 262,
+        "height": 11856751
+      },
+      {
+        "size": 256,
+        "height": 11850171
+      },
+      {
+        "size": 255,
+        "height": 11853339
+      },
+      {
+        "size": 248,
+        "height": 11842173
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectSpreadRewards": [
+      {
+        "size": 113,
+        "height": 11853365
+      },
+      {
+        "size": 74,
+        "height": 11813302
+      },
+      {
+        "size": 74,
+        "height": 11827667
+      },
+      {
+        "size": 74,
+        "height": 11847355
+      },
+      {
+        "size": 74,
+        "height": 11852730
+      },
+      {
+        "size": 74,
+        "height": 11858543
+      },
+      {
+        "size": 71,
+        "height": 11798440
+      },
+      {
+        "size": 71,
+        "height": 11813433
+      },
+      {
+        "size": 68,
+        "height": 11772688
+      },
+      {
+        "size": 68,
+        "height": 11827797
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgCollectIncentives": [
+      {
+        "size": 113,
+        "height": 11853365
+      },
+      {
+        "size": 74,
+        "height": 11813302
+      },
+      {
+        "size": 74,
+        "height": 11827667
+      },
+      {
+        "size": 74,
+        "height": 11847355
+      },
+      {
+        "size": 74,
+        "height": 11852730
+      },
+      {
+        "size": 74,
+        "height": 11858543
+      },
+      {
+        "size": 68,
+        "height": 11772688
+      },
+      {
+        "size": 68,
+        "height": 11827797
+      },
+      {
+        "size": 68,
+        "height": 11847466
+      },
+      {
+        "size": 68,
+        "height": 11858670
+      }
+    ],
+    "/osmosis.gamm.v1beta1.MsgJoinSwapExternAmountIn": [
+      {
+        "size": 172,
+        "height": 11785780
+      },
+      {
+        "size": 169,
+        "height": 11806763
+      },
+      {
+        "size": 169,
+        "height": 11821907
+      },
+      {
+        "size": 168,
+        "height": 11809951
+      },
+      {
+        "size": 168,
+        "height": 11811651
+      },
+      {
+        "size": 168,
+        "height": 11832915
+      },
+      {
+        "size": 168,
+        "height": 11858922
+      },
+      {
+        "size": 167,
+        "height": 11770583
+      },
+      {
+        "size": 167,
+        "height": 11776671
+      },
+      {
+        "size": 167,
+        "height": 11791826
+      }
+    ],
+    "/osmosis.lockup.MsgLockTokens": [
+      {
+        "size": 100,
+        "height": 11759363
+      },
+      {
+        "size": 100,
+        "height": 11811653
+      },
+      {
+        "size": 99,
+        "height": 11758509
+      },
+      {
+        "size": 99,
+        "height": 11764582
+      },
+      {
+        "size": 99,
+        "height": 11795751
+      },
+      {
+        "size": 99,
+        "height": 11799277
+      },
+      {
+        "size": 99,
+        "height": 11849883
+      },
+      {
+        "size": 99,
+        "height": 11852053
+      },
+      {
+        "size": 99,
+        "height": 11854437
+      },
+      {
+        "size": 98,
+        "height": 11756220
+      }
+    ],
+    "/cosmos.authz.v1beta1.MsgGrant": [
+      {
+        "size": 832,
+        "height": 11837021
+      },
+      {
+        "size": 577,
+        "height": 11778699
+      },
+      {
+        "size": 526,
+        "height": 11813806
+      },
+      {
+        "size": 474,
+        "height": 11809359
+      },
+      {
+        "size": 474,
+        "height": 11832088
+      },
+      {
+        "size": 370,
+        "height": 11816268
+      },
+      {
+        "size": 370,
+        "height": 11831869
+      },
+      {
+        "size": 370,
+        "height": 11833302
+      },
+      {
+        "size": 318,
+        "height": 11764225
+      },
+      {
+        "size": 318,
+        "height": 11775697
+      }
+    ],
+    "/cosmos.staking.v1beta1.MsgBeginRedelegate": [
+      {
+        "size": 189,
+        "height": 11757318
+      },
+      {
+        "size": 189,
+        "height": 11790761
+      },
+      {
+        "size": 188,
+        "height": 11773211
+      },
+      {
+        "size": 188,
+        "height": 11790783
+      },
+      {
+        "size": 171,
+        "height": 11773475
+      },
+      {
+        "size": 171,
+        "height": 11817941
+      },
+      {
+        "size": 170,
+        "height": 11758510
+      },
+      {
+        "size": 170,
+        "height": 11772523
+      },
+      {
+        "size": 170,
+        "height": 11776433
+      },
+      {
+        "size": 170,
+        "height": 11808632
+      }
+    ],
+    "/osmosis.superfluid.MsgUnbondConvertAndStake": [
+      {
+        "size": 175,
+        "height": 11809559
+      },
+      {
+        "size": 173,
+        "height": 11756508
+      },
+      {
+        "size": 173,
+        "height": 11784784
+      },
+      {
+        "size": 173,
+        "height": 11786176
+      },
+      {
+        "size": 173,
+        "height": 11802713
+      },
+      {
+        "size": 173,
+        "height": 11810626
+      },
+      {
+        "size": 173,
+        "height": 11813305
+      },
+      {
+        "size": 173,
+        "height": 11844960
+      },
+      {
+        "size": 172,
+        "height": 11772954
+      },
+      {
+        "size": 172,
+        "height": 11820795
+      }
+    ],
+    "/osmosis.superfluid.MsgAddToConcentratedLiquiditySuperfluidPosition": [
+      {
+        "size": 158,
+        "height": 11789676
+      },
+      {
+        "size": 158,
+        "height": 11800982
+      },
+      {
+        "size": 157,
+        "height": 11774260
+      },
+      {
+        "size": 157,
+        "height": 11836305
+      },
+      {
+        "size": 155,
+        "height": 11785250
+      },
+      {
+        "size": 155,
+        "height": 11808088
+      },
+      {
+        "size": 154,
+        "height": 11792591
+      },
+      {
+        "size": 154,
+        "height": 11834276
+      },
+      {
+        "size": 153,
+        "height": 11762639
+      },
+      {
+        "size": 153,
+        "height": 11842895
+      }
+    ],
+    "/osmosis.superfluid.MsgLockAndSuperfluidDelegate": [
+      {
+        "size": 157,
+        "height": 11803885
+      },
+      {
+        "size": 139,
+        "height": 11763657
+      },
+      {
+        "size": 139,
+        "height": 11809957
+      },
+      {
+        "size": 139,
+        "height": 11857714
+      },
+      {
+        "size": 138,
+        "height": 11758541
+      },
+      {
+        "size": 138,
+        "height": 11759951
+      },
+      {
+        "size": 138,
+        "height": 11760538
+      },
+      {
+        "size": 138,
+        "height": 11787454
+      },
+      {
+        "size": 138,
+        "height": 11814595
+      },
+      {
+        "size": 138,
+        "height": 11823904
+      }
+    ],
+    "/cosmwasm.wasm.v1.MsgInstantiateContract": [
+      {
+        "size": 479,
+        "height": 11795132
+      },
+      {
+        "size": 479,
+        "height": 11821295
+      },
+      {
+        "size": 477,
+        "height": 11760103
+      },
+      {
+        "size": 477,
+        "height": 11761868
+      },
+      {
+        "size": 477,
+        "height": 11816407
+      },
+      {
+        "size": 477,
+        "height": 11820860
+      },
+      {
+        "size": 477,
+        "height": 11821447
+      },
+      {
+        "size": 477,
+        "height": 11821746
+      },
+      {
+        "size": 477,
+        "height": 11822215
+      },
+      {
+        "size": 477,
+        "height": 11823315
+      }
+    ],
+    "/cosmos.authz.v1beta1.MsgRevoke": [
+      {
+        "size": 147,
+        "height": 11758267
+      },
+      {
+        "size": 147,
+        "height": 11833730
+      },
+      {
+        "size": 147,
+        "height": 11839449
+      },
+      {
+        "size": 140,
+        "height": 11761595
+      },
+      {
+        "size": 140,
+        "height": 11763425
+      },
+      {
+        "size": 140,
+        "height": 11827188
+      },
+      {
+        "size": 140,
+        "height": 11835712
+      },
+      {
+        "size": 139,
+        "height": 11761595
+      },
+      {
+        "size": 139,
+        "height": 11763425
+      },
+      {
+        "size": 139,
+        "height": 11827117
+      }
+    ],
+    "/cosmos.distribution.v1beta1.MsgWithdrawValidatorCommission": [
+      {
+        "size": 52,
+        "height": 11757392
+      },
+      {
+        "size": 52,
+        "height": 11761007
+      },
+      {
+        "size": 52,
+        "height": 11761874
+      },
+      {
+        "size": 52,
+        "height": 11761936
+      },
+      {
+        "size": 52,
+        "height": 11762727
+      },
+      {
+        "size": 52,
+        "height": 11762886
+      },
+      {
+        "size": 52,
+        "height": 11763548
+      },
+      {
+        "size": 52,
+        "height": 11768300
+      },
+      {
+        "size": 52,
+        "height": 11771996
+      },
+      {
+        "size": 52,
+        "height": 11772270
+      }
+    ],
+    "/osmosis.superfluid.MsgSuperfluidDelegate": [
+      {
+        "size": 101,
+        "height": 11757442
+      },
+      {
+        "size": 101,
+        "height": 11757654
+      },
+      {
+        "size": 101,
+        "height": 11760393
+      },
+      {
+        "size": 101,
+        "height": 11770930
+      },
+      {
+        "size": 101,
+        "height": 11771573
+      },
+      {
+        "size": 101,
+        "height": 11773520
+      },
+      {
+        "size": 101,
+        "height": 11788143
+      },
+      {
+        "size": 101,
+        "height": 11788986
+      },
+      {
+        "size": 101,
+        "height": 11790141
+      },
+      {
+        "size": 101,
+        "height": 11790619
+      }
+    ],
+    "/osmosis.gamm.poolmodels.stableswap.v1beta1.MsgStableSwapAdjustScalingFactors": [
+      {
+        "size": 56,
+        "height": 11758653
+      },
+      {
+        "size": 56,
+        "height": 11758653
+      },
+      {
+        "size": 56,
+        "height": 11758653
+      },
+      {
+        "size": 56,
+        "height": 11758669
+      },
+      {
+        "size": 56,
+        "height": 11848426
+      },
+      {
+        "size": 56,
+        "height": 11855543
+      },
+      {
+        "size": 56,
+        "height": 11855543
+      },
+      {
+        "size": 56,
+        "height": 11855543
+      }
+    ],
+    "/cosmwasm.wasm.v1.MsgStoreCode": [
+      {
+        "size": 288005,
+        "height": 11816526
+      },
+      {
+        "size": 200357,
+        "height": 11816435
+      },
+      {
+        "size": 179424,
+        "height": 11816429
+      },
+      {
+        "size": 161072,
+        "height": 11816440
+      },
+      {
+        "size": 150886,
+        "height": 11816433
+      },
+      {
+        "size": 118892,
+        "height": 11816529
+      },
+      {
+        "size": 117174,
+        "height": 11759152
+      },
+      {
+        "size": 116719,
+        "height": 11816520
+      },
+      {
+        "size": 100609,
+        "height": 11816438
+      },
+      {
+        "size": 87035,
+        "height": 11816523
+      }
+    ],
+    "/osmosis.incentives.MsgCreateGauge": [
+      {
+        "size": 165,
+        "height": 11759166
+      },
+      {
+        "size": 165,
+        "height": 11759186
+      },
+      {
+        "size": 165,
+        "height": 11759364
+      },
+      {
+        "size": 164,
+        "height": 11759153
+      },
+      {
+        "size": 164,
+        "height": 11759176
+      },
+      {
+        "size": 161,
+        "height": 11825818
+      },
+      {
+        "size": 161,
+        "height": 11825881
+      },
+      {
+        "size": 151,
+        "height": 11840335
+      },
+      {
+        "size": 150,
+        "height": 11840248
+      }
+    ],
+    "/cosmwasm.wasm.v1.MsgMigrateContract": [
+      {
+        "size": 473,
+        "height": 11833609
+      },
+      {
+        "size": 168,
+        "height": 11833564
+      },
+      {
+        "size": 162,
+        "height": 11833525
+      },
+      {
+        "size": 117,
+        "height": 11759281
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      },
+      {
+        "size": 117,
+        "height": 11779075
+      }
+    ],
+    "/ibc.core.channel.v1.MsgChannelOpenTry": [
+      {
+        "size": 1927,
+        "height": 11779090
+      },
+      {
+        "size": 1927,
+        "height": 11779091
+      },
+      {
+        "size": 1927,
+        "height": 11779091
+      },
+      {
+        "size": 1927,
+        "height": 11779091
+      },
+      {
+        "size": 1921,
+        "height": 11817023
+      },
+      {
+        "size": 1921,
+        "height": 11817080
+      },
+      {
+        "size": 1921,
+        "height": 11817108
+      },
+      {
+        "size": 1921,
+        "height": 11817108
+      },
+      {
+        "size": 1921,
+        "height": 11817120
+      },
+      {
+        "size": 1921,
+        "height": 11817121
+      }
+    ],
+    "/ibc.core.channel.v1.MsgChannelOpenConfirm": [
+      {
+        "size": 1568,
+        "height": 11779094
+      },
+      {
+        "size": 1568,
+        "height": 11779094
+      },
+      {
+        "size": 1568,
+        "height": 11779094
+      },
+      {
+        "size": 1527,
+        "height": 11783023
+      },
+      {
+        "size": 1527,
+        "height": 11783023
+      },
+      {
+        "size": 1527,
+        "height": 11783023
+      },
+      {
+        "size": 1524,
+        "height": 11821992
+      },
+      {
+        "size": 1524,
+        "height": 11821992
+      },
+      {
+        "size": 1523,
+        "height": 11817196
+      },
+      {
+        "size": 1522,
+        "height": 11761827
+      }
+    ],
+    "/cosmos.gov.v1beta1.MsgSubmitProposal": [
+      {
+        "size": 2211,
+        "height": 11796346
+      },
+      {
+        "size": 1579,
+        "height": 11850594
+      },
+      {
+        "size": 1059,
+        "height": 11759390
+      },
+      {
+        "size": 862,
+        "height": 11822074
+      },
+      {
+        "size": 856,
+        "height": 11819461
+      },
+      {
+        "size": 856,
+        "height": 11819464
+      },
+      {
+        "size": 251,
+        "height": 11820302
+      },
+      {
+        "size": 231,
+        "height": 11820285
+      }
+    ],
+    "/cosmos.staking.v1beta1.MsgEditValidator": [
+      {
+        "size": 317,
+        "height": 11800757
+      },
+      {
+        "size": 160,
+        "height": 11759544
+      },
+      {
+        "size": 139,
+        "height": 11847844
+      }
+    ],
+    "/osmosis.superfluid.MsgCreateFullRangePositionAndSuperfluidDelegate": [
+      {
+        "size": 224,
+        "height": 11847102
+      },
+      {
+        "size": 214,
+        "height": 11826163
+      },
+      {
+        "size": 213,
+        "height": 11809084
+      },
+      {
+        "size": 211,
+        "height": 11804272
+      },
+      {
+        "size": 210,
+        "height": 11836701
+      },
+      {
+        "size": 209,
+        "height": 11859018
+      },
+      {
+        "size": 206,
+        "height": 11768458
+      },
+      {
+        "size": 205,
+        "height": 11770633
+      },
+      {
+        "size": 205,
+        "height": 11779907
+      },
+      {
+        "size": 205,
+        "height": 11795307
+      }
+    ],
+    "/osmosis.concentratedliquidity.poolmodel.concentrated.v1beta1.MsgCreateConcentratedPool": [
+      {
+        "size": 205,
+        "height": 11785757
+      },
+      {
+        "size": 205,
+        "height": 11785763
+      },
+      {
+        "size": 205,
+        "height": 11785792
+      },
+      {
+        "size": 205,
+        "height": 11785805
+      },
+      {
+        "size": 205,
+        "height": 11785829
+      },
+      {
+        "size": 205,
+        "height": 11833282
+      },
+      {
+        "size": 205,
+        "height": 11833778
+      },
+      {
+        "size": 205,
+        "height": 11856237
+      },
+      {
+        "size": 204,
+        "height": 11764637
+      },
+      {
+        "size": 204,
+        "height": 11764700
+      }
+    ],
+    "/ibc.core.client.v1.MsgCreateClient": [
+      {
+        "size": 368,
+        "height": 11814181
+      },
+      {
+        "size": 368,
+        "height": 11814366
+      },
+      {
+        "size": 367,
+        "height": 11775285
+      },
+      {
+        "size": 362,
+        "height": 11848693
+      },
+      {
+        "size": 362,
+        "height": 11848699
+      },
+      {
+        "size": 362,
+        "height": 11848742
+      },
+      {
+        "size": 362,
+        "height": 11848766
+      },
+      {
+        "size": 362,
+        "height": 11848802
+      },
+      {
+        "size": 361,
+        "height": 11790147
+      },
+      {
+        "size": 361,
+        "height": 11803854
+      }
+    ],
+    "/osmosis.concentratedliquidity.v1beta1.MsgFungifyChargedPositions": [
+      {
+        "size": 56,
+        "height": 11842580
+      },
+      {
+        "size": 53,
+        "height": 11782073
+      },
+      {
+        "size": 53,
+        "height": 11782125
+      },
+      {
+        "size": 53,
+        "height": 11842522
+      },
+      {
+        "size": 50,
+        "height": 11840177
+      }
+    ],
+    "/ibc.core.connection.v1.MsgConnectionOpenTry": [
+      {
+        "size": 3058,
+        "height": 11848844
+      },
+      {
+        "size": 3004,
+        "height": 11848773
+      },
+      {
+        "size": 3003,
+        "height": 11848747
+      },
+      {
+        "size": 2962,
+        "height": 11848808
+      },
+      {
+        "size": 2958,
+        "height": 11848705
+      },
+      {
+        "size": 2391,
+        "height": 11809911
+      },
+      {
+        "size": 2390,
+        "height": 11803860
+      },
+      {
+        "size": 2227,
+        "height": 11814786
+      },
+      {
+        "size": 2217,
+        "height": 11790153
+      },
+      {
+        "size": 2217,
+        "height": 11816420
+      }
+    ],
+    "/ibc.core.connection.v1.MsgConnectionOpenConfirm": [
+      {
+        "size": 932,
+        "height": 11848865
+      },
+      {
+        "size": 928,
+        "height": 11848754
+      },
+      {
+        "size": 928,
+        "height": 11848781
+      },
+      {
+        "size": 928,
+        "height": 11848816
+      },
+      {
+        "size": 884,
+        "height": 11848712
+      },
+      {
+        "size": 692,
+        "height": 11803872
+      },
+      {
+        "size": 692,
+        "height": 11809918
+      },
+      {
+        "size": 653,
+        "height": 11814790
+      },
+      {
+        "size": 649,
+        "height": 11790162
+      },
+      {
+        "size": 649,
+        "height": 11816429
+      }
+    ],
+    "/ibc.core.channel.v1.MsgChannelCloseConfirm": [
+      {
+        "size": 1518,
+        "height": 11817594
+      },
+      {
+        "size": 1516,
+        "height": 11817594
+      },
+      {
+        "size": 1512,
+        "height": 11817112
+      },
+      {
+        "size": 1480,
+        "height": 11817122
+      },
+      {
+        "size": 1480,
+        "height": 11817123
+      },
+      {
+        "size": 1476,
+        "height": 11817184
+      },
+      {
+        "size": 1475,
+        "height": 11817094
+      },
+      {
+        "size": 1471,
+        "height": 11808302
+      },
+      {
+        "size": 1469,
+        "height": 11808280
+      },
+      {
+        "size": 1469,
+        "height": 11808290
+      }
+    ],
+    "/cosmos.gov.v1beta1.MsgDeposit": [
+      {
+        "size": 69,
+        "height": 11820357
+      }
+    ],
+    "/osmosis.cosmwasmpool.v1beta1.MsgCreateCosmWasmPool": [
+      {
+        "size": 216,
+        "height": 11850025
+      }
+    ],
+    "/cosmos.vesting.v1beta1.MsgCreateVestingAccount": [
+      {
+        "size": 119,
+        "height": 11853768
+      }
+    ]
+  },
+  "largestTxs": [
+    {
+      "size": 288224,
+      "height": 11816526,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 200576,
+      "height": 11816435,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 192066,
+      "height": 11780477,
+      "composedMsgTypes": "/cosmos.authz.v1beta1.MsgExec"
+    },
+    {
+      "size": 192050,
+      "height": 11759261,
+      "composedMsgTypes": "/cosmos.authz.v1beta1.MsgExec"
+    },
+    {
+      "size": 179643,
+      "height": 11816429,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 161291,
+      "height": 11816440,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 151105,
+      "height": 11816433,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 119111,
+      "height": 11816529,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 117392,
+      "height": 11759152,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 116938,
+      "height": 11816520,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 100828,
+      "height": 11816438,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 96465,
+      "height": 11830489,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgTimeout"
+    },
+    {
+      "size": 90128,
+      "height": 11830503,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgTimeout"
+    },
+    {
+      "size": 89895,
+      "height": 11831006,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 87254,
+      "height": 11816523,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 81966,
+      "height": 11816431,
+      "composedMsgTypes": "/cosmwasm.wasm.v1.MsgStoreCode"
+    },
+    {
+      "size": 81775,
+      "height": 11830630,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement"
+    },
+    {
+      "size": 80764,
+      "height": 11776592,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 77000,
+      "height": 11792696,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 76793,
+      "height": 11822419,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 76559,
+      "height": 11826143,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 76262,
+      "height": 11837188,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 74337,
+      "height": 11859631,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 73647,
+      "height": 11852045,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 73474,
+      "height": 11844646,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 73314,
+      "height": 11762887,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 73263,
+      "height": 11789023,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 72864,
+      "height": 11800142,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 72239,
+      "height": 11803872,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 69057,
+      "height": 11830720,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement"
+    },
+    {
+      "size": 68587,
+      "height": 11830677,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement"
+    },
+    {
+      "size": 65229,
+      "height": 11830978,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 64386,
+      "height": 11833539,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 62092,
+      "height": 11793154,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 61572,
+      "height": 11830984,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 61384,
+      "height": 11821239,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 61286,
+      "height": 11758219,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 60904,
+      "height": 11811224,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 60843,
+      "height": 11818736,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 60214,
+      "height": 11807516,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 60211,
+      "height": 11831001,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 59124,
+      "height": 11830907,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 59072,
+      "height": 11808235,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 58171,
+      "height": 11817117,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement"
+    },
+    {
+      "size": 57925,
+      "height": 11848380,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 57104,
+      "height": 11859631,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 56801,
+      "height": 11777778,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 56720,
+      "height": 11830522,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement, /ibc.core.channel.v1.MsgAcknowledgement"
+    },
+    {
+      "size": 56598,
+      "height": 11852042,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    },
+    {
+      "size": 56587,
+      "height": 11840913,
+      "composedMsgTypes": "/ibc.core.client.v1.MsgUpdateClient, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket, /ibc.core.channel.v1.MsgRecvPacket"
+    }
+  ]
+}
