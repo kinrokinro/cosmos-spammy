@@ -41,6 +41,8 @@ const updateAnalysisVariables = (txData, height) => {
 
 const saveAndExit = () => {
   const avgTxSize = totalTxSize / numTxs;
+  fs.writeFileSync("txDataTable.json", JSON.stringify(txDataTable, null, 2));
+  console.log("Transaction data table saved to txDataTable.json");
   fs.writeFileSync("txDataAnalysis.json", JSON.stringify({
     avgTxSize,
     largestTxSize,
