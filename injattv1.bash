@@ -45,7 +45,7 @@ echo "transaction signed"
 
 
 # Step 5: Broadcast the transaction
-$APPNAME tx broadcast ban.json --home ~/.gaia-rs > banana.log
+$APPNAME tx broadcast ban.json --sign-mode amino --home ~/.gaia-rs > banana.log
 cat banana.log
 echo "transaction broadcasted"
 
