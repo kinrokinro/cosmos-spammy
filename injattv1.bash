@@ -5,8 +5,8 @@ set -ue
 APPNAME="injectived"
 SEQUENCE=311812
 IBCMEMO=50000
-RECIEVEADDR=500000
-GAS=100000
+RECIEVEADDR=300000
+GAS=10000
 ADDRESS=inj1tcj6mwx3r4uet0vm3wdhug5g3lx47tf5xn7e59
 CHAINID=injective-888
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
