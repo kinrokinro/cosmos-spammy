@@ -13,7 +13,7 @@ IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
 FEES=4750
 UDENOM=uinj
 ACCOUNT=86213
-CHANNEL=channel-352
+CHANNEL=channel-145
 # HOME="/root/.gaia-rs"
 
 
