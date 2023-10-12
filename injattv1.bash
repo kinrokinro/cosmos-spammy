@@ -8,7 +8,7 @@ IBCMEMO=50000
 RECIEVEADDR=300000
 GAS=10000
 ADDRESS=inj1tcj6mwx3r4uet0vm3wdhug5g3lx47tf5xn7e59
-CHAINID=injective-888
+CHAINID="injective-888"
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
 FEES=4750
 UDENOM=uinj
@@ -40,7 +40,7 @@ rm tmp.txt
 echo "temporary file removed"
 
 # Step 4: Sign the transaction
-$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id provider --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
+$APPNAME tx sign autobanana.json --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAIND --keyring-backend test --offline --account-number $ACCOUNT &> ban.json
 echo "transaction signed"
 
 
