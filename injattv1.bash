@@ -24,7 +24,7 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-$APPNAME tx ibc-transfer transfer transfer $CHANNEL cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+$APPNAME tx ibc-transfer transfer transfer $CHANNEL cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
 echo "transaction body generated with $((IBCMEMO*2)) byte ibc memo field"
 
 # Step 1: Generate the random hex string and save it to a temporary file
