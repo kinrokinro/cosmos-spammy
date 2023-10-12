@@ -8,6 +8,7 @@ RECIEVEADDR=30000
 GAS=9514074
 ADDRESS=cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq
 CHAINID=provider
+IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
 FEES=23786
 UDENOM=uatom
 ACCOUNT=490
@@ -21,7 +22,7 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes   --packet-timeout-timestamp 0 --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+gaiad tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS 0 --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
 echo "transaction body generated with $((IBCMEMO*2)) byte ibc memo field"
 
 # Step 1: Generate the random hex string and save it to a temporary file
