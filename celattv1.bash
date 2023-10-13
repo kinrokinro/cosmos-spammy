@@ -3,6 +3,7 @@ set -ue
 
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="celestia-appd"
+CHANNEL=channel-0
 SEQUENCE=0
 IBCMEMO=45000
 RECIEVEADDR=45000
@@ -22,7 +23,7 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-$APPNAME tx ibc-transfer transfer transfer channel-58 $ADDRESS 1$UDENOM  --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+$APPNAME tx ibc-transfer transfer transfer $CHANNEL $ADDRESS 1$UDENOM  --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
 echo "transaction body generated with $((IBCMEMO*2)) byte ibc memo field"
 
 # Step 1: Generate the random hex string and save it to a temporary file
