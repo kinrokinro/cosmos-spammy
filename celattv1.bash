@@ -6,14 +6,13 @@ APPNAME="celestia-appd"
 SEQUENCE=0
 IBCMEMO=45000
 RECIEVEADDR=45000
-GAS=1900000
+GAS=19000
 ADDRESS=celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k
 CHAINID=mocha-4
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-FEES=4750
+FEES=190000
 UDENOM=utia
 ACCOUNT=72556
-# HOME="/root/.gaia-rs"
 
 
 while true
@@ -23,7 +22,7 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-$APPNAME tx ibc-transfer transfer transfer channel-58 $ADDRESS 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+$APPNAME tx ibc-transfer transfer transfer channel-58 $ADDRESS 1$UDENOM  --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
 echo "transaction body generated with $((IBCMEMO*2)) byte ibc memo field"
 
 # Step 1: Generate the random hex string and save it to a temporary file
