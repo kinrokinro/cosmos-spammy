@@ -3,15 +3,15 @@ set -ue
 
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="celestia-appd"
-SEQUENCE=311812
+SEQUENCE=0
 IBCMEMO=45000
 RECIEVEADDR=45000
 GAS=1900000
 ADDRESS=celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k
 CHAINID=mocha-4
-IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
+IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
 FEES=4750
-UDENOM=uatom
+UDENOM=utia
 ACCOUNT=72556
 # HOME="/root/.gaia-rs"
 
