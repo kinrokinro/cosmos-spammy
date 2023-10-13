@@ -1,21 +1,26 @@
 set -ue
 
 
+# Outer loop grabs sequence number
+while true
+
+do
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="celestia-appd"
 CHANNEL=channel-0
-SEQUENCE=0
-IBCMEMO=45000
-RECIEVEADDR=45000
-GAS=1894044
+SEQUENCE=$(curl http://127.0.0.1:5003/cosmos/auth/v1beta1/accounts/celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k | jq --raw-output ' .account.sequence ')
+IBCMEMO=50000
+RECIEVEADDR=890000
+GAS=18914044
 ADDRESS=celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k
 CHAINID=mocha-4
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-FEES=190000
+FEES=1891405
 UDENOM=utia
 ACCOUNT=72556
 
 
+# Inner loop delivers payload until sequence number mismatch then starts again
 while true
 
 do
@@ -57,6 +62,8 @@ echo "transaction broadcasted"
 
 # iterate sequence number
 SEQUENCE=$(($SEQUENCE+1))
+
+done
 
 done
 
