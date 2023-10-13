@@ -1,0 +1,13 @@
+code: 32
+codespace: sdk
+data: ""
+events: []
+gas_used: "0"
+gas_wanted: "0"
+height: "0"
+info: ""
+logs: []
+raw_log: 'account sequence mismatch, expected 67, got 56: incorrect account sequence'
+timestamp: ""
+tx: null
+txhash: 36DD9B26D942C5969F0C879C49DA74DF4BC9C8117FA617E64D4D2F84FAE18988
