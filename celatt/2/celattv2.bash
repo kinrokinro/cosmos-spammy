@@ -12,10 +12,10 @@ ADDRESS=celestia1x7jn3tafxdhk844vgle5ga4plyqqxk39z4zsnk
 SEQUENCE=$(curl http://127.0.0.1:5003/cosmos/auth/v1beta1/accounts/$ADDRESS | jq --raw-output ' .account.sequence ')
 IBCMEMO=50000
 RECIEVEADDR=100000
-GAS=1500000
+GAS=3114054
 CHAINID=mocha-4
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-FEES=1891405
+FEES=391405
 UDENOM=utia
 ACCOUNT=72559 # replace with a curl...
 
