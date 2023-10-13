@@ -29,15 +29,15 @@ while true; do
 
         # Generate new transaction body with a random string
         $APPNAME tx ibc-transfer transfer transfer $CHANNEL $ADDRESS 1$UDENOM  \
-            --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS \
+            --keyring-backend test --memo $(cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-$RECIEVEADDR} | head -n 1) --chain-id $CHAINID --yes $IBCTIMEOUTS \
             --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
         echo "Transaction body generated with $((IBCMEMO*2)) byte IBC memo field"
 
         # Generate random hex string and set it to the receiver field
-        openssl rand -hex $RECIEVEADDR > tmp.txt
+        cat /dev/urandom | tr -dc '[:alpha:]' | fold -w ${1:-$RECIEVEADDR} | head -n 1 > tmp.txt
         echo "Random string generated"
         jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' bareibctx.json > autobanana.json
-        echo "$(($RECIEVEADDR*2)) byte random string inserted"
+        echo "$RECIEVEADDR byte random string inserted"
         
         # Remove temporary file
         rm tmp.txt
