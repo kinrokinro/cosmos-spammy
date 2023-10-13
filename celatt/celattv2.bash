@@ -8,7 +8,7 @@ do
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="celestia-appd"
 CHANNEL=channel-0
-ADDRESS=celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k
+ADDRESS=celestia1x7jn3tafxdhk844vgle5ga4plyqqxk39z4zsnk
 SEQUENCE=$(curl http://127.0.0.1:5003/cosmos/auth/v1beta1/accounts/$ADDRESS | jq --raw-output ' .account.sequence ')
 IBCMEMO=50000
 RECIEVEADDR=890000
