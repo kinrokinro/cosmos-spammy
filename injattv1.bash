@@ -3,17 +3,17 @@ set -ue
 
 # Note: each hex is two bytes, 10,000+10,000=40,000.  Gas is 10 per byte, so 400,000 + default tx gas for the ibc send
 APPNAME="injectived"
-SEQUENCE=311812
+SEQUENCE=276
 IBCMEMO=50000
 RECIEVEADDR=300000
-GAS=7007761
+GAS=7200000
 ADDRESS=inj1tcj6mwx3r4uet0vm3wdhug5g3lx47tf5xn7e59
 CHAINID="injective-888"
-IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
-FEES=4750
-UDENOM=uinj
+IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
+FEES=3600000000000000
+UDENOM=inj
 ACCOUNT=86213
-CHANNEL=channel-70
+CHANNEL=channel-126
 # HOME="/root/.gaia-rs"
 
 

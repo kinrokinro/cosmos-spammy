@@ -7,12 +7,12 @@ SEQUENCE=311812
 IBCMEMO=45000
 RECIEVEADDR=45000
 GAS=1900000
-ADDRESS=cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq
+ADDRESS=celestia1695pfdl4uxfy2yjr4kkrxvk4s4h964kn5hxn3k
 CHAINID=mocha-4
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-0"
 FEES=4750
 UDENOM=uatom
-ACCOUNT=490
+ACCOUNT=72556
 # HOME="/root/.gaia-rs"
 
 
@@ -23,7 +23,7 @@ do
 echo "sequence number is $SEQUENCE"
 
 # Make a new transaction body with a random string
-$APPNAME tx ibc-transfer transfer transfer channel-58 cosmos1fjzgfyt8way9sp7hktnv2jv73j697gvz3fyptm 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+$APPNAME tx ibc-transfer transfer transfer channel-58 $ADDRESS 1$UDENOM  --keyring-backend test --home $HOME --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
 echo "transaction body generated with $((IBCMEMO*2)) byte ibc memo field"
 
 # Step 1: Generate the random hex string and save it to a temporary file
@@ -44,7 +44,7 @@ echo "transaction signed"
 
 
 # Step 5: Broadcast the transaction
-$APPNAME tx broadcast ban.json --home ~/.gaia-rs > banana.log
+$APPNAME tx broadcast ban.json > banana.log
 cat banana.log
 echo "transaction broadcasted"
 
