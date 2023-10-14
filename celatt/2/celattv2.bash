@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -ue
 
 # Constants
 APPNAME="celestia-appd"
@@ -16,8 +15,6 @@ UDENOM="utia"
 # Retrieve account details (Placeholder: Replace with actual curl command if needed)
 ACCOUNT=72559
 
-# Outer loop to handle sequence number
-while true; do
 
     # Retrieve sequence
     SEQUENCE=$(curl http://127.0.0.1:5003/cosmos/auth/v1beta1/accounts/$ADDRESS | jq --raw-output ' .account.sequence ')
@@ -49,21 +46,25 @@ while true; do
         echo "Transaction signed"
 
         # Broadcast the transaction
-        $APPNAME tx broadcast ban.json > banana.log
+	
+        if $APPNAME tx broadcast ban.json > banana.log
+	then
         cat banana.log
         echo "Transaction broadcasted"
+	SEQUENCE=$(($SEQUENCE+1))
 
-        # Check for a sequence number mismatch
-        if [ $(grep -c "mismatch" banana.log) -eq 1 ]; then
-            echo "Sequence number mismatch"
-            break
-        fi
+	else
 
-        # Update sequence number for next iteration
-        SEQUENCE=$(($SEQUENCE+1))
+echo "some kinda bug, sleeping for a minute"
+sleep 60
+	fi
+
+
+
+
+
 
     done
 
-done
 
 echo "If you're running it right, the script just restarted"
