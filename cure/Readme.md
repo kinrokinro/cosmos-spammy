@@ -1,4 +1,4 @@
-# Cure
+# Cures
 
 Assaf Morami of Secret Network has provided me with an example transaction that adjusts the maximum block size by governance.  
 
