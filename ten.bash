@@ -8,14 +8,14 @@ KEY_NAME="test"
 UDENOM="utia"
 APPNAME="celestia-appd"
 CHAINID="mocha-4"
-IBCMEMO=10000  # 50kb in bytes
+IBCMEMO=50000
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-FEES="55000"
-GAS="550000"
+FEES="1994080"
+GAS="19940740"
 ADDRESS="celestia164cq648zdsehddhg6q8l5djva02fvu38ncxzk0"
 
 # Calculate bytes for RECEIVEADDR
-RECIEVEADDR=10000
+RECIEVEADDR=890000
 
 # Get the current block number
 current_block() {
