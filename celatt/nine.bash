@@ -3,7 +3,7 @@
 NODE_URL="http://127.0.0.1:6000"
 BATCH_SIZE=50
 ACCOUNT="72559"
-CHANNEL="channel-1"
+CHANNEL="channel-2"
 KEY_NAME="test"
 UDENOM="utia"
 APPNAME="celestia-appd"
@@ -56,7 +56,6 @@ while true; do
 
     openssl rand -hex $RECIEVEADDR > tmp.txt
     jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' bareibctx.json > autobanana.json
-    rm tmp.txt
 
     # Sign the transaction
     $APPNAME tx sign autobanana.json --account-number $ACCOUNT --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAINID --keyring-backend test --offline &> ban.json
