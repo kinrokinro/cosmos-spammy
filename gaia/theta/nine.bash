@@ -1,21 +1,21 @@
 #!/bin/bash
 
-NODE_URL="http://127.0.0.1:26657"
+NODE_URL="https://rpc.sentry-01.theta-testnet.polypore.xyz:443"
 BATCH_SIZE=50
-ACCOUNT="490"
+ACCOUNT="727228"
 CHANNEL="channel-58"
 KEY_NAME="test"
 UDENOM="uatom"
 APPNAME="gaiad"
-CHAINID="provider"
-IBCMEMO=1000  # 50kb in bytes
+CHAINID="theta-testnet-001"
+IBCMEMO=50000  # 50kb in bytes
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-GAS="1107854"
-FEES=2770
+GAS="2100000"
+FEES=5250
 ADDRESS="cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq"
 
 # Calculate bytes for RECEIVEADDR
-RECIEVEADDR=1000
+RECIEVEADDR=47000
 
 # Get the current block number
 current_block() {
