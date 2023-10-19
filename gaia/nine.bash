@@ -1,21 +1,21 @@
 #!/bin/bash
 
-NODE_URL="http://127.0.0.1:6000"
+NODE_URL="http://127.0.0.1:26657"
 BATCH_SIZE=50
-ACCOUNT="72559"
-CHANNEL="channel-4"
+ACCOUNT="490"
+CHANNEL="channel-58"
 KEY_NAME="test"
-UDENOM="utia"
-APPNAME="celestia-appd"
-CHAINID="mocha-4"
-IBCMEMO=50000  # 50kb in bytes
+UDENOM="uatom"
+APPNAME="gaiad"
+CHAINID="provider"
+IBCMEMO=48690  # 50kb in bytes
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-FEES="1494080"
-GAS="14914084"
-ADDRESS="celestia1x7jn3tafxdhk844vgle5ga4plyqqxk39z4zsnk"
+GAS="2069420"
+FEES=5174
+ADDRESS="cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq"
 
 # Calculate bytes for RECEIVEADDR
-RECIEVEADDR=690000
+RECIEVEADDR=48690
 
 # Get the current block number
 current_block() {
@@ -52,16 +52,16 @@ while true; do
   # Send transactions in a batch
   for ((i=0; i<$BATCH_SIZE; i++)); do
     # Transaction body generation
-    $APPNAME tx ibc-transfer transfer transfer $CHANNEL $ADDRESS 1$UDENOM --account-number $ACCOUNT --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS &> bareibctx.json
+    $APPNAME tx ibc-transfer transfer transfer $CHANNEL $ADDRESS 1$UDENOM --account-number $ACCOUNT --keyring-backend test --memo $(openssl rand -hex $IBCMEMO) --chain-id $CHAINID --yes $IBCTIMEOUTS --generate-only --fees $FEES$UDENOM --gas $GAS --from $ADDRESS --home ~/.gaia-rs &> bareibctx.json
 
     openssl rand -hex $RECIEVEADDR > tmp.txt
     jq --rawfile random_str tmp.txt '.body.messages[0].receiver = $random_str' bareibctx.json > autobanana.json
 
     # Sign the transaction
-    $APPNAME tx sign autobanana.json --account-number $ACCOUNT --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAINID --keyring-backend test --offline &> ban.json
+    $APPNAME tx sign autobanana.json --account-number $ACCOUNT --from $ADDRESS --yes --sequence $SEQUENCE --chain-id $CHAINID --keyring-backend test --offline --home ~/.gaia-rs &> ban.json
 
     # Broadcast the signed transaction
-    $APPNAME tx broadcast ban.json --node $NODE_URL --chain-id $CHAINID &> broadcast.log
+    $APPNAME tx broadcast ban.json --node $NODE_URL --chain-id $CHAINID --home ~/.gaia-rs &> broadcast.log
     cat broadcast.log
     echo "transaction broadcasted"
 
