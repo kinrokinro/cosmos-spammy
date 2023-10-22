@@ -7,8 +7,21 @@ import (
 	"os"
 	"strings"
 	"sync"
+	"sync/atomic"
 	"time"
 )
+
+var totalNodesChecked int32
+
+var successfulNodes = struct {
+	sync.RWMutex
+	nodes []string
+}{nodes: []string{}}
+
+var unsuccessfulNodes = struct {
+	sync.RWMutex
+	nodes []string
+}{nodes: []string{}}
 
 const (
 	initialNode     = "http://localhost:26657"
@@ -22,16 +35,16 @@ var visited = struct {
 	nodes map[string]bool
 }{nodes: make(map[string]bool)}
 
-var successfulNodes = struct {
-	sync.RWMutex
-	nodes []string
-}{}
-
 var client = &http.Client{Timeout: 500 * time.Millisecond}
 
 func main() {
+	initialNode := "http://localhost:26657"
+	if len(os.Args) > 1 {
+		initialNode = os.Args[1]
+	}
+
 	checkNode(initialNode)
-	writeSuccessfulNodesToToml()
+	writeNodesToToml()
 }
 
 func checkNode(nodeAddr string) {
@@ -41,11 +54,24 @@ func checkNode(nodeAddr string) {
 
 	markNodeAsVisited(nodeAddr)
 
+	// Increment total nodes
+	atomic.AddInt32(&totalNodesChecked, 1)
+
 	resp, err := fetchNetInfo(nodeAddr)
 	if err == nil {
-		fmt.Println("Got net_info from", nodeAddr)
-		addSuccessfulNode(nodeAddr)
+		fmt.Println("Got net info from", nodeAddr)
+
+		// Add to successful nodes
+		successfulNodes.Lock()
+		successfulNodes.nodes = append(successfulNodes.nodes, nodeAddr)
+		successfulNodes.Unlock()
 	} else {
+		fmt.Println("Failed to fetch net_info from", nodeAddr)
+
+		// Add to unsuccessful nodes
+		unsuccessfulNodes.Lock()
+		unsuccessfulNodes.nodes = append(unsuccessfulNodes.nodes, nodeAddr)
+		unsuccessfulNodes.Unlock()
 		return
 	}
 
@@ -118,19 +144,25 @@ func getIPAddressWithoutPort(addr string) string {
 	return strings.Join(parts[:len(parts)-1], ":")
 }
 
-func writeSuccessfulNodesToToml() {
-	file, err := os.Create(tomlFilename)
+func writeNodesToToml() {
+	file, err := os.Create("nodes.toml")
 	if err != nil {
 		fmt.Println("Error creating .toml file:", err)
 		return
 	}
 	defer file.Close()
 
-	successfulNodes.RLock()
-	defer successfulNodes.RUnlock()
+	file.WriteString(fmt.Sprintf("totalNodesChecked = %d\n\n", totalNodesChecked))
+	writeSectionToToml(file, "successfulNodes", successfulNodes.nodes)
+	writeSectionToToml(file, "unsuccessfulNodes", unsuccessfulNodes.nodes)
 
-	for _, node := range successfulNodes.nodes {
-		file.WriteString(fmt.Sprintf("node = \"%s\"\n", node))
+	fmt.Println(".toml file created with node details.")
+}
+
+func writeSectionToToml(file *os.File, sectionName string, nodes []string) {
+	file.WriteString(fmt.Sprintf("%s = [\n", sectionName))
+	for _, node := range nodes {
+		file.WriteString(fmt.Sprintf("    \"%s\",\n", node))
 	}
-	fmt.Println(".toml file created with successful nodes.")
+	file.WriteString("]\n\n")
 }
