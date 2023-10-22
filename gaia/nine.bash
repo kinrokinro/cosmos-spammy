@@ -1,21 +1,21 @@
 #!/bin/bash
 
 NODE_URL="http://127.0.0.1:26657"
-BATCH_SIZE=50
+BATCH_SIZE=150
 ACCOUNT="490"
 CHANNEL="channel-58"
 KEY_NAME="test"
 UDENOM="uatom"
 APPNAME="gaiad"
 CHAINID="provider"
-IBCMEMO=1000  # 50kb in bytes
+IBCMEMO=44000  # 50kb in bytes
 IBCTIMEOUTS="--packet-timeout-timestamp 0 --packet-timeout-height 0-100000"
-GAS="1107854"
-FEES=2770
+GAS="2107854"
+FEES=5970
 ADDRESS="cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq"
 
 # Calculate bytes for RECEIVEADDR
-RECIEVEADDR=1000
+RECIEVEADDR=50000
 
 # Get the current block number
 current_block() {
