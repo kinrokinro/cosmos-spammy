@@ -23,7 +23,7 @@ func currentBlock(nodeURL string) string {
 	return blockRes.Result.Block.Header.Height
 }
 
-func mempoolSize(nodeURL string) string {
+func mempoolSize(nodeURL string) Result {
 	resp, err := httpGet(fmt.Sprintf("%s/num_unconfirmed_txs", nodeURL))
 	if err != nil {
 		log.Fatalf("Failed to get mempool size: %v", err)
@@ -33,7 +33,7 @@ func mempoolSize(nodeURL string) string {
 	if err != nil {
 		log.Fatalf("Failed to unmarshal mempool result: %v", err)
 	}
-	return mempoolRes.Result.NTxs
+	return mempoolRes.Result
 }
 
 func blockSize(height, nodeURL string) []string {

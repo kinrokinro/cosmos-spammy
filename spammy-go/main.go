@@ -30,20 +30,11 @@ func main() {
 			sequence := getInitialSequence()
 
 			// Compile the regex outside of the loop
-			reMismatch, err := regexp.Compile("account sequence mismatch")
-			if err != nil {
-				log.Fatalf("Failed to compile regex: %v", err)
-			}
+			reMismatch := regexp.MustCompile("account sequence mismatch")
 
-			reOneMessage, err := regexp.Compile("must contain at least one message: invalid request")
-			if err != nil {
-				log.Fatalf("Failed to compile regex: %v", err)
-			}
+			//			reOneMessage := regexp.MustCompile("must contain at least one message: invalid request")
 
-			reExpected, err := regexp.Compile(`expected (\d+)`)
-			if err != nil {
-				log.Fatalf("Failed to compile regex: %v", err)
-			}
+			reExpected := regexp.MustCompile(`expected (\d+)`)
 
 			for {
 				lastBlock := currentBlock(nodeURL)
@@ -51,7 +42,8 @@ func main() {
 				currentMempoolSize := mempoolSize(nodeURL)
 
 				fmt.Printf("Last block height: %s, size: %d transactions\n", lastBlock, len(lastBlockSize))
-				fmt.Printf("Current mempool size: %s transactions\n", currentMempoolSize)
+				fmt.Printf("Current mempool txns: %s transactions\n", currentMempoolSize.NTxs)
+				fmt.Println("mempool byte size:", currentMempoolSize.TotalBytes)
 
 				for i := 0; i < BatchSize; i++ {
 					broadcastLog, reqString, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
@@ -65,11 +57,6 @@ func main() {
 						fmt.Println("\033[31mMEMPOOL FULL!!!!!!!!!\033[0m")
 						time.Sleep(60 * time.Second)
 						break
-					}
-
-					oneMatch := reOneMessage.MatchString(broadcastLog)
-					if oneMatch {
-
 					}
 
 					match := reMismatch.MatchString(broadcastLog)

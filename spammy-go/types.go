@@ -42,8 +42,8 @@ type BroadcastResponse struct {
 }
 
 type Result struct {
-	NTxs        string `json:"n_txs"`
-	Total_bytes string `json:"total_bytes"`
+	NTxs       string `json:"n_txs"`
+	TotalBytes string `json:"total_bytes"`
 }
 
 type Account struct {

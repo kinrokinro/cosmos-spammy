@@ -11,22 +11,28 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/cosmos/cosmos-sdk/types/module"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
-	simappparams "github.com/cosmos/ibc-go/v4/testing/simapp/params"
+	"github.com/cosmos/ibc-go/v4/testing/simapp"
 )
 
 func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (response, txbody string, err error) {
-	var encodingConfig simappparams.EncodingConfig
+	encodingConfig := simapp.MakeTestEncodingConfig()
+	//	initClientCtx := client.Context{}.
+	//		WithCodec(encodingConfig.Marshaler).
+	//		WithInterfaceRegistry(encodingConfig.InterfaceRegistry).
+	//		WithTxConfig(encodingConfig.TxConfig).
+	//		WithLegacyAmino(encodingConfig.Amino).
+	//		WithInput(os.Stdin).
+	//		WithHomeDir(simapp.DefaultNodeHome).
+	//		WithViper("") // In simapp, we don't use any prefix for env variables.
 
-	modules := []module.AppModuleBasic{transfer.AppModuleBasic{}}
-	for _, m := range modules {
-		m.RegisterGRPCGatewayRoutes(encodingConfig.Marshaler)
-	}
+	// Register IBC and other necessary types
+	transferModule := transfer.AppModuleBasic{}
+	transferModule.RegisterInterfaces(encodingConfig.InterfaceRegistry)
 
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
