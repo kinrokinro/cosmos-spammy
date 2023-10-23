@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	BATCH_SIZE = 500
+	BatchSize = 500
 )
 
 func main() {
@@ -29,6 +29,17 @@ func main() {
 
 			sequence := getInitialSequence()
 
+			// Compile the regex outside of the loop
+			reMismatch, err := regexp.Compile("account sequence mismatch")
+			if err != nil {
+				log.Fatalf("Failed to compile regex: %v", err)
+			}
+
+			reExpected, err := regexp.Compile(`expected (\d+)`)
+			if err != nil {
+				log.Fatalf("Failed to compile regex: %v", err)
+			}
+
 			for {
 				lastBlock := currentBlock(nodeURL)
 				lastBlockSize := blockSize(lastBlock, nodeURL)
@@ -37,29 +48,28 @@ func main() {
 				fmt.Printf("Last block height: %s, size: %d transactions\n", lastBlock, len(lastBlockSize))
 				fmt.Printf("Current mempool size: %s transactions\n", currentMempoolSize)
 
-				for i := 0; i < BATCH_SIZE; i++ {
+				for i := 0; i < BatchSize; i++ {
 					broadcastLog, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
 					if err != nil {
 						log.Fatalf("Failed to send IBC transfer via RPC: %v", err)
 					}
 					fmt.Print(broadcastLog)
 
-					if strings.Contains(string(broadcastLog), "code: 20") {
+					if strings.Contains(broadcastLog, "code: 20") {
 						fmt.Println("\033[31mMEMPOOL FULL!!!!!!!!!\033[0m")
 						time.Sleep(60 * time.Second)
 						break
 					}
 
-					match, _ := regexp.MatchString("account sequence mismatch", string(broadcastLog))
+					match := reMismatch.MatchString(broadcastLog)
 					if match {
-						re := regexp.MustCompile(`expected (\d+)`)
-						matches := re.FindStringSubmatch(string(broadcastLog))
+						matches := reExpected.FindStringSubmatch(broadcastLog)
 						if len(matches) > 1 {
 							sequence, err = strconv.Atoi(matches[1])
 							if err != nil {
 								log.Fatalf("Failed to convert sequence to integer: %v", err)
 							}
-							fmt.Printf("we had an account sequence mismatch, adjusting to %s\n", sequence)
+							fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", sequence)
 						}
 					} else {
 						seqNum := sequence
