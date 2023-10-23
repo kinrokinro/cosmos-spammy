@@ -32,12 +32,8 @@ func main() {
 			fmt.Printf("Script starting at block height: %s\n", startBlock)
 
 			sequence := getInitialSequence()
-
-			blockChan := make(chan string, 1)
-			blockChan <- startBlock
-
 			for {
-				lastBlock := <-blockChan
+				lastBlock := startBlock
 				lastBlockSize := blockSize(lastBlock, nodeURL)
 				currentMempoolSize := mempoolSize(nodeURL)
 
@@ -84,11 +80,9 @@ func main() {
 
 				wgBatch.Wait()
 
-				newBlock := lastBlock
-				for newBlock == lastBlock {
-					newBlock = currentBlock(nodeURL)
+				for currentBlock(nodeURL) == lastBlock {
+					break
 				}
-				blockChan <- newBlock
 			}
 		}(nodeURL)
 	}
