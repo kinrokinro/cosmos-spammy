@@ -19,6 +19,10 @@ func main() {
 
 	var wg sync.WaitGroup
 
+	// Compile the regex outside the loop
+	reMismatch := regexp.MustCompile("account sequence mismatch")
+	reExpected := regexp.MustCompile(`expected (\d+)`)
+
 	for _, nodeURL := range successfulNodes {
 		wg.Add(1)
 		go func(nodeURL string) {
@@ -29,15 +33,11 @@ func main() {
 
 			sequence := getInitialSequence()
 
-			// Compile the regex outside of the loop
-			reMismatch := regexp.MustCompile("account sequence mismatch")
-
-			//			reOneMessage := regexp.MustCompile("must contain at least one message: invalid request")
-
-			reExpected := regexp.MustCompile(`expected (\d+)`)
+			blockChan := make(chan string, 1)
+			blockChan <- startBlock
 
 			for {
-				lastBlock := currentBlock(nodeURL)
+				lastBlock := <-blockChan
 				lastBlockSize := blockSize(lastBlock, nodeURL)
 				currentMempoolSize := mempoolSize(nodeURL)
 
@@ -45,41 +45,50 @@ func main() {
 				fmt.Printf("Current mempool txns: %s transactions\n", currentMempoolSize.NTxs)
 				fmt.Println("mempool byte size:", currentMempoolSize.TotalBytes)
 
+				var wgBatch sync.WaitGroup
+				wgBatch.Add(BatchSize)
+
 				for i := 0; i < BatchSize; i++ {
-					broadcastLog, reqString, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
-					if err != nil {
-						fmt.Println(reqString)
-						log.Fatalf("Failed to send IBC transfer via RPC: %v", err)
-					}
-					fmt.Print(broadcastLog)
+					go func() {
+						defer wgBatch.Done()
 
-					if strings.Contains(broadcastLog, "code: 20") {
-						fmt.Println("\033[31mMEMPOOL FULL!!!!!!!!!\033[0m")
-						time.Sleep(60 * time.Second)
-						break
-					}
-
-					match := reMismatch.MatchString(broadcastLog)
-					if match {
-						matches := reExpected.FindStringSubmatch(broadcastLog)
-						if len(matches) > 1 {
-							sequence, err = strconv.Atoi(matches[1])
-							if err != nil {
-								log.Fatalf("Failed to convert sequence to integer: %v", err)
-							}
-							fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", sequence)
+						broadcastLog, reqString, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
+						if err != nil {
+							fmt.Println(reqString)
+							log.Fatalf("Failed to send IBC transfer via RPC: %v", err)
 						}
-					} else {
-						seqNum := sequence
-						sequence = seqNum + 1
-					}
+						fmt.Print(broadcastLog)
+
+						if strings.Contains(broadcastLog, "code: 20") {
+							fmt.Println("\033[31mMEMPOOL FULL!!!!!!!!!\033[0m")
+							time.Sleep(60 * time.Second)
+							return
+						}
+
+						match := reMismatch.MatchString(broadcastLog)
+						if match {
+							matches := reExpected.FindStringSubmatch(broadcastLog)
+							if len(matches) > 1 {
+								sequence, err = strconv.Atoi(matches[1])
+								if err != nil {
+									log.Fatalf("Failed to convert sequence to integer: %v", err)
+								}
+								fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", sequence)
+							}
+						} else {
+							seqNum := sequence
+							sequence = seqNum + 1
+						}
+					}()
 				}
 
-				for {
-					if currentBlock(nodeURL) > lastBlock {
-						break
-					}
+				wgBatch.Wait()
+
+				newBlock := lastBlock
+				for newBlock == lastBlock {
+					newBlock = currentBlock(nodeURL)
 				}
+				blockChan <- newBlock
 			}
 		}(nodeURL)
 	}
