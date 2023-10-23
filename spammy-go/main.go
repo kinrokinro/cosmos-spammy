@@ -80,7 +80,7 @@ func main() {
 
 				wgBatch.Wait()
 
-				for  {
+				for {
 					if currentBlock(nodeURL) > lastBlock {
 						break
 					}

@@ -49,11 +49,11 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	}
 
 	address := info.GetAddress()
-	receiver, _ := generateRandomString(30)
+	receiver, _ := generateRandomString(1)
 	token := sdk.NewCoin("uatom", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
-		"channel-51",
+		"channel-58",
 		token,
 		address.String(),
 		receiver,
@@ -97,12 +97,15 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println(err)
 		return "", "", err
 	}
+	fmt.Println(string(txJSONBytes))
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
 	if err != nil {
 		fmt.Println("some issue with the broadcast, so here's the bytes")
 		return "", "", err
 	}
+	fmt.Println("code: ", resp.BroadcastResult.Code)
+	fmt.Println(resp.Log)
 
 	return resp.BroadcastResult.Log, string(txJSONBytes), nil
 }
@@ -124,7 +127,7 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 		return nil, err
 	}
 
-	resp, err := http.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes))
+	resp, err := http.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes)) //nolint:gosec // not worth fixing
 	if err != nil {
 		return nil, err
 	}

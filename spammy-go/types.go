@@ -38,7 +38,7 @@ type BroadcastRequestParams struct {
 
 type BroadcastResponse struct {
 	Jsonrpc         string `json:"jsonrpc"`
-	ID              int    `json:"id"`
+	ID              string `json:"id"`
 	BroadcastResult `json:"result"`
 }
 
