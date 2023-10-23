@@ -30,15 +30,17 @@ type BroadcastRequest struct {
 }
 
 type BroadcastResponse struct {
-	Jsonrpc string `json:"jsonrpc"`
-	Id      int    `json:"id"`
-	Result  struct {
-		Code      int    `json:"code"`
-		Data      string `json:"data"`
-		Log       string `json:"log"`
-		Codespace string `json:"codespace"`
-		Hash      string `json:"hash"`
-	} `json:"result"`
+	Jsonrpc         string `json:"jsonrpc"`
+	ID              int    `json:"id"`
+	BroadcastResult `json:"result"`
+}
+
+type BroadcastResult struct {
+	Code      int    `json:"code"`
+	Data      string `json:"data"`
+	Log       string `json:"log"`
+	Codespace string `json:"codespace"`
+	Hash      string `json:"hash"`
 }
 
 type Result struct {

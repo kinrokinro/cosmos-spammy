@@ -102,7 +102,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		return "", "", err
 	}
 
-	return resp.Result.Log, string(txJSONBytes), nil
+	return resp.BroadcastResult.Log, string(txJSONBytes), nil
 }
 
 func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastResponse, error) {
