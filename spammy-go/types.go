@@ -1,30 +1,41 @@
 package main
 
+type Header struct {
+	Height string `json:"height"`
+}
+
+type Data struct {
+	Txs []string `json:"txs"`
+}
+
+type Block struct {
+	Header Header `json:"header"`
+	Data   Data   `json:"data"`
+}
+
+type ResultBlock struct {
+	Block Block `json:"block"`
+}
+
 type BlockResult struct {
-	Result struct {
-		Block struct {
-			Header struct {
-				Height string `json:"height"`
-			} `json:"header"`
-			Data struct {
-				Txs []string `json:"txs"`
-			} `json:"data"`
-		} `json:"block"`
-	} `json:"result"`
+	Result ResultBlock `json:"result"`
 }
 
 type MempoolResult struct {
-	Result struct {
-		NTxs string `json:"n_txs"`
-	} `json:"result"`
+	Result Result `json:"result"`
+}
+
+type Result struct {
+	NTxs string `json:"n_txs"`
+}
+
+type Account struct {
+	Sequence int `json:"sequence"`
 }
 
 type AccountResult struct {
-	Account struct {
-		Sequence int `json:"sequence"`
-	} `json:"account"`
+	Account Account `json:"account"`
 }
-
 type Transaction struct {
 	Body       Body     `json:"body"`
 	AuthInfo   AuthInfo `json:"auth_info"`

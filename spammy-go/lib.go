@@ -10,33 +10,42 @@ import (
 	"github.com/BurntSushi/toml"
 )
 
-func currentBlock(NODE_URL string) string {
-	resp, err := httpGet(fmt.Sprintf("%s/block", NODE_URL))
+func currentBlock(nodeURL string) string {
+	resp, err := httpGet(fmt.Sprintf("%s/block", nodeURL))
 	if err != nil {
 		log.Fatalf("Failed to get current block: %v", err)
 	}
 	var blockRes BlockResult
-	json.Unmarshal(resp, &blockRes)
+	err = json.Unmarshal(resp, &blockRes)
+	if err != nil {
+		log.Fatalf("Failed to unmarshal block result: %v", err)
+	}
 	return blockRes.Result.Block.Header.Height
 }
 
-func mempoolSize(NODE_URL string) string {
-	resp, err := httpGet(fmt.Sprintf("%s/num_unconfirmed_txs", NODE_URL))
+func mempoolSize(nodeURL string) string {
+	resp, err := httpGet(fmt.Sprintf("%s/num_unconfirmed_txs", nodeURL))
 	if err != nil {
 		log.Fatalf("Failed to get mempool size: %v", err)
 	}
 	var mempoolRes MempoolResult
-	json.Unmarshal(resp, &mempoolRes)
+	err = json.Unmarshal(resp, &mempoolRes)
+	if err != nil {
+		log.Fatalf("Failed to unmarshal mempool result: %v", err)
+	}
 	return mempoolRes.Result.NTxs
 }
 
-func blockSize(height, NODE_URL string) []string {
-	resp, err := httpGet(fmt.Sprintf("%s/block?height=%s", NODE_URL, height))
+func blockSize(height, nodeURL string) []string {
+	resp, err := httpGet(fmt.Sprintf("%s/block?height=%s", nodeURL, height))
 	if err != nil {
 		log.Fatalf("Failed to get block size: %v", err)
 	}
 	var blockRes BlockResult
-	json.Unmarshal(resp, &blockRes)
+	err = json.Unmarshal(resp, &blockRes)
+	if err != nil {
+		log.Fatalf("Failed to unmarshal block result: %v", err)
+	}
 	return blockRes.Result.Block.Data.Txs
 }
 
@@ -46,13 +55,16 @@ func getInitialSequence() int {
 		log.Fatalf("Failed to get initial sequence: %v", err)
 	}
 	var accountRes AccountResult
-	json.Unmarshal(resp, &accountRes)
+	err = json.Unmarshal(resp, &accountRes)
+	if err != nil {
+		log.Fatalf("Failed to unmarshal account result: %v", err)
+	}
 	fmt.Println("sequence is", accountRes.Account.Sequence)
 	return accountRes.Account.Sequence
 }
 
 func httpGet(url string) ([]byte, error) {
-	resp, err := http.Get(url)
+	resp, err := http.Get(url) //nolint:gosec // this is what it thinks it is
 	if err != nil {
 		return nil, err
 	}

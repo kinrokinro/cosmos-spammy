@@ -5,6 +5,7 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
+	"fmt"
 	"io"
 	"net/http"
 
@@ -12,6 +13,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/simapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
+
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 )
@@ -34,14 +36,14 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	}
 
 	address := info.GetAddress()
-	reciever, err := generateRandomString(30)
+	receiver, _ := generateRandomString(30)
 	token := sdk.NewCoin("uatom", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
 		"channel-51",
 		token,
 		address.String(),
-		reciever,
+		receiver,
 		clienttypes.NewHeight(0, 10000),
 		types.DefaultRelativePacketTimeoutTimestamp,
 	)
@@ -49,6 +51,10 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	err = txBuilder.SetMsgs(msg)
 	if err != nil {
 		return "", err
+	}
+
+	if len(txBuilder.GetTx().GetMsgs()) == 0 {
+		return "", fmt.Errorf("transaction has no messages set")
 	}
 
 	sigBytes, _, err := kr.SignByAddress(address, msg.GetSignBytes())
@@ -62,7 +68,11 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		Sequence: sequence,
 	}
 
-	txBuilder.SetSignatures(sig)
+	err = txBuilder.SetSignatures(sig)
+	if err != nil {
+		fmt.Println("cannot set signatures")
+		panic(err)
+	}
 
 	bz, err := encodingConfig.TxConfig.TxEncoder()(txBuilder.GetTx())
 	if err != nil {
