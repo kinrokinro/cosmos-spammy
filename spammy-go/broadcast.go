@@ -5,7 +5,6 @@ import (
 	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 
@@ -13,7 +12,6 @@ import (
 	"github.com/cosmos/cosmos-sdk/simapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
-	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 )
@@ -24,7 +22,8 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
 
-	kr, err := keyring.New("cosmos", keyring.BackendTest, "/root/.gaia-rs", nil) // adjust paths/backend as necessary
+	// Create a new keyring to access keys
+	kr, err := keyring.New("cosmos", keyring.BackendTest, "/root/.gaia-rs", nil)
 	if err != nil {
 		return "", err
 	}
@@ -47,50 +46,25 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		types.DefaultRelativePacketTimeoutTimestamp,
 	)
 
-	signerData := authsigning.SignerData{
-		ChainID:       "provider",
-		AccountNumber: 490,      // set actual account number
-		Sequence:      sequence, // set actual sequence number
-	}
-
 	err = txBuilder.SetMsgs(msg)
 	if err != nil {
 		return "", err
 	}
 
-	// First round: we gather all the signer infos. We use the "set empty
-	// signature" hack to do that.
-	var sigsV2 []signing.SignatureV2
-	sigV2 := signing.SignatureV2{
-		PubKey: info.GetPubKey(),
-		Data: &signing.SingleSignatureData{
-			SignMode:  encodingConfig.TxConfig.SignModeHandler().DefaultMode(),
-			Signature: nil,
-		},
-		Sequence: 69,
-	}
-
-	sigsV2 = append(sigsV2, sigV2)
-	err = txBuilder.SetSignatures(sigsV2...)
+	sigBytes, _, err := kr.SignByAddress(address, msg.GetSignBytes())
 	if err != nil {
 		return "", err
 	}
 
-	// Second round: all signer infos are set, so each signer can sign.
-	sigsV2 = []signing.SignatureV2{}
-	signed, pubkey, err := kr.Sign("test", msg.GetSignBytes())
-	if err != nil {
-		return "", err
+	sig := signing.SignatureV2{
+		PubKey:   info.GetPubKey(),
+		Data:     &signing.SingleSignatureData{SignMode: signing.SignMode_SIGN_MODE_DIRECT, Signature: sigBytes},
+		Sequence: sequence,
 	}
 
-	fee := sdk.NewCoin("uatom", sdk.NewInt(5000))
-	fees := sdk.NewCoins(fee)
+	txBuilder.SetSignatures(sig)
 
-	txBuilder.SetGasLimit(300000)
-	txBuilder.SetFeeAmount(fees)
-	txBuilder.SetMemo("testing 1 2 3")
-
-	err = txBuilder.SetSignatures(sigV2)
+	bz, err := encodingConfig.TxConfig.TxEncoder()(txBuilder.GetTx())
 	if err != nil {
 		return "", err
 	}
@@ -114,8 +88,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		return "", err
 	}
 
-	fmt.Println("Response:", string(body))
-	return broadcastlog, nil
+	return string(body), nil
 }
 
 func generateRandomString(sizeKB int) (string, error) {

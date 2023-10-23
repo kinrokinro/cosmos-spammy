@@ -21,7 +21,7 @@ type MempoolResult struct {
 
 type AccountResult struct {
 	Account struct {
-		Sequence string `json:"sequence"`
+		Sequence int `json:"sequence"`
 	} `json:"account"`
 }
 
@@ -71,4 +71,8 @@ type Fee struct {
 	GasLimit string  `json:"gas_limit"`
 	Payer    string  `json:"payer"`
 	Granter  string  `json:"granter"`
+}
+
+type Config struct {
+	SuccessfulNodes []string `toml:"successfulNodes"`
 }
