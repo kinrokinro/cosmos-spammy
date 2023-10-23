@@ -25,8 +25,25 @@ type MempoolResult struct {
 	Result Result `json:"result"`
 }
 
+type BroadcastRequest struct {
+	Tx string `json:"tx"`
+}
+
+type BroadcastResponse struct {
+	Jsonrpc string `json:"jsonrpc"`
+	Id      int    `json:"id"`
+	Result  struct {
+		Code      int    `json:"code"`
+		Data      string `json:"data"`
+		Log       string `json:"log"`
+		Codespace string `json:"codespace"`
+		Hash      string `json:"hash"`
+	} `json:"result"`
+}
+
 type Result struct {
-	NTxs string `json:"n_txs"`
+	NTxs        string `json:"n_txs"`
+	Total_bytes string `json:"total_bytes"`
 }
 
 type Account struct {

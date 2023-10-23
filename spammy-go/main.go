@@ -35,6 +35,11 @@ func main() {
 				log.Fatalf("Failed to compile regex: %v", err)
 			}
 
+			reOneMessage, err := regexp.Compile("must contain at least one message: invalid request")
+			if err != nil {
+				log.Fatalf("Failed to compile regex: %v", err)
+			}
+
 			reExpected, err := regexp.Compile(`expected (\d+)`)
 			if err != nil {
 				log.Fatalf("Failed to compile regex: %v", err)
@@ -49,8 +54,9 @@ func main() {
 				fmt.Printf("Current mempool size: %s transactions\n", currentMempoolSize)
 
 				for i := 0; i < BatchSize; i++ {
-					broadcastLog, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
+					broadcastLog, reqString, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
 					if err != nil {
+						fmt.Println(reqString)
 						log.Fatalf("Failed to send IBC transfer via RPC: %v", err)
 					}
 					fmt.Print(broadcastLog)
@@ -59,6 +65,11 @@ func main() {
 						fmt.Println("\033[31mMEMPOOL FULL!!!!!!!!!\033[0m")
 						time.Sleep(60 * time.Second)
 						break
+					}
+
+					oneMatch := reOneMessage.MatchString(broadcastLog)
+					if oneMatch {
+
 					}
 
 					match := reMismatch.MatchString(broadcastLog)
