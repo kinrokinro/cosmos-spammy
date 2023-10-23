@@ -26,6 +26,13 @@ type MempoolResult struct {
 }
 
 type BroadcastRequest struct {
+	Jsonrpc                string `json:"jsonrpc"`
+	ID                     string `json:"id"`
+	Method                 string `json:"method"`
+	BroadcastRequestParams `json:"params"`
+}
+
+type BroadcastRequestParams struct {
 	Tx string `json:"tx"`
 }
 

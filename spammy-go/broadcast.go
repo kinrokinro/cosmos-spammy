@@ -75,6 +75,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("coulnd't sign")
 		return "", "", err
 	}
+	fmt.Println("signed")
 
 	sig := signing.SignatureV2{
 		PubKey:   info.GetPubKey(),
@@ -87,6 +88,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("cannot set signatures")
 		panic(err)
 	}
+	fmt.Println("set signatures")
 
 	// Generate a JSON string.
 	txJSONBytes, err := encodingConfig.TxConfig.TxJSONEncoder()(txBuilder.GetTx())
@@ -109,14 +111,20 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 	encodedTx := hex.EncodeToString(txBytes)
 
 	broadcastReq := BroadcastRequest{
-		Tx: encodedTx,
+		Jsonrpc: "2.0",
+		ID:      "",
+		Method:  "broadcast_tx_sync",
+		BroadcastRequestParams: BroadcastRequestParams{
+			Tx: encodedTx,
+		},
 	}
+
 	reqBytes, err := json.Marshal(broadcastReq)
 	if err != nil {
 		return nil, err
 	}
 
-	resp, err := http.Post(rpcEndpoint+"/broadcast_tx_sync", "application/json", bytes.NewBuffer(reqBytes))
+	resp, err := http.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes))
 	if err != nil {
 		return nil, err
 	}
