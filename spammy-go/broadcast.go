@@ -49,7 +49,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	}
 
 	address := info.GetAddress()
-	receiver, _ := generateRandomString(1)
+	receiver, _ := generateRandomString(190)
 	token := sdk.NewCoin("uatom", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
@@ -75,7 +75,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("coulnd't sign")
 		return "", "", err
 	}
-	fmt.Println("signed")
+	//	fmt.Println("signed")
 
 	sig := signing.SignatureV2{
 		PubKey:   info.GetPubKey(),
@@ -88,7 +88,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("cannot set signatures")
 		panic(err)
 	}
-	fmt.Println("set signatures")
+	//	fmt.Println("set signatures")
 
 	// Generate a JSON string.
 	txJSONBytes, err := encodingConfig.TxConfig.TxJSONEncoder()(txBuilder.GetTx())
@@ -97,15 +97,12 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println(err)
 		return "", "", err
 	}
-	fmt.Println(string(txJSONBytes))
+	//	fmt.Println(string(txJSONBytes))
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
-	if err != nil {
-		fmt.Println("some issue with the broadcast, so here's the bytes")
-		return "", "", err
-	}
-	fmt.Println("code: ", resp.BroadcastResult.Code)
-	fmt.Println(resp.Log)
+
+	//fmt.Println("code: ", resp.BroadcastResult.Code)
+	//	fmt.Println(resp.Log)
 
 	return resp.BroadcastResult.Log, string(txJSONBytes), nil
 }
