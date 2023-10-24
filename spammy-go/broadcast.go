@@ -44,19 +44,13 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
 
-	info, err := kr.Key(senderKeyName)
-	if err != nil {
-		return nil, "", err
-	}
-
-	address := info.GetAddress()
 	receiver, _ := generateRandomString()
 	token := sdk.NewCoin("utia", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
 		"channel-4",
 		token,
-		address.String(),
+		address,
 		receiver,
 		clienttypes.NewHeight(0, 10000),
 		types.DefaultRelativePacketTimeoutTimestamp,
@@ -68,7 +62,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 		return nil, "", err
 	}
 
-	fee := sdk.NewCoin(10000, "uatom")
+	fee := sdk.NewCoin("utia", sdk.NewInt(10000))
 
 	txBuilder.SetGasLimit(300000)
 	txBuilder.SetFeeAmount(fee)
