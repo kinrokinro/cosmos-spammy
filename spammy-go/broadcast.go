@@ -1,11 +1,10 @@
 package main
 
 import (
-	"bytes"
+	"context"
 	"encoding/hex"
-	"encoding/json"
 	"fmt"
-	"io"
+	"log"
 	"math/rand"
 	"net/http"
 	"time"
@@ -16,6 +15,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
+	cometrpc "github.com/tendermint/tendermint/rpc/client/http"
+	coretypes "github.com/tendermint/tendermint/rpc/core/types"
 
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
@@ -34,7 +35,7 @@ var client = &http.Client{
 	},
 }
 
-func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *BroadcastResponse, txbody string, err error) {
+func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *coretypes.ResultBroadcastTx, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
 
 	// Register IBC and other necessary types
@@ -66,7 +67,7 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 		return nil, "", err
 	}
 
-	feecoin := sdk.NewCoin("utia", sdk.NewInt(10000))
+	feecoin := sdk.NewCoin("uatom", sdk.NewInt(10000))
 	fee := sdk.NewCoins(feecoin)
 
 	txBuilder.SetGasLimit(300000)
@@ -130,47 +131,26 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 	return resp, string(txJSONBytes), nil
 }
 
-func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastResponse, error) {
-	encodedTx := hex.EncodeToString(txBytes)
-
-	broadcastReq := BroadcastRequest{
-		Jsonrpc: "2.0",
-		ID:      "1",
-		Method:  "broadcast_tx_sync",
-		BroadcastRequestParams: BroadcastRequestParams{
-			Tx: encodedTx,
-		},
+func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*coretypes.ResultBroadcastTx, error) {
+	cmtCli, err := cometrpc.New(rpcEndpoint, "/websocket")
+	if err != nil {
+		log.Fatal(err) //nolint:gocritic
 	}
 
-	reqBytes, err := json.Marshal(broadcastReq)
+	var ctx context.Context
+	res, err := cmtCli.BroadcastTxSync(ctx, txBytes)
 	if err != nil {
+		fmt.Println("error at broadcast")
 		return nil, err
 	}
 
-	resp, err := client.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes)) //nolint:gosec // not worth fixing
-	if err != nil {
-		return nil, err
-	}
-	defer resp.Body.Close()
+	fmt.Println("other: ", res.Data)
+	fmt.Println("log: ", res.Log)
+	fmt.Println("code: ", res.Code)
+	fmt.Println("code: ", res.Codespace)
+	fmt.Println("txid: ", res.Hash)
 
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return nil, err
-	}
-
-	var broadcastResp BroadcastResponse
-	err = json.Unmarshal(body, &broadcastResp)
-	if err != nil {
-		return nil, err
-	}
-
-	fmt.Println("other: ", broadcastResp.BroadcastResult.Data)
-	fmt.Println("log: ", broadcastResp.BroadcastResult.Log)
-	fmt.Println("code: ", broadcastResp.BroadcastResult.Code)
-	fmt.Println("code: ", broadcastResp.BroadcastResult.Codespace)
-	fmt.Println("txid: ", broadcastResp.BroadcastResult.Hash)
-
-	return &broadcastResp, nil
+	return res, nil
 }
 
 func generateRandomString() (string, error) {

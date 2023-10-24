@@ -20,7 +20,7 @@ func main() {
 	var failedTxns int
 	var mu sync.Mutex
 	// Declare a map to hold response codes and their counts
-	responseCodes := make(map[int]int)
+	responseCodes := make(map[uint32]int)
 
 	// keyring
 	// read seed phrase
@@ -81,13 +81,13 @@ func main() {
 							if resp != nil {
 								// Increment the count for this response code
 								mu.Lock()
-								responseCodes[resp.BroadcastResult.Code]++
+								responseCodes[resp.Code]++
 								mu.Unlock()
 							}
 
-							match := reMismatch.MatchString(resp.BroadcastResult.Log)
+							match := reMismatch.MatchString(resp.Log)
 							if match {
-								matches := reExpected.FindStringSubmatch(resp.BroadcastResult.Log)
+								matches := reExpected.FindStringSubmatch(resp.Log)
 								if len(matches) > 1 {
 									sequence, err = strconv.Atoi(matches[1])
 									if err != nil {
