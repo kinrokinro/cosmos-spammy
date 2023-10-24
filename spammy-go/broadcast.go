@@ -41,7 +41,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
 
 	// Create a new keyring to access keys
-	kr, err := keyring.New("cosmos", keyring.BackendTest, "/root/.gaia-rs", nil)
+	kr := keyring.NewInMemory(nil)
 	if err != nil {
 		return nil, "", err
 	}
@@ -53,7 +53,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 
 	address := info.GetAddress()
 	receiver, _ := generateRandomString()
-	token := sdk.NewCoin("uatom", sdk.NewInt(1))
+	token := sdk.NewCoin("utia", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
 		"channel-58",
@@ -78,7 +78,6 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("coulnd't sign")
 		return nil, "", err
 	}
-	//	fmt.Println("signed")
 
 	sig := signing.SignatureV2{
 		PubKey:   info.GetPubKey(),
@@ -91,7 +90,6 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println("cannot set signatures")
 		panic(err)
 	}
-	//	fmt.Println("set signatures")
 
 	// Generate a JSON string.
 	txJSONBytes, err := encodingConfig.TxConfig.TxJSONEncoder()(txBuilder.GetTx())
@@ -100,7 +98,6 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 		fmt.Println(err)
 		return nil, "", err
 	}
-	//	fmt.Println(string(txJSONBytes))
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
 	if err != nil {
@@ -143,10 +140,6 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 	err = json.Unmarshal(body, &broadcastResp)
 	if err != nil {
 		return nil, err
-	}
-
-	if broadcastResp.BroadcastResult.Code != 0 {
-		return nil, fmt.Errorf("transaction failed with code: %d", broadcastResp.BroadcastResult.Code)
 	}
 
 	return &broadcastResp, nil
