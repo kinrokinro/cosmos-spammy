@@ -7,8 +7,6 @@ import (
 	"regexp"
 	"strconv"
 	"sync"
-
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 )
 
 const (
@@ -29,8 +27,6 @@ func main() {
 	mnemonic, _ := os.ReadFile("seedphrase")
 	privkey, pubKey, acctaddress := getPrivKey(mnemonic)
 	// Create an in-mempory keyring
-
-	kr := keyring.NewInMemory(nil)
 
 	address := acctaddress
 
@@ -73,7 +69,7 @@ func main() {
 					go func() {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence), uint64(accNum), kr, privkey, pubKey, address)
+						resp, _, err := sendIBCTransferViaRPC(nodeURL, uint64(sequence), uint64(accNum), privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++

@@ -11,15 +11,13 @@ import (
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/client/tx"
-	"github.com/cosmos/cosmos-sdk/crypto/keyring"
+	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
-	"github.com/tendermint/tendermint/crypto/secp256k1"
-
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
+
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
-
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 	"github.com/cosmos/ibc-go/v4/testing/simapp"
 )
@@ -29,12 +27,12 @@ var client = &http.Client{
 	Transport: &http.Transport{
 		MaxIdleConns:        10,
 		MaxIdleConnsPerHost: 1,
-		IdleConnTimeout:     500 * time.Millisecond,
+		IdleConnTimeout:     5 * time.Second,
 		TLSHandshakeTimeout: 500 * time.Millisecond,
 	},
 }
 
-func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum uint64, kr keyring.Keyring, privKey secp256k1.PrivKey, pubKey secp256k1.PubKey, address string) (response *BroadcastResponse, txbody string, err error) {
+func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *BroadcastResponse, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
 
 	// Register IBC and other necessary types
@@ -62,7 +60,8 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 		return nil, "", err
 	}
 
-	fee := sdk.NewCoin("utia", sdk.NewInt(10000))
+	feecoin := sdk.NewCoin("utia", sdk.NewInt(10000))
+	fee := sdk.NewCoins(feecoin)
 
 	txBuilder.SetGasLimit(300000)
 	txBuilder.SetFeeAmount(fee)
@@ -72,7 +71,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 	// First round: we gather all the signer infos. We use the "set empty
 	// signature" hack to do that.
 	sigV2 := signing.SignatureV2{
-		PubKey: info.GetPubKey(),
+		PubKey: pubKey,
 		Data: &signing.SingleSignatureData{
 			SignMode:  encodingConfig.TxConfig.SignModeHandler().DefaultMode(),
 			Signature: nil,
@@ -94,33 +93,19 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 
 	signed, err := tx.SignWithPrivKey(
 		encodingConfig.TxConfig.SignModeHandler().DefaultMode(), signerData,
-		txBuilder, priv, encodingConfig.TxConfig, sequence)
-
-	if err != nil {
-		return nil, "", err
-	}
-
-	err = txBuilder.SetSignatures(sigsV2...)
-	if err != nil {
-		return err
-	}
-
-	sigBytes, _, err := kr.SignByAddress(address, msg.GetSignBytes())
+		txBuilder, privKey, encodingConfig.TxConfig, sequence)
 	if err != nil {
 		fmt.Println("coulnd't sign")
 		return nil, "", err
 	}
 
-	sig := signing.SignatureV2{
-		PubKey:   info.GetPubKey(),
-		Data:     &signing.SingleSignatureData{SignMode: signing.SignMode_SIGN_MODE_DIRECT, Signature: sigBytes},
-		Sequence: sequence,
+	if err != nil {
+		return nil, "", err
 	}
 
-	err = txBuilder.SetSignatures(sig)
+	err = txBuilder.SetSignatures(signed)
 	if err != nil {
-		fmt.Println("cannot set signatures")
-		panic(err)
+		return nil, "", err
 	}
 
 	// Generate a JSON string.
@@ -133,7 +118,6 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum u
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
 	if err != nil {
-		// handle error, for example:
 		return nil, "", fmt.Errorf("failed to broadcast transaction: %w", err)
 	}
 
@@ -145,7 +129,7 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 
 	broadcastReq := BroadcastRequest{
 		Jsonrpc: "2.0",
-		ID:      "",
+		ID:      "1",
 		Method:  "broadcast_tx_sync",
 		BroadcastRequestParams: BroadcastRequestParams{
 			Tx: encodedTx,
