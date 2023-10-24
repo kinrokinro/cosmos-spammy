@@ -38,7 +38,7 @@ type BroadcastRequestParams struct {
 
 type BroadcastResponse struct {
 	Jsonrpc         string `json:"jsonrpc"`
-	ID              int    `json:"id"`
+	ID              string `json:"id"`
 	BroadcastResult `json:"result"`
 }
 
@@ -56,7 +56,7 @@ type Result struct {
 }
 
 type Account struct {
-	Sequence int `json:"sequence"`
+	Sequence string `json:"sequence"`
 }
 
 type AccountResult struct {
