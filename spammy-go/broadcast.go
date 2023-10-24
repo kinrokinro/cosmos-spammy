@@ -17,6 +17,7 @@ import (
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	cometrpc "github.com/tendermint/tendermint/rpc/client/http"
 	coretypes "github.com/tendermint/tendermint/rpc/core/types"
+	tmtypes "github.com/tendermint/tendermint/types"
 
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
@@ -137,9 +138,12 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*coretypes.Result
 		log.Fatal(err) //nolint:gocritic
 	}
 
-	var ctx context.Context
-	res, err := cmtCli.BroadcastTxSync(ctx, txBytes)
+	t := tmtypes.Tx(txBytes)
+
+	ctx := context.Background()
+	res, err := cmtCli.BroadcastTxSync(ctx, t)
 	if err != nil {
+		fmt.Println(err)
 		fmt.Println("error at broadcast")
 		return nil, err
 	}
