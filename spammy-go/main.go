@@ -9,12 +9,15 @@ import (
 )
 
 const (
-	BatchSize = 10000
+	BatchSize  = 100
+	MaxWorkers = 1000
 )
 
 func main() {
 	var successfulTxns int
 	var failedTxns int
+	var mu sync.Mutex
+
 	// Declare a map to hold response codes and their counts
 	responseCodes := make(map[int]int)
 
@@ -58,12 +61,18 @@ func main() {
 
 						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
 						if err != nil {
+							mu.Lock()
 							failedTxns++
+							mu.Unlock()
 						} else {
+							mu.Lock()
 							successfulTxns++
+							mu.Unlock()
 							if resp != nil {
 								// Increment the count for this response code
+								mu.Lock()
 								responseCodes[resp.BroadcastResult.Code]++
+								mu.Unlock()
 							}
 
 							match := reMismatch.MatchString(resp.BroadcastResult.Log)
