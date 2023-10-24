@@ -63,13 +63,13 @@ func getInitialSequence(address string) (int, int) {
 	if err != nil {
 		log.Printf("Failed to unmarshal account result: %v", err)
 	}
-	fmt.Println("sequence is", accountRes.Account.Sequence)
-	seqint, err := strconv.Atoi(accountRes.Account.Sequence)
+	fmt.Println("sequence is", accountRes.Sequence)
+	seqint, err := strconv.Atoi(accountRes.Sequence)
 	if err != nil {
 		log.Printf("Failed to convert to string: %v", err)
 	}
-	accnum, err := strconv.Atoi(accountRes.Account.Sequence)
-	fmt.Println("Number is", accountRes.Account.Sequence)
+	accnum, err := strconv.Atoi(accountRes.Sequence)
+	fmt.Println("Number is", accountRes.Sequence)
 	if err != nil {
 		log.Printf("Failed to convert to string: %v", err)
 	}

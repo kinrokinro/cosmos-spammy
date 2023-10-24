@@ -3,28 +3,26 @@ package main
 import (
 	"fmt"
 
-	bip39 "github.com/tyler-smith/go-bip39"
-
 	"github.com/cosmos/cosmos-sdk/crypto/hd"
-	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 func getPrivKey(mnemonic []byte) (cryptotypes.PrivKey, cryptotypes.PubKey, string) {
 	// Generate a Bip32 HD wallet for the mnemonic and a user supplied password
-	seed := bip39.NewSeed(string(mnemonic), "")
+	// create master key and derive first key for keyring
+	stringmem := string(mnemonic)
 
-	// Create master private key from seed
-	masterPriv, chainCode := hd.ComputeMastersFromSeed(seed)
+	algo := hd.Secp256k1
 
-	// Path for Celestia
-	// This is just an example path. Adjust based on the actual requirements.
-	path := hd.CreateHDPath(118, 0, 0).String()
+	derivedPriv, err := algo.Derive()(stringmem, "", "m/44'/118'/0'/0/0")
+	if err != nil {
+		panic(err)
+	}
 
-	derivedPriv, _ := hd.DerivePrivateKeyForPath(masterPriv, chainCode, path)
+	privKey := algo.Generate()(derivedPriv)
 
-	privKey := secp256k1.GenPrivKeyFromSecret(derivedPriv)
+	// Create master private key from
 
 	pubKey := privKey.PubKey()
 

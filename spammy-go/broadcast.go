@@ -19,6 +19,7 @@ import (
 
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
+	ibc "github.com/cosmos/ibc-go/v4/modules/core"
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 	"github.com/cosmos/ibc-go/v4/testing/simapp"
 )
@@ -38,18 +39,20 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 
 	// Register IBC and other necessary types
 	transferModule := transfer.AppModuleBasic{}
+	ibcModule := ibc.AppModuleBasic{}
+
+	ibcModule.RegisterInterfaces(encodingConfig.InterfaceRegistry)
 	transferModule.RegisterInterfaces(encodingConfig.InterfaceRegistry)
-	std.RegisterLegacyAminoCodec(encodingConfig.Amino)
 	std.RegisterInterfaces(encodingConfig.InterfaceRegistry)
 
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
 
 	receiver, _ := generateRandomString()
-	token := sdk.NewCoin("utia", sdk.NewInt(1))
+	token := sdk.NewCoin("uatom", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
-		"channel-4",
+		"channel-58",
 		token,
 		address,
 		receiver,
