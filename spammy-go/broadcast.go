@@ -2,12 +2,13 @@ package main
 
 import (
 	"bytes"
-	"crypto/rand"
 	"encoding/hex"
 	"encoding/json"
 	"fmt"
 	"io"
+	"math/rand"
 	"net/http"
+	"time"
 
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -19,16 +20,18 @@ import (
 	"github.com/cosmos/ibc-go/v4/testing/simapp"
 )
 
-func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (response, txbody string, err error) {
+var client = &http.Client{
+	Timeout: time.Millisecond * 500,
+	Transport: &http.Transport{
+		MaxIdleConns:        10,
+		MaxIdleConnsPerHost: 1,
+		IdleConnTimeout:     500 * time.Millisecond,
+		TLSHandshakeTimeout: 500 * time.Millisecond,
+	},
+}
+
+func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (response *BroadcastResponse, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
-	//	initClientCtx := client.Context{}.
-	//		WithCodec(encodingConfig.Marshaler).
-	//		WithInterfaceRegistry(encodingConfig.InterfaceRegistry).
-	//		WithTxConfig(encodingConfig.TxConfig).
-	//		WithLegacyAmino(encodingConfig.Amino).
-	//		WithInput(os.Stdin).
-	//		WithHomeDir(simapp.DefaultNodeHome).
-	//		WithViper("") // In simapp, we don't use any prefix for env variables.
 
 	// Register IBC and other necessary types
 	transferModule := transfer.AppModuleBasic{}
@@ -40,16 +43,16 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	// Create a new keyring to access keys
 	kr, err := keyring.New("cosmos", keyring.BackendTest, "/root/.gaia-rs", nil)
 	if err != nil {
-		return "", "", err
+		return nil, "", err
 	}
 
 	info, err := kr.Key(senderKeyName)
 	if err != nil {
-		return "", "", err
+		return nil, "", err
 	}
 
 	address := info.GetAddress()
-	receiver, _ := generateRandomString(190)
+	receiver, _ := generateRandomString()
 	token := sdk.NewCoin("uatom", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
@@ -63,17 +66,17 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 
 	err = txBuilder.SetMsgs(msg)
 	if err != nil {
-		return "", "", err
+		return nil, "", err
 	}
 
 	if len(txBuilder.GetTx().GetMsgs()) == 0 {
-		return "", "", fmt.Errorf("transaction has no messages set")
+		return nil, "", fmt.Errorf("transaction has no messages set")
 	}
 
 	sigBytes, _, err := kr.SignByAddress(address, msg.GetSignBytes())
 	if err != nil {
 		fmt.Println("coulnd't sign")
-		return "", "", err
+		return nil, "", err
 	}
 	//	fmt.Println("signed")
 
@@ -95,17 +98,17 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	if err != nil {
 		fmt.Println("some issue with the string")
 		fmt.Println(err)
-		return "", "", err
+		return nil, "", err
 	}
 	//	fmt.Println(string(txJSONBytes))
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
 	if err != nil {
 		// handle error, for example:
-		return "", "", fmt.Errorf("failed to broadcast transaction: %w", err)
+		return nil, "", fmt.Errorf("failed to broadcast transaction: %w", err)
 	}
 
-	return resp.BroadcastResult.Log, string(txJSONBytes), nil
+	return resp, string(txJSONBytes), nil
 }
 
 func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastResponse, error) {
@@ -125,7 +128,7 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 		return nil, err
 	}
 
-	resp, err := http.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes)) //nolint:gosec // not worth fixing
+	resp, err := client.Post(rpcEndpoint, "application/json", bytes.NewBuffer(reqBytes)) //nolint:gosec // not worth fixing
 	if err != nil {
 		return nil, err
 	}
@@ -142,12 +145,19 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 		return nil, err
 	}
 
+	if broadcastResp.BroadcastResult.Code != 0 {
+		return nil, fmt.Errorf("transaction failed with code: %d", broadcastResp.BroadcastResult.Code)
+	}
+
 	return &broadcastResp, nil
 }
 
-func generateRandomString(sizeKB int) (string, error) {
+func generateRandomString() (string, error) {
+	rand.Seed(time.Now().UnixNano())
+	sizeB := rand.Intn(175000-100+1) + 100 // Generate random size between 100 and 175000 bytes
+
 	// Calculate the number of bytes to generate (2 characters per byte in hex encoding)
-	nBytes := sizeKB * 1024 / 2
+	nBytes := sizeB / 2
 
 	randomBytes := make([]byte, nBytes)
 	_, err := rand.Read(randomBytes)

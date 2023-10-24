@@ -1,6 +1,10 @@
 totalNodesChecked = 81
 
 successfulNodes = [
+    "https://rpc.provider-sentry-01.rs-testnet.polypore.xyz:443",
+    "https://rpc.provider-sentry-02.rs-testnet.polypore.xyz:443",
+    "https://rpc.provider-state-sync-01.rs-testnet.polypore.xyz:443",
+    "https://rpc.provider-state-sync-02.rs-testnet.polypore.xyz:443",
     "http://65.21.202.61:25005",
     "http://141.94.138.48:26677",
     "http://65.21.24.47:26657",

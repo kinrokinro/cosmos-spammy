@@ -56,7 +56,7 @@ type Result struct {
 }
 
 type Account struct {
-	Sequence int `json:"sequence"`
+	Sequence string `json:"sequence"`
 }
 
 type AccountResult struct {
