@@ -55,10 +55,15 @@ type Result struct {
 	TotalBytes string `json:"total_bytes"`
 }
 
-type AccountResult struct {
+type AccountInfo struct {
 	Sequence      string `json:"sequence"`
 	AccountNumber string `json:"account_number"`
 }
+
+type AccountResult struct {
+	Account AccountInfo `json:"account"`
+}
+
 type Transaction struct {
 	Body       Body     `json:"body"`
 	AuthInfo   AuthInfo `json:"auth_info"`

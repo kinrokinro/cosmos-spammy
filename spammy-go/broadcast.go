@@ -24,20 +24,32 @@ import (
 	ibc "github.com/cosmos/ibc-go/v4/modules/core"
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 	"github.com/cosmos/ibc-go/v4/testing/simapp"
+
+	"github.com/cosmos/cosmos-sdk/codec"
+	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 )
 
 var client = &http.Client{
-	Timeout: time.Millisecond * 500,
+	Timeout: 10 * time.Second, // Adjusted timeout to 10 seconds
 	Transport: &http.Transport{
-		MaxIdleConns:        10,
-		MaxIdleConnsPerHost: 1,
-		IdleConnTimeout:     5 * time.Second,
-		TLSHandshakeTimeout: 500 * time.Millisecond,
+		MaxIdleConns:        100,              // Increased maximum idle connections
+		MaxIdleConnsPerHost: 10,               // Increased maximum idle connections per host
+		IdleConnTimeout:     90 * time.Second, // Increased idle connection timeout
+		TLSHandshakeTimeout: 10 * time.Second, // Increased TLS handshake timeout
 	},
+}
+
+var (
+	cdc = codec.NewProtoCodec(codectypes.NewInterfaceRegistry())
+)
+
+func init() {
+	types.RegisterInterfaces(cdc.InterfaceRegistry())
 }
 
 func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *coretypes.ResultBroadcastTx, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
+	encodingConfig.Marshaler = cdc
 
 	// Register IBC and other necessary types
 	transferModule := transfer.AppModuleBasic{}
