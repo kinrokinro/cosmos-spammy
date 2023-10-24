@@ -30,7 +30,7 @@ var client = &http.Client{
 	},
 }
 
-func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (response *BroadcastResponse, txbody string, err error) {
+func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64, kr keyring.Keyring) (response *BroadcastResponse, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
 
 	// Register IBC and other necessary types
@@ -39,12 +39,6 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
-
-	// Create a new keyring to access keys
-	kr := keyring.NewInMemory(nil)
-	if err != nil {
-		return nil, "", err
-	}
 
 	info, err := kr.Key(senderKeyName)
 	if err != nil {

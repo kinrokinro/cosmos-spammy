@@ -3,9 +3,13 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"regexp"
 	"strconv"
 	"sync"
+
+	"github.com/cosmos/cosmos-sdk/crypto/hd"
+	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 )
 
 const (
@@ -14,12 +18,29 @@ const (
 )
 
 func main() {
+	// tracking vars
 	var successfulTxns int
 	var failedTxns int
 	var mu sync.Mutex
-
 	// Declare a map to hold response codes and their counts
 	responseCodes := make(map[int]int)
+
+	// keyring
+	// read seed phrase
+	mnemonic, _ := os.ReadFile("seedphrase")
+	// Create an in-mempory keyring
+
+	kr := keyring.NewInMemory(nil)
+
+	// Derive a new account from the mnemonic.
+	info, err := kr.NewAccount("test", string(mnemonic), "", hd.CreateHDPath(118, 0, 0).String(), hd.Secp256k1)
+	if err != nil {
+		log.Fatalf("Failed to create account: %v", err)
+	}
+
+	address := info.GetAddress().String()
+
+	sequence := getInitialSequence(address)
 
 	successfulNodes := loadNodes()
 	fmt.Printf("Number of nodes: %d\n", len(successfulNodes))
@@ -41,7 +62,6 @@ func main() {
 			startBlock := currentBlock(nodeURL)
 			fmt.Printf("Script starting at block height: %s\n", startBlock)
 
-			sequence := getInitialSequence()
 			for {
 				lastBlock := startBlock
 				lastBlockSize := blockSize(lastBlock, nodeURL)
@@ -59,7 +79,7 @@ func main() {
 					go func() {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
+						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence), kr)
 						if err != nil {
 							mu.Lock()
 							failedTxns++

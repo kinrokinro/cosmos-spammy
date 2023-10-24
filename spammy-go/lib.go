@@ -53,8 +53,8 @@ func blockSize(height, nodeURL string) uintptr {
 	return size
 }
 
-func getInitialSequence() int {
-	resp, err := httpGet("http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq")
+func getInitialSequence(address string) int {
+	resp, err := httpGet("http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/" + address)
 	if err != nil {
 		log.Printf("Failed to get initial sequence: %v", err)
 	}
