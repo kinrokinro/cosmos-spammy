@@ -51,7 +51,7 @@ func main() {
 						broadcastLog, reqString, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
 						if err != nil {
 							fmt.Println(reqString)
-							log.Fatalf("Failed to send IBC transfer via RPC: %v", err)
+							log.Printf("Failed to send IBC transfer via RPC: %v", err)
 						}
 						fmt.Print(broadcastLog)
 
