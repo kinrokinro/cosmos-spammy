@@ -12,6 +12,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
+	"github.com/cosmos/cosmos-sdk/std"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
@@ -38,6 +39,8 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 	// Register IBC and other necessary types
 	transferModule := transfer.AppModuleBasic{}
 	transferModule.RegisterInterfaces(encodingConfig.InterfaceRegistry)
+	std.RegisterLegacyAminoCodec(encodingConfig.Amino)
+	std.RegisterInterfaces(encodingConfig.InterfaceRegistry)
 
 	// Create a new TxBuilder.
 	txBuilder := encodingConfig.TxConfig.NewTxBuilder()
@@ -157,6 +160,12 @@ func BroadcastTransaction(txBytes []byte, rpcEndpoint string) (*BroadcastRespons
 	if err != nil {
 		return nil, err
 	}
+
+	fmt.Println("other: ", broadcastResp.BroadcastResult.Data)
+	fmt.Println("log: ", broadcastResp.BroadcastResult.Log)
+	fmt.Println("code: ", broadcastResp.BroadcastResult.Code)
+	fmt.Println("code: ", broadcastResp.BroadcastResult.Codespace)
+	fmt.Println("txid: ", broadcastResp.BroadcastResult.Hash)
 
 	return &broadcastResp, nil
 }
