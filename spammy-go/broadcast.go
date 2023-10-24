@@ -100,9 +100,10 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64) (
 	//	fmt.Println(string(txJSONBytes))
 
 	resp, err := BroadcastTransaction(txJSONBytes, rpcEndpoint)
-
-	//fmt.Println("code: ", resp.BroadcastResult.Code)
-	//	fmt.Println(resp.Log)
+	if err != nil {
+		// handle error, for example:
+		return "", "", fmt.Errorf("failed to broadcast transaction: %w", err)
+	}
 
 	return resp.BroadcastResult.Log, string(txJSONBytes), nil
 }
