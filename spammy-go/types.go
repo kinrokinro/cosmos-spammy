@@ -51,8 +51,10 @@ type BroadcastResult struct {
 }
 
 type Result struct {
-	NTxs       string `json:"n_txs"`
-	TotalBytes string `json:"total_bytes"`
+	NTxs       string      `json:"n_txs"`
+	Total      string      `json:"total"`
+	TotalBytes string      `json:"total_bytes"`
+	Txs        interface{} `json:"txs"` // Assuming txs can be null or an array, interface{} will accommodate both
 }
 
 type AccountInfo struct {

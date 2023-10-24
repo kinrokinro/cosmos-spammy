@@ -59,7 +59,7 @@ func main() {
 
 				fmt.Println("Last block height: ", lastBlock)
 				fmt.Println("Last Block Size: ", lastBlockSize)
-				fmt.Println(nodeURL, "Current mempool txns: %s transactions\n", currentMempoolSize.NTxs)
+				fmt.Println(nodeURL, "Current mempool txns: "+currentMempoolSize.NTxs+" transactions")
 				fmt.Println(nodeURL, "mempool byte size:", currentMempoolSize.TotalBytes)
 
 				var wgBatch sync.WaitGroup

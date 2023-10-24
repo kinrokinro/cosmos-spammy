@@ -29,12 +29,16 @@ func mempoolSize(nodeURL string) Result {
 	resp, err := httpGet(fmt.Sprintf("%s/num_unconfirmed_txs", nodeURL))
 	if err != nil {
 		log.Printf("Failed to get mempool size: %v", err)
+		return Result{} // Return an empty Result on error
 	}
+
 	var mempoolRes MempoolResult
 	err = json.Unmarshal(resp, &mempoolRes)
 	if err != nil {
 		log.Printf("Failed to unmarshal mempool result: %v", err)
+		return Result{} // Return an empty Result on error
 	}
+
 	return mempoolRes.Result
 }
 
