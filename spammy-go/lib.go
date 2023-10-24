@@ -53,7 +53,7 @@ func blockSize(height, nodeURL string) uintptr {
 	return size
 }
 
-func getInitialSequence(address string) int {
+func getInitialSequence(address string) (int, int) {
 	resp, err := httpGet("http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/" + address)
 	if err != nil {
 		log.Printf("Failed to get initial sequence: %v", err)
@@ -68,7 +68,12 @@ func getInitialSequence(address string) int {
 	if err != nil {
 		log.Printf("Failed to convert to string: %v", err)
 	}
-	return seqint
+	accnum, err := strconv.Atoi(accountRes.Account.Sequence)
+	fmt.Println("Number is", accountRes.Account.Sequence)
+	if err != nil {
+		log.Printf("Failed to convert to string: %v", err)
+	}
+	return seqint, accnum
 }
 
 func httpGet(url string) ([]byte, error) {

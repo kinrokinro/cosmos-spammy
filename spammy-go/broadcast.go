@@ -10,12 +10,16 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/cosmos/cosmos-sdk/client/tx"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/tx/signing"
+	"github.com/tendermint/tendermint/crypto/secp256k1"
 
+	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer"
 	"github.com/cosmos/ibc-go/v4/modules/apps/transfer/types"
+
 	clienttypes "github.com/cosmos/ibc-go/v4/modules/core/02-client/types"
 	"github.com/cosmos/ibc-go/v4/testing/simapp"
 )
@@ -30,7 +34,7 @@ var client = &http.Client{
 	},
 }
 
-func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64, kr keyring.Keyring) (response *BroadcastResponse, txbody string, err error) {
+func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence, accnum uint64, kr keyring.Keyring, privKey secp256k1.PrivKey, pubKey secp256k1.PubKey, address string) (response *BroadcastResponse, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
 
 	// Register IBC and other necessary types
@@ -50,7 +54,7 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64, k
 	token := sdk.NewCoin("utia", sdk.NewInt(1))
 	msg := types.NewMsgTransfer(
 		"transfer",
-		"channel-58",
+		"channel-4",
 		token,
 		address.String(),
 		receiver,
@@ -58,13 +62,53 @@ func sendIBCTransferViaRPC(senderKeyName, rpcEndpoint string, sequence uint64, k
 		types.DefaultRelativePacketTimeoutTimestamp,
 	)
 
+	// set messages
 	err = txBuilder.SetMsgs(msg)
 	if err != nil {
 		return nil, "", err
 	}
 
-	if len(txBuilder.GetTx().GetMsgs()) == 0 {
-		return nil, "", fmt.Errorf("transaction has no messages set")
+	fee := sdk.NewCoin(10000, "uatom")
+
+	txBuilder.SetGasLimit(300000)
+	txBuilder.SetFeeAmount(fee)
+	txBuilder.SetMemo("testing 1 2 3")
+	txBuilder.SetTimeoutHeight(0)
+
+	// First round: we gather all the signer infos. We use the "set empty
+	// signature" hack to do that.
+	sigV2 := signing.SignatureV2{
+		PubKey: info.GetPubKey(),
+		Data: &signing.SingleSignatureData{
+			SignMode:  encodingConfig.TxConfig.SignModeHandler().DefaultMode(),
+			Signature: nil,
+		},
+		Sequence: sequence,
+	}
+
+	err = txBuilder.SetSignatures(sigV2)
+	if err != nil {
+		fmt.Println("error setting signatures")
+		return nil, "", err
+	}
+
+	signerData := authsigning.SignerData{
+		ChainID:       "provider",
+		AccountNumber: accnum,   // set actual account number
+		Sequence:      sequence, // set actual sequence number
+	}
+
+	signed, err := tx.SignWithPrivKey(
+		encodingConfig.TxConfig.SignModeHandler().DefaultMode(), signerData,
+		txBuilder, priv, encodingConfig.TxConfig, sequence)
+
+	if err != nil {
+		return nil, "", err
+	}
+
+	err = txBuilder.SetSignatures(sigsV2...)
+	if err != nil {
+		return err
 	}
 
 	sigBytes, _, err := kr.SignByAddress(address, msg.GetSignBytes())

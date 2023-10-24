@@ -8,7 +8,6 @@ import (
 	"strconv"
 	"sync"
 
-	"github.com/cosmos/cosmos-sdk/crypto/hd"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 )
 
@@ -28,19 +27,14 @@ func main() {
 	// keyring
 	// read seed phrase
 	mnemonic, _ := os.ReadFile("seedphrase")
+	privkey, pubKey, acctaddress := getPrivKey(mnemonic)
 	// Create an in-mempory keyring
 
 	kr := keyring.NewInMemory(nil)
 
-	// Derive a new account from the mnemonic.
-	info, err := kr.NewAccount("test", string(mnemonic), "", hd.CreateHDPath(118, 0, 0).String(), hd.Secp256k1)
-	if err != nil {
-		log.Fatalf("Failed to create account: %v", err)
-	}
+	address := acctaddress
 
-	address := info.GetAddress().String()
-
-	sequence := getInitialSequence(address)
+	sequence, accNum := getInitialSequence(address)
 
 	successfulNodes := loadNodes()
 	fmt.Printf("Number of nodes: %d\n", len(successfulNodes))
@@ -79,7 +73,7 @@ func main() {
 					go func() {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence), kr)
+						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence), uint64(accNum), kr, privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++
