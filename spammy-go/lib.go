@@ -29,12 +29,16 @@ func mempoolSize(nodeURL string) Result {
 	resp, err := httpGet(fmt.Sprintf("%s/num_unconfirmed_txs", nodeURL))
 	if err != nil {
 		log.Printf("Failed to get mempool size: %v", err)
+		return Result{} // Return an empty Result on error
 	}
+
 	var mempoolRes MempoolResult
 	err = json.Unmarshal(resp, &mempoolRes)
 	if err != nil {
 		log.Printf("Failed to unmarshal mempool result: %v", err)
+		return Result{} // Return an empty Result on error
 	}
+
 	return mempoolRes.Result
 }
 
@@ -53,22 +57,50 @@ func blockSize(height, nodeURL string) uintptr {
 	return size
 }
 
-func getInitialSequence() int {
-	resp, err := httpGet("http://127.0.0.1:1317/cosmos/auth/v1beta1/accounts/cosmos140rptve4cr0mxgknzprl86868nfslydfyem3nq")
+func getInitialSequence(address string) (int64, int64) {
+	resp, err := httpGet("https://rest.sentry-01.theta-testnet.polypore.xyz/cosmos/auth/v1beta1/accounts/" + address)
 	if err != nil {
 		log.Printf("Failed to get initial sequence: %v", err)
+		return 0, 0
 	}
+
 	var accountRes AccountResult
 	err = json.Unmarshal(resp, &accountRes)
 	if err != nil {
 		log.Printf("Failed to unmarshal account result: %v", err)
+		return 0, 0
 	}
-	fmt.Println("sequence is", accountRes.Account.Sequence)
-	seqint, err := strconv.Atoi(accountRes.Account.Sequence)
+
+	seqint, err := strconv.ParseInt(accountRes.Account.Sequence, 10, 64)
 	if err != nil {
-		log.Printf("Failed to convert to string: %v", err)
+		log.Printf("Failed to convert sequence to int: %v", err)
+		return 0, 0
 	}
-	return seqint
+
+	accnum, err := strconv.ParseInt(accountRes.Account.AccountNumber, 10, 64)
+	if err != nil {
+		log.Printf("Failed to convert account number to int: %v", err)
+		return 0, 0
+	}
+
+	return seqint, accnum
+}
+
+func getChainID(nodeURL string) (string, error) {
+	resp, err := httpGet(fmt.Sprintf("%s/status", nodeURL))
+	if err != nil {
+		log.Printf("Failed to get node status: %v", err)
+		return "", err
+	}
+
+	var statusRes NodeStatusResponse
+	err = json.Unmarshal(resp, &statusRes)
+	if err != nil {
+		log.Printf("Failed to unmarshal node status result: %v", err)
+		return "", err
+	}
+
+	return statusRes.Result.NodeInfo.Network, nil
 }
 
 func httpGet(url string) ([]byte, error) {

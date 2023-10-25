@@ -3,9 +3,11 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 	"regexp"
 	"strconv"
 	"sync"
+	"sync/atomic"
 )
 
 const (
@@ -14,12 +16,28 @@ const (
 )
 
 func main() {
+	// tracking vars
 	var successfulTxns int
 	var failedTxns int
 	var mu sync.Mutex
-
 	// Declare a map to hold response codes and their counts
-	responseCodes := make(map[int]int)
+	responseCodes := make(map[uint32]int)
+
+	// keyring
+	// read seed phrase
+	mnemonic, _ := os.ReadFile("seedphrase")
+	privkey, pubKey, acctaddress := getPrivKey(mnemonic)
+	// Create an in-mempory keyring
+
+	// get initial sequence
+	address := acctaddress
+	sequence, accNum := getInitialSequence(address)
+
+	// get correct chain-id
+	chainID, err := getChainID("https://rest.sentry-01.theta-testnet.polypore.xyz/")
+	if err != nil {
+		log.Fatalf("Failed to get chain ID: %v", err)
+	}
 
 	successfulNodes := loadNodes()
 	fmt.Printf("Number of nodes: %d\n", len(successfulNodes))
@@ -41,7 +59,6 @@ func main() {
 			startBlock := currentBlock(nodeURL)
 			fmt.Printf("Script starting at block height: %s\n", startBlock)
 
-			sequence := getInitialSequence()
 			for {
 				lastBlock := startBlock
 				lastBlockSize := blockSize(lastBlock, nodeURL)
@@ -49,17 +66,18 @@ func main() {
 
 				fmt.Println("Last block height: ", lastBlock)
 				fmt.Println("Last Block Size: ", lastBlockSize)
-				fmt.Println(nodeURL, "Current mempool txns: %s transactions\n", currentMempoolSize.NTxs)
+				fmt.Println(nodeURL, "Current mempool txns: "+currentMempoolSize.NTxs+" transactions")
 				fmt.Println(nodeURL, "mempool byte size:", currentMempoolSize.TotalBytes)
 
 				var wgBatch sync.WaitGroup
 				wgBatch.Add(BatchSize)
 
 				for i := 0; i < BatchSize; i++ {
-					go func() {
+					currentSequence := atomic.AddInt64(&sequence, 1) - 1 // Use atomic to ensure thread-safety
+					go func(seq int64) {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC("test", nodeURL, uint64(sequence))
+						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(seq), uint64(accNum), privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++
@@ -71,26 +89,25 @@ func main() {
 							if resp != nil {
 								// Increment the count for this response code
 								mu.Lock()
-								responseCodes[resp.BroadcastResult.Code]++
+								responseCodes[resp.Code]++
 								mu.Unlock()
 							}
 
-							match := reMismatch.MatchString(resp.BroadcastResult.Log)
+							match := reMismatch.MatchString(resp.Log)
 							if match {
-								matches := reExpected.FindStringSubmatch(resp.BroadcastResult.Log)
+								matches := reExpected.FindStringSubmatch(resp.Log)
 								if len(matches) > 1 {
-									sequence, err = strconv.Atoi(matches[1])
+									newSequence, err := strconv.Atoi(matches[1])
 									if err != nil {
 										log.Fatalf("Failed to convert sequence to integer: %v", err)
 									}
-									fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", sequence)
+									// Safely update the global sequence if needed
+									atomic.CompareAndSwapInt64(&sequence, seq, int64(newSequence))
+									fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", newSequence)
 								}
-							} else {
-								seqNum := sequence
-								sequence = seqNum + 1
 							}
 						}
-					}()
+					}(currentSequence) // Pass the currentSequence variable to the goroutine
 				}
 
 				wgBatch.Wait()
