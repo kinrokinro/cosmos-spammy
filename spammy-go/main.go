@@ -73,11 +73,11 @@ func main() {
 				wgBatch.Add(BatchSize)
 
 				for i := 0; i < BatchSize; i++ {
-					currentSequence := atomic.AddInt64(&sequence, 1) - 1 // Use atomic to ensure thread-safety
-					go func(seq int64) {
+					go func() {
 						defer wgBatch.Done()
+						currentSequence := sequence// Use atomic to ensure thread-safety
 
-						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(seq), uint64(accNum), privkey, pubKey, address)
+						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(currentSequence), uint64(accNum), privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++
@@ -102,12 +102,12 @@ func main() {
 										log.Fatalf("Failed to convert sequence to integer: %v", err)
 									}
 									// Safely update the global sequence if needed
-									atomic.CompareAndSwapInt64(&sequence, seq, int64(newSequence))
+									atomic.SwapInt64(&sequence, int64(newSequence))
 									fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", newSequence)
 								}
 							}
 						}
-					}(currentSequence) // Pass the currentSequence variable to the goroutine
+					}() // Pass the currentSequence variable to the goroutine
 				}
 
 				wgBatch.Wait()
