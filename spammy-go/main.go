@@ -28,9 +28,15 @@ func main() {
 	privkey, pubKey, acctaddress := getPrivKey(mnemonic)
 	// Create an in-mempory keyring
 
+	// get initial sequence
 	address := acctaddress
-
 	sequence, accNum := getInitialSequence(address)
+
+	// get correct chain-id
+	chainID, err := getChainID("https://rest.sentry-01.theta-testnet.polypore.xyz/")
+	if err != nil {
+		log.Fatalf("Failed to get chain ID: %v", err)
+	}
 
 	successfulNodes := loadNodes()
 	fmt.Printf("Number of nodes: %d\n", len(successfulNodes))
@@ -69,7 +75,7 @@ func main() {
 					go func() {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC(nodeURL, uint64(sequence), uint64(accNum), privkey, pubKey, address)
+						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(sequence), uint64(accNum), privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++

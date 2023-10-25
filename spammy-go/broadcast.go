@@ -47,7 +47,7 @@ func init() {
 	types.RegisterInterfaces(cdc.InterfaceRegistry())
 }
 
-func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *coretypes.ResultBroadcastTx, txbody string, err error) {
+func sendIBCTransferViaRPC(rpcEndpoint string, chainID string, sequence, accnum uint64, privKey cryptotypes.PrivKey, pubKey cryptotypes.PubKey, address string) (response *coretypes.ResultBroadcastTx, txbody string, err error) {
 	encodingConfig := simapp.MakeTestEncodingConfig()
 	encodingConfig.Marshaler = cdc
 
@@ -106,7 +106,7 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 	}
 
 	signerData := authsigning.SignerData{
-		ChainID:       "provider",
+		ChainID:       chainID,
 		AccountNumber: accnum,   // set actual account number
 		Sequence:      sequence, // set actual sequence number
 	}
@@ -129,9 +129,8 @@ func sendIBCTransferViaRPC(rpcEndpoint string, sequence, accnum uint64, privKey 
 	}
 
 	// Generate a JSON string.
-	txJSONBytes, err := encodingConfig.TxConfig.TxJSONEncoder()(txBuilder.GetTx())
+	txJSONBytes, err := encodingConfig.TxConfig.TxEncoder()(txBuilder.GetTx())
 	if err != nil {
-		fmt.Println("some issue with the string")
 		fmt.Println(err)
 		return nil, "", err
 	}
