@@ -7,6 +7,7 @@ import (
 	"regexp"
 	"strconv"
 	"sync"
+	"sync/atomic"
 )
 
 const (
@@ -72,10 +73,11 @@ func main() {
 				wgBatch.Add(BatchSize)
 
 				for i := 0; i < BatchSize; i++ {
-					go func() {
+					currentSequence := atomic.AddInt64(&sequence, 1) - 1 // Use atomic to ensure thread-safety
+					go func(seq int64) {
 						defer wgBatch.Done()
 
-						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(sequence), uint64(accNum), privkey, pubKey, address)
+						resp, _, err := sendIBCTransferViaRPC(nodeURL, chainID, uint64(seq), uint64(accNum), privkey, pubKey, address)
 						if err != nil {
 							mu.Lock()
 							failedTxns++
@@ -95,18 +97,17 @@ func main() {
 							if match {
 								matches := reExpected.FindStringSubmatch(resp.Log)
 								if len(matches) > 1 {
-									sequence, err = strconv.Atoi(matches[1])
+									newSequence, err := strconv.Atoi(matches[1])
 									if err != nil {
 										log.Fatalf("Failed to convert sequence to integer: %v", err)
 									}
-									fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", sequence)
+									// Safely update the global sequence if needed
+									atomic.CompareAndSwapInt64(&sequence, seq, int64(newSequence))
+									fmt.Printf("we had an account sequence mismatch, adjusting to %d\n", newSequence)
 								}
-							} else {
-								seqNum := sequence
-								sequence = seqNum + 1
 							}
 						}
-					}()
+					}(currentSequence) // Pass the currentSequence variable to the goroutine
 				}
 
 				wgBatch.Wait()
